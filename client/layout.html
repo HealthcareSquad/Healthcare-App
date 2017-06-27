@@ -13,8 +13,8 @@
   }
   </style>
 
-  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-      <div class="container">
+  <nav class="navbar navbar-inverse" role="navigation">
+      <div class="container-fluid"> <!-- <div class="container"> aligns center -->
           <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
                   <span class="sr-only">Toggle navigation</span>
@@ -22,14 +22,14 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
+                <a class="navbar-brand" href="/">DocFinder</a>
           </div>
-
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="navbar-collapse-1">
               <ul class="nav navbar-nav">
-                  <li><a href="home">Home</a></li>
-                  <li><a href="about">About</a></li>
-                  <li><a href="contact">Contact</a></li>
+                  <li><a href="{{pathFor 'home'}}">Home</a></li>
+                  <li><a href="{{pathFor 'about'}}">About</a></li>
+                  <li><a href="{{pathFor 'contact'}}">Contact</a></li>
               </ul>
           </div>
       </div>
