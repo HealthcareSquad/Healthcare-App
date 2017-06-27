@@ -3,8 +3,30 @@
 		DocFinder
 	</title>
 </head>
+
 <template name="layout">
+  <style>
+  .navbar-default {
+    background-color: #d8f4ff;
+    border-color: #E7E7E7;
+}
 
-<h1>Here. We. Go.</h1>
+  </style>
 
+  <div class="container">
+    <div class="navbar navbar-default">
+      <h1>Here. We. Go.</h1>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="{{pathFor 'about'}}">About Us</a></li>
+            <li><a href="{{pathFor 'contact'}}">Contact Us</a></li>
+            <li><a href="{{pathFor 'home'}}">Return to Home Page</a></li>
+
+          </ul>
+        <!-- <ul class="nav navbar-nav navbar-right">
+                {{> loginButtons}}
+        </ul>here -->
+      </div><!-- /.navbar-collapse -->
+    </div>
+  </div>
 </template>
