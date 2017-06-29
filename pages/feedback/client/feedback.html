@@ -1,3 +1,42 @@
 <template name="feedback">
-  <h3>This page is for the feedback</h3>
+  <div class="feedback">
+    <h1>Feedback</h1>
+    <h4>Leave us feedback!</h4>
+    <hr>
+    <form>
+      Name:<br>
+      <input type="text" id="name">
+      <br>
+      <br>
+      Feedback:<br>
+      <textarea id="feedbackfield" rows="10" cols="50" placeholder="Enter feedback here!"></textarea>
+      <br>
+      <button type="button" class="btn btn-primary btn-group-lg">Submit</button>
+    </form>
+    <hr>
+    <div class="feedbackdatabase">
+      <h2>Our Feedback List</h2><br>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Feedback</td>
+          </tr>
+        </thead>
+        {{#each f in feedbacklist}}
+        <tbody>
+          {{> feedbackrow feed = f}}
+        </tbody>
+        {{/each}}
+      </table>
+      <hr>
+    </div>
+  </div>
+</template>
+
+<template name="feedbackrow">
+  <tr>
+    <td>{{feed.Name}}</td>
+    <td>{{feed.Feedback}}&nbsp;&nbsp;<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+  </tr>
 </template>
