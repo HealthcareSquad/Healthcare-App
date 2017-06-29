@@ -15,12 +15,12 @@
   </div>
 
   <div zclass="w3-main" id="main">
-    <div>
       <button class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
       <div class="w3-container">
         <h1 class="text-center">DocFinder</h1>
       </div>
-    </div>
+      <hr>
+    {{>yield}}
   </div>
 
   <script>
@@ -36,6 +36,4 @@
     document.getElementById("openNav").style.display = "inline-block";
   }
   </script>
-<hr>
-  {{>yield}}
 </template>
