@@ -7,34 +7,32 @@
 </head>
 
 <template name="layout">
-  <style>
-  nav.navbar-inverse{
-    background-color: #003805;
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- Sidebar -->
+  <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+    <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+    <a href="/" class="w3-bar-item w3-button">Home</a>
+    <a href="/about" class="w3-bar-item w3-button">About</a>
+    <a href="/contact" class="w3-bar-item w3-button">Contact</a>
+    <a href="/results" class="w3-bar-item w3-button">Results</a>
+    <a href="/feedback" class="w3-bar-item w3-button">Feedback</a>
+  </div>
+
+  <!-- Page Content -->
+  <div>
+    <button class="w3-button w3-xlarge" onclick="w3_open()">☰</button>
+    <div class="w3-container">
+      <h1>DocFinder</h1>
+    </div>
+  </div>
+
+  <script>
+  function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
   }
-  </style>
-
-  <nav class="navbar navbar-inverse" role="navigation">
-      <div class="container-fluid"> <!-- <div class="container"> aligns center -->
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-                <a class="navbar-brand" href="/">DocFinder</a>
-          </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                  <li><a href="{{pathFor 'home'}}">Home</a></li>
-                  <li><a href="{{pathFor 'about'}}">About</a></li>
-                  <li><a href="{{pathFor 'contact'}}">Contact</a></li>
-              </ul>
-          </div>
-      </div>
-  </nav>
-
-
-  {{> yield}}
+  function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+  }
+  </script>
+{{> yield}}
 </template>
