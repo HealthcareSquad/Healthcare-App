@@ -19,7 +19,7 @@ Template.something.events({
 
 
 //fill in what template this goes with
-Template.---.events({
+Template.something.events({
   //this is for a remove button, change it to a span or other thing as needed
   'click button'(elt,instance) {
         console.dir(this);
