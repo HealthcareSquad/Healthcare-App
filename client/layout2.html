@@ -14,11 +14,13 @@
     <a href="/feedback" class="w3-bar-item w3-button">Feedback</a>
   </div>
 
-  <div zclass="w3-main" id="main">
+  <div class="w3-main" id="main">
+    <div id="yes">
       <button class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
-      <div class="w3-container">
-        <h1 class="text-center">DocFinder</h1>
-      </div>
+    </div>
+    <div class="w3-container" id="mainheader">
+      <h1 class="text-center">DocFinder</h1>
+    </div>
       <hr>
     {{>yield}}
   </div>

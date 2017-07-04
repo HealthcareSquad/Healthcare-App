@@ -23,7 +23,7 @@ Template.feedback.events({
 
       console.log("done");
     } else {
-      console.log('Invalid Entry...field is blank?');
+      alert('Invalid Entry...field is blank?');
     }
 
   }

@@ -1,4 +1,13 @@
 /* CSS declarations go here */
 #mySidebar {
-  background-color: #e4fde1;
+
+  background-color: #2e61a5;
+}
+
+h1 {
+  font: Arial;
+}
+
+#yes {
+  background-color: #2e61a5;
 }

@@ -1,8 +1,16 @@
 input[type=text] {
     width: 300px;
     height: 50px;
+    opacity: .9;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
+    text-align: center;
 }
 
 /* When the input field gets focus, change its width to 100% */
@@ -11,7 +19,9 @@ input[type=text]:focus {
 }
 
 .search {
+  font: Arial;
   text-align: center;
+  color: #875785;
 }
 
 ::-webkit-input-placeholder {
