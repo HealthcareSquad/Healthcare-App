@@ -1,0 +1,3117 @@
+{
+  "meta": {
+    "data_type": "array",
+    "item_type": "Doctor",
+    "total": 329,
+    "count": 10,
+    "skip": 0,
+    "limit": 10
+  },
+  "data": [
+    {
+      "practices": [
+        {
+          "location_slug": "ma-waltham",
+          "within_search_area": true,
+          "distance": 0.7242340204874576,
+          "lat": 42.39792,
+          "lon": -71.24762,
+          "uid": "ba53167c5f0189a6faa0be702323934c",
+          "name": "Lisa Mandelblatt, OTR",
+          "accepts_new_patients": true,
+          "insurance_uids": [
+            "bcbsbluecard-bcbsbluecardppo",
+            "bluecrossblueshieldofmassachusetts-bcbsmabluecareelectppo",
+            "bluecrossblueshieldofmassachusetts-bcbsmahmobluewithmanagedcarebehavioralhealth",
+            "bluecrossblueshieldofmassachusetts-bcbsmapreferredblueppo"
+          ],
+          "visit_address": {
+            "city": "Waltham",
+            "lat": 42.39792,
+            "lon": -71.24762,
+            "state": "MA",
+            "state_long": "Massachusetts",
+            "street": "45 Malvern St",
+            "zip": "02451"
+          },
+          "office_hours": [],
+          "phones": [
+            {
+              "number": "6173887439",
+              "type": "landline"
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "code": "en"
+            }
+          ]
+        }
+      ],
+      "educations": [],
+      "profile": {
+        "first_name": "Lisa",
+        "middle_name": "Carolyn",
+        "last_name": "Mandelblatt",
+        "slug": "lisa-mandelblatt-ma",
+        "title": "OTR",
+        "image_url": "https://asset1.betterdoctor.com/assets/general_doctor_female.png",
+        "gender": "female",
+        "languages": [
+          {
+            "name": "English",
+            "code": "en"
+          }
+        ],
+        "bio": "Dr. Lisa Mandelblatt, OTR MA--specialist in occupational therapy assistant and occupational therapist--currently practices medicine at Waltham, Massachusetts.\n\nDr. Mandelblatt is licensed to practice medicine at Massachusetts.\n\nIn addition to having active medical licenses, Dr. Mandelblatt has been found to hold one or more active medical licenses, and successfully passed a malpractice history screening."
+      },
+      "ratings": [],
+      "insurances": [
+        {
+          "insurance_plan": {
+            "uid": "bcbsbluecard-bcbsbluecardppo",
+            "name": "BCBS Blue Card PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bcbsbluecard",
+            "name": "BCBS Blue Card"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmabluecareelectppo",
+            "name": "BCBS MA Blue Care Elect PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmahmobluewithmanagedcarebehavioralhealth",
+            "name": "BCBS MA HMO Blue with Managed Care Behavioral Health",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmapreferredblueppo",
+            "name": "BCBS MA Preferred Blue PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        }
+      ],
+      "specialties": [
+        {
+          "uid": "occupational-therapist-pediatrics",
+          "name": "Occupational Therapist Pediatrics",
+          "description": "Occupational therapists provide services to infants, toddlers and children who have or who are at risk for developmental delays or disabilities. Occupational therapy is concerned with a child's ability to participate in daily life activities or \"occupations.\"  Occupational therapists use their unique expertise to help children with social-emotional, physical, cognitive, communication, and adaptive behavioral challenges and to help children to be prepared for and perform important learning and school-related activities and to fulfill their rule as students.  Through an understanding of the impact of disability, illness, and impairment on a child's development, plan, ability to learn new skills, and overall occupational performance, occupational therapists design interventions that promote healthy development, establish needed skills, and/or modify environments, all in support of participation in daily activities.",
+          "category": "therapy",
+          "actor": "Occupational Therapist Pediatric",
+          "actors": "Occupational Therapist Pediatrics"
+        }
+      ],
+      "licenses": [
+        {
+          "number": "5527",
+          "state": "MA"
+        }
+      ],
+      "uid": "9fe2b1df20d4410caf07e7f4fff78b4f",
+      "npi": "1619013737"
+    },
+    {
+      "practices": [
+        {
+          "location_slug": "ma-waltham",
+          "within_search_area": true,
+          "distance": 0.8946925216772162,
+          "lat": 42.376,
+          "lon": -71.24286,
+          "uid": "4f28ba686c1ee1ea3bd3cbef2783f771",
+          "name": "Walk In And Primary Care",
+          "accepts_new_patients": true,
+          "insurance_uids": [
+            "gwhcigna-greatwestppo"
+          ],
+          "visit_address": {
+            "city": "Waltham",
+            "lat": 42.376,
+            "lon": -71.24286,
+            "state": "MA",
+            "state_long": "Massachusetts",
+            "street": "808 Main St",
+            "zip": "02451"
+          },
+          "office_hours": [],
+          "phones": [
+            {
+              "number": "7818948202",
+              "type": "fax"
+            },
+            {
+              "number": "7818948200",
+              "type": "landline"
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "code": "en"
+            }
+          ]
+        }
+      ],
+      "educations": [],
+      "profile": {
+        "first_name": "Henry",
+        "middle_name": "John",
+        "last_name": "Merola",
+        "slug": "henry-merola",
+        "title": "MD",
+        "image_url": "https://asset2.betterdoctor.com/assets/general_doctor_male.png",
+        "gender": "male",
+        "languages": [
+          {
+            "name": "English",
+            "code": "en"
+          }
+        ],
+        "bio": "Dr. Henry Merola, MD--specialist in internal medicine--currently practices medicine at Waltham, Massachusetts.\n\nDr. Merola is licensed to see patients in Massachusetts.\n\nDr. Merola has successfully passed a background check including a medical license verification (active) and screening for malpractice history (none found)."
+      },
+      "ratings": [],
+      "insurances": [
+        {
+          "insurance_plan": {
+            "uid": "gwhcigna-greatwestppo",
+            "name": "Great West PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "gwhcigna",
+            "name": "GWH-Cigna"
+          }
+        }
+      ],
+      "specialties": [
+        {
+          "uid": "internist",
+          "name": "Internal Medicine",
+          "description": "Specializes in common illnesses and complex medical problems.",
+          "category": "medical",
+          "actor": "Internist",
+          "actors": "Internists"
+        }
+      ],
+      "claims": [
+        {
+          "hcpcs": "99213",
+          "hcpcs_description": "Office / outpatient visit, established patient, 15 minutes",
+          "service_cnt": 1331,
+          "bene_uniq_cnt": 309,
+          "avg_allowed_amt": 75.64,
+          "avg_charge_amt": 152.04,
+          "avg_payment_amt": 50.817385424
+        },
+        {
+          "hcpcs": "G0180",
+          "hcpcs_description": "Physician certification for medicare-covered home health services",
+          "service_cnt": 35,
+          "bene_uniq_cnt": 32,
+          "avg_allowed_amt": 57.05,
+          "avg_charge_amt": 221.38,
+          "avg_payment_amt": 45.64
+        },
+        {
+          "hcpcs": "99203",
+          "hcpcs_description": "Office / outpatient visit, new patient, 30 minutes",
+          "service_cnt": 13,
+          "bene_uniq_cnt": 13,
+          "avg_allowed_amt": 112.61,
+          "avg_charge_amt": 276.01,
+          "avg_payment_amt": 52.417692308
+        }
+      ],
+      "licenses": [
+        {
+          "number": "59659",
+          "state": "MA"
+        }
+      ],
+      "uid": "127e62cee65e21b6b153edd2663457fb",
+      "npi": "1902963986"
+    },
+    {
+      "practices": [
+        {
+          "location_slug": "ma-waltham",
+          "within_search_area": true,
+          "distance": 0.9117596415487907,
+          "lat": 42.37574,
+          "lon": -71.24218,
+          "uid": "f1f1b08cc821c7ba2f815d3d7ee18020",
+          "name": "Dr. Richard Crossman, DPM",
+          "accepts_new_patients": true,
+          "insurance_uids": [
+            "cigna-cignaopenaccessplus",
+            "multiplan-phcsppo",
+            "harvardpilgrim-harvardpilgrimppo",
+            "multiplan-multiplanppo",
+            "aetna-aetnasignatureadministratorsppo",
+            "aetna-aetnamanagedchoiceposopenaccess",
+            "tuftshealthplan-tuftsppo",
+            "cigna-cignalocalplus",
+            "aetna-aetnachoiceposii",
+            "cigna-cignappo",
+            "cigna-cignahmo",
+            "humana-humanachoicecarenetworkppo",
+            "bcbsbluecard-bcbsbluecardppo",
+            "gwhcigna-greatwestppo",
+            "unitedhealthcare-uhcchoicepluspos",
+            "unitedhealthcare-uhcnavigatehmo",
+            "unitedhealthcare-uhcnavigatepos",
+            "unitedhealthcare-uhcoptionsppo",
+            "bluecrossblueshieldofmassachusetts-bcbsmabluecareelectppo",
+            "bluecrossblueshieldofmassachusetts-bcbsmahmobluewithmanagedcarebehavioralhealth",
+            "bluecrossblueshieldofmassachusetts-bcbsmapreferredblueppo",
+            "firsthealthcoventryhealthcare-firsthealthppo"
+          ],
+          "visit_address": {
+            "city": "Waltham",
+            "lat": 42.37574,
+            "lon": -71.24218,
+            "state": "MA",
+            "state_long": "Massachusetts",
+            "street": "30 Grant St",
+            "zip": "02453"
+          },
+          "office_hours": [],
+          "phones": [
+            {
+              "number": "7818939186",
+              "type": "business_landline"
+            },
+            {
+              "number": "7818939186",
+              "type": "landline"
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "code": "en"
+            }
+          ]
+        }
+      ],
+      "educations": [],
+      "profile": {
+        "first_name": "Richard",
+        "last_name": "Crossman",
+        "slug": "richard-crossman-dpm",
+        "title": "DPM",
+        "image_url": "https://asset1.betterdoctor.com/assets/general_doctor_male.png",
+        "gender": "male",
+        "languages": [
+          {
+            "name": "English",
+            "code": "en"
+          }
+        ],
+        "bio": "Dr. Richard Crossman, DPM specializes in podiatry, and currently treats patients in North grafton, Massachusetts, Waltham, Massachusetts, and Boston, Massachusetts.\n\nDr. Crossman is licensed to treat patients in Massachusetts.\n\nIn addition to having active medical licenses, Dr. Crossman has passed an automated background check which looked at elements including medical license status and malpractice screening (no history found)."
+      },
+      "ratings": [],
+      "insurances": [
+        {
+          "insurance_plan": {
+            "uid": "cigna-cignaopenaccessplus",
+            "name": "CIGNA Open Access Plus",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "cigna",
+            "name": "Cigna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "multiplan-phcsppo",
+            "name": "PHCS PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "multiplan",
+            "name": "Multiplan"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "harvardpilgrim-harvardpilgrimppo",
+            "name": "Harvard Pilgrim PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "harvardpilgrim",
+            "name": "Harvard Pilgrim"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "multiplan-multiplanppo",
+            "name": "Multiplan PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "multiplan",
+            "name": "Multiplan"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnasignatureadministratorsppo",
+            "name": "Aetna Signature Administrators PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnamanagedchoiceposopenaccess",
+            "name": "Aetna Managed Choice POS Open Access",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "tuftshealthplan-tuftsppo",
+            "name": "Tufts PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "tuftshealthplan",
+            "name": "Tufts Health Plan"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "cigna-cignalocalplus",
+            "name": "CIGNA LocalPlus",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "cigna",
+            "name": "Cigna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnachoiceposii",
+            "name": "Aetna Choice POS II",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "cigna-cignappo",
+            "name": "CIGNA PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "cigna",
+            "name": "Cigna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "cigna-cignahmo",
+            "name": "CIGNA HMO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "cigna",
+            "name": "Cigna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "humana-humanachoicecarenetworkppo",
+            "name": "Humana ChoiceCare Network PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "humana",
+            "name": "Humana"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bcbsbluecard-bcbsbluecardppo",
+            "name": "BCBS Blue Card PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bcbsbluecard",
+            "name": "BCBS Blue Card"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "gwhcigna-greatwestppo",
+            "name": "Great West PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "gwhcigna",
+            "name": "GWH-Cigna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "unitedhealthcare-uhcchoicepluspos",
+            "name": "UHC Choice Plus POS",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "unitedhealthcare",
+            "name": "United Healthcare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "unitedhealthcare-uhcnavigatehmo",
+            "name": "UHC Navigate HMO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "unitedhealthcare",
+            "name": "United Healthcare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "unitedhealthcare-uhcnavigatepos",
+            "name": "UHC Navigate POS",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "unitedhealthcare",
+            "name": "United Healthcare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "unitedhealthcare-uhcoptionsppo",
+            "name": "UHC Options PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "unitedhealthcare",
+            "name": "United Healthcare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmabluecareelectppo",
+            "name": "BCBS MA Blue Care Elect PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmahmobluewithmanagedcarebehavioralhealth",
+            "name": "BCBS MA HMO Blue with Managed Care Behavioral Health",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmapreferredblueppo",
+            "name": "BCBS MA Preferred Blue PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "firsthealthcoventryhealthcare-firsthealthppo",
+            "name": "First Health PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "firsthealthcoventryhealthcare",
+            "name": "First Health Coventry Healthcare"
+          }
+        }
+      ],
+      "specialties": [
+        {
+          "uid": "podiatrist",
+          "name": "Podiatry",
+          "description": "Specializes in foot and ankle problems.",
+          "category": "medical",
+          "actor": "Podiatrist",
+          "actors": "Podiatrists"
+        }
+      ],
+      "claims": [
+        {
+          "hcpcs": "G0127",
+          "hcpcs_description": "Trimming of dystrophic nails, any number",
+          "service_cnt": 729,
+          "bene_uniq_cnt": 231,
+          "avg_allowed_amt": 16.646529492,
+          "avg_charge_amt": 48.299039781,
+          "avg_payment_amt": 13.068203018
+        },
+        {
+          "hcpcs": "11056",
+          "hcpcs_description": "Trim skin lesions, 2 to 4 lesions",
+          "service_cnt": 258,
+          "bene_uniq_cnt": 124,
+          "avg_allowed_amt": 61.020077519,
+          "avg_charge_amt": 75,
+          "avg_payment_amt": 47.837131783
+        },
+        {
+          "hcpcs": "11055",
+          "hcpcs_description": "Trim skin lesion",
+          "service_cnt": 205,
+          "bene_uniq_cnt": 134,
+          "avg_allowed_amt": 54.376,
+          "avg_charge_amt": 60,
+          "avg_payment_amt": 42.858926829
+        },
+        {
+          "hcpcs": "11057",
+          "hcpcs_description": "Trim skin lesions, over 4 lesions",
+          "service_cnt": 38,
+          "bene_uniq_cnt": 20,
+          "avg_allowed_amt": 75.93,
+          "avg_charge_amt": 90,
+          "avg_payment_amt": 60.74
+        },
+        {
+          "hcpcs": "G0127",
+          "hcpcs_description": "Trimming of dystrophic nails, any number",
+          "service_cnt": 37,
+          "bene_uniq_cnt": 34,
+          "avg_allowed_amt": 5.797027027,
+          "avg_charge_amt": 48.378378378,
+          "avg_payment_amt": 4.4618918919
+        },
+        {
+          "hcpcs": "11721",
+          "hcpcs_description": "Debride nail, 6 or more",
+          "service_cnt": 36,
+          "bene_uniq_cnt": 20,
+          "avg_allowed_amt": 47.031944444,
+          "avg_charge_amt": 75,
+          "avg_payment_amt": 37.623611111
+        },
+        {
+          "hcpcs": "99307",
+          "hcpcs_description": "Subsequent nursing facility care, per day, evaluation and management, 10 minutes ",
+          "service_cnt": 12,
+          "bene_uniq_cnt": 11,
+          "avg_allowed_amt": 44.91,
+          "avg_charge_amt": 85,
+          "avg_payment_amt": 35.93
+        }
+      ],
+      "licenses": [
+        {
+          "number": "1943",
+          "state": "MA"
+        }
+      ],
+      "uid": "b20b748240f0db392da156d6e3d43058",
+      "npi": "1235194929"
+    },
+    {
+      "practices": [
+        {
+          "location_slug": "ma-concord",
+          "within_search_area": false,
+          "distance": 10.15957841222411,
+          "lat": 42.45181,
+          "lon": -71.375,
+          "uid": "0ce1bc8249436e83ee34d35d7792656a",
+          "name": "Thomas Lamattina, MD",
+          "accepts_new_patients": true,
+          "insurance_uids": [
+            "cigna-cignappo",
+            "cigna-cignahmo",
+            "cigna-cignaopenaccessplus"
+          ],
+          "visit_address": {
+            "city": "Concord",
+            "lat": 42.45181,
+            "lon": -71.375,
+            "state": "MA",
+            "state_long": "Massachusetts",
+            "street": "133 Old Road To 9 Acre Cor",
+            "zip": "01742"
+          },
+          "office_hours": [],
+          "phones": [
+            {
+              "number": "9782873690",
+              "type": "landline"
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "code": "en"
+            }
+          ]
+        },
+        {
+          "location_slug": "ma-boston",
+          "within_search_area": false,
+          "distance": 12.119583217570645,
+          "lat": 42.362323,
+          "lon": -71.069086,
+          "uid": "eae9adc74f9d00f1d681fd476151b426",
+          "name": "Thomas Lamattina, MD",
+          "accepts_new_patients": true,
+          "insurance_uids": [
+            "cigna-cignahmo",
+            "cigna-cignappo",
+            "cigna-cignaopenaccessplus",
+            "gwhcigna-greatwestppo"
+          ],
+          "visit_address": {
+            "city": "Boston",
+            "lat": 42.362323,
+            "lon": -71.069086,
+            "state": "MA",
+            "state_long": "Massachusetts",
+            "street": "32 Fruit St",
+            "zip": "02114"
+          },
+          "office_hours": [],
+          "phones": [
+            {
+              "number": "6177268157",
+              "type": "landline"
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "code": "en"
+            }
+          ]
+        },
+        {
+          "location_slug": "ma-burlington",
+          "within_search_area": false,
+          "distance": 7.111527261842325,
+          "lat": 42.484822,
+          "lon": -71.205212,
+          "uid": "ad63ee8997300c19cabee130cb58f52d",
+          "name": "Thomas Lamattina, MD",
+          "accepts_new_patients": true,
+          "insurance_uids": [
+            "medicare-medicare",
+            "medicaid-medicaid",
+            "aetna-aetnamdbronzesilverandgoldhmo",
+            "firsthealthcoventryhealthcare-firsthealthppo"
+          ],
+          "visit_address": {
+            "city": "Burlington",
+            "lat": 42.484822,
+            "lon": -71.205212,
+            "state": "MA",
+            "state_long": "Massachusetts",
+            "street": "41 Mall Rd",
+            "zip": "01805"
+          },
+          "office_hours": [],
+          "phones": [
+            {
+              "number": "7817448608",
+              "type": "landline"
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "code": "en"
+            }
+          ]
+        },
+        {
+          "location_slug": "ma-waltham",
+          "within_search_area": true,
+          "distance": 0.9145920156850059,
+          "lat": 42.376296,
+          "lon": -71.238339,
+          "uid": "31ae61cf4421bf728ee86ad8c8b0b1d8",
+          "name": "Thomas Lamattina, MD",
+          "accepts_new_patients": true,
+          "insurance_uids": [
+            "aetna-aetnasignatureadministratorsppo",
+            "aetna-aetnamanagedchoiceposopenaccess",
+            "unitedhealthcare-uhcchoicepluspos",
+            "unitedhealthcare-uhcnavigatehmo",
+            "unitedhealthcare-uhcnavigatepos",
+            "unitedhealthcare-uhcoptionsppo"
+          ],
+          "visit_address": {
+            "city": "Waltham",
+            "lat": 42.376296,
+            "lon": -71.238339,
+            "state": "MA",
+            "state_long": "Massachusetts",
+            "street": "707 Main St",
+            "zip": "02451"
+          },
+          "office_hours": [],
+          "phones": [
+            {
+              "number": "7818943500",
+              "type": "landline"
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "code": "en"
+            }
+          ]
+        }
+      ],
+      "educations": [
+        {
+          "school": "St Elizabeths Hospital",
+          "graduation_year": "Complete in 1985",
+          "degree": "residency"
+        }
+      ],
+      "profile": {
+        "first_name": "Thomas",
+        "last_name": "Lamattina",
+        "slug": "thomas-lamattina",
+        "title": "MD",
+        "image_url": "https://asset2.betterdoctor.com/assets/general_doctor_male.png",
+        "gender": "male",
+        "languages": [
+          {
+            "name": "English",
+            "code": "en"
+          }
+        ],
+        "bio": ""
+      },
+      "ratings": [],
+      "insurances": [
+        {
+          "insurance_plan": {
+            "uid": "cigna-cignappo",
+            "name": "CIGNA PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "cigna",
+            "name": "Cigna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "cigna-cignahmo",
+            "name": "CIGNA HMO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "cigna",
+            "name": "Cigna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "cigna-cignaopenaccessplus",
+            "name": "CIGNA Open Access Plus",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "cigna",
+            "name": "Cigna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "gwhcigna-greatwestppo",
+            "name": "Great West PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "gwhcigna",
+            "name": "GWH-Cigna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "medicare-medicare",
+            "name": "Medicare",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "medicare",
+            "name": "Medicare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "medicaid-medicaid",
+            "name": "Medicaid",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "medicaid",
+            "name": "Medicaid"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnamdbronzesilverandgoldhmo",
+            "name": "MD Bronze Silver  Gold - HMO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "firsthealthcoventryhealthcare-firsthealthppo",
+            "name": "First Health PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "firsthealthcoventryhealthcare",
+            "name": "First Health Coventry Healthcare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnasignatureadministratorsppo",
+            "name": "Aetna Signature Administrators PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnamanagedchoiceposopenaccess",
+            "name": "Aetna Managed Choice POS Open Access",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "unitedhealthcare-uhcchoicepluspos",
+            "name": "UHC Choice Plus POS",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "unitedhealthcare",
+            "name": "United Healthcare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "unitedhealthcare-uhcnavigatehmo",
+            "name": "UHC Navigate HMO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "unitedhealthcare",
+            "name": "United Healthcare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "unitedhealthcare-uhcnavigatepos",
+            "name": "UHC Navigate POS",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "unitedhealthcare",
+            "name": "United Healthcare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "unitedhealthcare-uhcoptionsppo",
+            "name": "UHC Options PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "unitedhealthcare",
+            "name": "United Healthcare"
+          }
+        }
+      ],
+      "specialties": [
+        {
+          "uid": "cardiologist",
+          "name": "Cardiovascular Disease",
+          "description": "Specializes in heart problems.",
+          "category": "medical",
+          "actor": "Cardiologist",
+          "actors": "Cardiologists"
+        }
+      ],
+      "claims": [
+        {
+          "hcpcs": "93010",
+          "hcpcs_description": "Electrocardiogram report",
+          "service_cnt": 784,
+          "bene_uniq_cnt": 648,
+          "avg_allowed_amt": 8.87,
+          "avg_charge_amt": 25,
+          "avg_payment_amt": 7.0329209184
+        },
+        {
+          "hcpcs": "99213",
+          "hcpcs_description": "Office / outpatient visit, established patient, 15 minutes",
+          "service_cnt": 775,
+          "bene_uniq_cnt": 493,
+          "avg_allowed_amt": 75.64,
+          "avg_charge_amt": 152,
+          "avg_payment_amt": 56.486954839
+        },
+        {
+          "hcpcs": "99231",
+          "hcpcs_description": "Subsequent hospital care",
+          "service_cnt": 387,
+          "bene_uniq_cnt": 144,
+          "avg_allowed_amt": 39.7,
+          "avg_charge_amt": 93,
+          "avg_payment_amt": 31.76
+        },
+        {
+          "hcpcs": "93306",
+          "hcpcs_description": "Echocardiography, transthoracic",
+          "service_cnt": 221,
+          "bene_uniq_cnt": 213,
+          "avg_allowed_amt": 67.85,
+          "avg_charge_amt": 202,
+          "avg_payment_amt": 54.101176471
+        },
+        {
+          "hcpcs": "93288",
+          "hcpcs_description": "Interrogation device evaluation; single, dual, or multiple lead pacemaker",
+          "service_cnt": 215,
+          "bene_uniq_cnt": 136,
+          "avg_allowed_amt": 22.54,
+          "avg_charge_amt": 67,
+          "avg_payment_amt": 17.191395349
+        },
+        {
+          "hcpcs": "99222",
+          "hcpcs_description": "Initial hospital care",
+          "service_cnt": 213,
+          "bene_uniq_cnt": 187,
+          "avg_allowed_amt": 138.24,
+          "avg_charge_amt": 308,
+          "avg_payment_amt": 110.47356808
+        },
+        {
+          "hcpcs": "93306",
+          "hcpcs_description": "Echocardiography, transthoracic",
+          "service_cnt": 187,
+          "bene_uniq_cnt": 179,
+          "avg_allowed_amt": 237.32882353,
+          "avg_charge_amt": 1142,
+          "avg_payment_amt": 185.28128342
+        },
+        {
+          "hcpcs": "93015",
+          "hcpcs_description": "Cardiovascular stress test",
+          "service_cnt": 182,
+          "bene_uniq_cnt": 177,
+          "avg_allowed_amt": 97.87,
+          "avg_charge_amt": 323,
+          "avg_payment_amt": 71.443351648
+        },
+        {
+          "hcpcs": "99203",
+          "hcpcs_description": "Office / outpatient visit, new patient, 30 minutes",
+          "service_cnt": 126,
+          "bene_uniq_cnt": 126,
+          "avg_allowed_amt": 112.61,
+          "avg_charge_amt": 276,
+          "avg_payment_amt": 87.222857143
+        },
+        {
+          "hcpcs": "93016",
+          "hcpcs_description": "Cardiovascular stress test",
+          "service_cnt": 95,
+          "bene_uniq_cnt": 92,
+          "avg_allowed_amt": 23.136631579,
+          "avg_charge_amt": 66,
+          "avg_payment_amt": 18.505368421
+        },
+        {
+          "hcpcs": "93018",
+          "hcpcs_description": "Cardiovascular stress test",
+          "service_cnt": 95,
+          "bene_uniq_cnt": 92,
+          "avg_allowed_amt": 15.71,
+          "avg_charge_amt": 44,
+          "avg_payment_amt": 12.57
+        },
+        {
+          "hcpcs": "78452",
+          "hcpcs_description": "Myocardial perfusion imaging, tomographic (SPECT); multiple studies, at rest and/or stress",
+          "service_cnt": 78,
+          "bene_uniq_cnt": 77,
+          "avg_allowed_amt": 79.94,
+          "avg_charge_amt": 216,
+          "avg_payment_amt": 63.289871795
+        },
+        {
+          "hcpcs": "99221",
+          "hcpcs_description": "Initial hospital care",
+          "service_cnt": 62,
+          "bene_uniq_cnt": 58,
+          "avg_allowed_amt": 102,
+          "avg_charge_amt": 186,
+          "avg_payment_amt": 81.6
+        },
+        {
+          "hcpcs": "93000",
+          "hcpcs_description": "Electrocardiogram, complete",
+          "service_cnt": 38,
+          "bene_uniq_cnt": 32,
+          "avg_allowed_amt": 20.88,
+          "avg_charge_amt": 81,
+          "avg_payment_amt": 16.260526316
+        },
+        {
+          "hcpcs": "93280",
+          "hcpcs_description": "Programming device evaluation with iterative adjustment, dual lead pacemaker system",
+          "service_cnt": 25,
+          "bene_uniq_cnt": 23,
+          "avg_allowed_amt": 38.8768,
+          "avg_charge_amt": 121,
+          "avg_payment_amt": 31.0976
+        },
+        {
+          "hcpcs": "93224",
+          "hcpcs_description": "ECG monitor / report, 24 hours",
+          "service_cnt": 24,
+          "bene_uniq_cnt": 24,
+          "avg_allowed_amt": 111.05,
+          "avg_charge_amt": 509,
+          "avg_payment_amt": 88.84
+        },
+        {
+          "hcpcs": "99212",
+          "hcpcs_description": "Office / outpatient visit, established patient, 10 minutes",
+          "service_cnt": 23,
+          "bene_uniq_cnt": 20,
+          "avg_allowed_amt": 46.19,
+          "avg_charge_amt": 112,
+          "avg_payment_amt": 36.94
+        },
+        {
+          "hcpcs": "99203",
+          "hcpcs_description": "Office / outpatient visit, new patient, 30 minutes",
+          "service_cnt": 22,
+          "bene_uniq_cnt": 22,
+          "avg_allowed_amt": 77.8,
+          "avg_charge_amt": 276,
+          "avg_payment_amt": 62.24
+        },
+        {
+          "hcpcs": "92980",
+          "hcpcs_description": "Insert intracoronary stent",
+          "service_cnt": 19,
+          "bene_uniq_cnt": 19,
+          "avg_allowed_amt": 839.60473684,
+          "avg_charge_amt": 2228,
+          "avg_payment_amt": 666.90789474
+        },
+        {
+          "hcpcs": "99213",
+          "hcpcs_description": "Office / outpatient visit, established patient, 15 minutes",
+          "service_cnt": 19,
+          "bene_uniq_cnt": 18,
+          "avg_allowed_amt": 51.79,
+          "avg_charge_amt": 152,
+          "avg_payment_amt": 40.565263158
+        },
+        {
+          "hcpcs": "93460",
+          "hcpcs_description": "Catheter placement in coronary artery(s) for coronary angiography",
+          "service_cnt": 18,
+          "bene_uniq_cnt": 18,
+          "avg_allowed_amt": 401.64,
+          "avg_charge_amt": 1000,
+          "avg_payment_amt": 321.31
+        },
+        {
+          "hcpcs": "92960",
+          "hcpcs_description": "Cardioversion electric, external",
+          "service_cnt": 14,
+          "bene_uniq_cnt": 14,
+          "avg_allowed_amt": 129.28642857,
+          "avg_charge_amt": 369,
+          "avg_payment_amt": 103.43285714
+        },
+        {
+          "hcpcs": "99212",
+          "hcpcs_description": "Office / outpatient visit, established patient, 10 minutes",
+          "service_cnt": 12,
+          "bene_uniq_cnt": 12,
+          "avg_allowed_amt": 26.25,
+          "avg_charge_amt": 112,
+          "avg_payment_amt": 21
+        },
+        {
+          "hcpcs": "33208",
+          "hcpcs_description": "Insertion of heart pacemaker",
+          "service_cnt": 12,
+          "bene_uniq_cnt": 12,
+          "avg_allowed_amt": 544.81833333,
+          "avg_charge_amt": 1423,
+          "avg_payment_amt": 435.855
+        },
+        {
+          "hcpcs": "33228",
+          "hcpcs_description": "Removal of permanent pacemaker pulse generator with replacement; dual lead system",
+          "service_cnt": 11,
+          "bene_uniq_cnt": 11,
+          "avg_allowed_amt": 367.2,
+          "avg_charge_amt": 918,
+          "avg_payment_amt": 293.76
+        }
+      ],
+      "licenses": [
+        {
+          "number": "52636",
+          "state": "MA"
+        }
+      ],
+      "uid": "df6043bd730fb3034a544f3d51621226",
+      "npi": "1073594990"
+    },
+    {
+      "practices": [
+        {
+          "location_slug": "ma-waltham",
+          "within_search_area": true,
+          "distance": 0.9640044873800397,
+          "lat": 42.376546,
+          "lon": -71.235858,
+          "uid": "0b68cda56cd7cd667230203387948fcf",
+          "name": "Drs Shocair And Reda PC",
+          "accepts_new_patients": true,
+          "insurance_uids": [
+            "aetna-aetnamanagedchoiceposopenaccess",
+            "tuftshealthplan-tuftsppo",
+            "aetna-aetnasignatureadministratorsppo",
+            "harvardpilgrim-harvardpilgrimppo",
+            "aetna-aetnachoiceposii",
+            "bcbsbluecard-bcbsbluecardppo",
+            "bluecrossblueshieldofmassachusetts-bcbsmabluecareelectppo",
+            "bluecrossblueshieldofmassachusetts-bcbsmahmobluewithmanagedcarebehavioralhealth",
+            "bluecrossblueshieldofmassachusetts-bcbsmapreferredblueppo",
+            "firsthealthcoventryhealthcare-firsthealthppo"
+          ],
+          "visit_address": {
+            "city": "Waltham",
+            "lat": 42.376546,
+            "lon": -71.235858,
+            "state": "MA",
+            "state_long": "Massachusetts",
+            "street": "6 Lexington St",
+            "street2": "Ste 2",
+            "zip": "02452"
+          },
+          "office_hours": [],
+          "phones": [
+            {
+              "number": "7818990300",
+              "type": "fax"
+            },
+            {
+              "number": "7818937395",
+              "type": "landline"
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "code": "en"
+            }
+          ]
+        }
+      ],
+      "educations": [],
+      "profile": {
+        "first_name": "Sheena",
+        "last_name": "John",
+        "slug": "sheena-john",
+        "title": "MD",
+        "image_url": "https://asset1.betterdoctor.com/assets/general_doctor_female.png",
+        "gender": "female",
+        "languages": [
+          {
+            "name": "English",
+            "code": "en"
+          }
+        ],
+        "bio": "Dr. Sheena John, MD practices medicine at Waltham, Massachusetts and specializes in internal medicine.\n\nDr. John is licensed to see patients in Massachusetts.\n\nDr. John has been found during an automated background check to be clear of any malpractice history and holds one or more active medical licenses."
+      },
+      "ratings": [],
+      "insurances": [
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnamanagedchoiceposopenaccess",
+            "name": "Aetna Managed Choice POS Open Access",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "tuftshealthplan-tuftsppo",
+            "name": "Tufts PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "tuftshealthplan",
+            "name": "Tufts Health Plan"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnasignatureadministratorsppo",
+            "name": "Aetna Signature Administrators PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "harvardpilgrim-harvardpilgrimppo",
+            "name": "Harvard Pilgrim PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "harvardpilgrim",
+            "name": "Harvard Pilgrim"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnachoiceposii",
+            "name": "Aetna Choice POS II",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bcbsbluecard-bcbsbluecardppo",
+            "name": "BCBS Blue Card PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bcbsbluecard",
+            "name": "BCBS Blue Card"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmabluecareelectppo",
+            "name": "BCBS MA Blue Care Elect PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmahmobluewithmanagedcarebehavioralhealth",
+            "name": "BCBS MA HMO Blue with Managed Care Behavioral Health",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmapreferredblueppo",
+            "name": "BCBS MA Preferred Blue PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "firsthealthcoventryhealthcare-firsthealthppo",
+            "name": "First Health PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "firsthealthcoventryhealthcare",
+            "name": "First Health Coventry Healthcare"
+          }
+        }
+      ],
+      "specialties": [
+        {
+          "uid": "internist",
+          "name": "Internal Medicine",
+          "description": "Specializes in common illnesses and complex medical problems.",
+          "category": "medical",
+          "actor": "Internist",
+          "actors": "Internists"
+        }
+      ],
+      "claims": [
+        {
+          "hcpcs": "99214",
+          "hcpcs_description": "Office / outpatient visit, established patient, 25 minutes",
+          "service_cnt": 760,
+          "bene_uniq_cnt": 243,
+          "avg_allowed_amt": 111.56,
+          "avg_charge_amt": 160,
+          "avg_payment_amt": 77.996
+        },
+        {
+          "hcpcs": "99213",
+          "hcpcs_description": "Office / outpatient visit, established patient, 15 minutes",
+          "service_cnt": 321,
+          "bene_uniq_cnt": 140,
+          "avg_allowed_amt": 75.64,
+          "avg_charge_amt": 120.12461059,
+          "avg_payment_amt": 56.69258567
+        },
+        {
+          "hcpcs": "99309",
+          "hcpcs_description": "Subsequent nursing facility care, per day, evaluation and management, 25 minutes ",
+          "service_cnt": 287,
+          "bene_uniq_cnt": 11,
+          "avg_allowed_amt": 91.63,
+          "avg_charge_amt": 150,
+          "avg_payment_amt": 71.834041812
+        },
+        {
+          "hcpcs": "99310",
+          "hcpcs_description": "Subsequent nursing facility care, per day, evaluation and management, 35 minutes ",
+          "service_cnt": 245,
+          "bene_uniq_cnt": 30,
+          "avg_allowed_amt": 135.71,
+          "avg_charge_amt": 200,
+          "avg_payment_amt": 106.64689796
+        },
+        {
+          "hcpcs": "G0008",
+          "hcpcs_description": "Administration of influenza virus vaccine",
+          "service_cnt": 91,
+          "bene_uniq_cnt": 90,
+          "avg_allowed_amt": 26.86,
+          "avg_charge_amt": 50,
+          "avg_payment_amt": 26.86
+        },
+        {
+          "hcpcs": "Q2037",
+          "hcpcs_description": "Influenza virus vaccine, split virus, individuals 3 years of age and older, intramuscular (fluvirin)",
+          "service_cnt": 91,
+          "bene_uniq_cnt": 90,
+          "avg_allowed_amt": 13.896153846,
+          "avg_charge_amt": 25,
+          "avg_payment_amt": 13.896153846
+        },
+        {
+          "hcpcs": "93000",
+          "hcpcs_description": "Electrocardiogram, complete",
+          "service_cnt": 47,
+          "bene_uniq_cnt": 44,
+          "avg_allowed_amt": 20.88,
+          "avg_charge_amt": 50,
+          "avg_payment_amt": 13.958510638
+        },
+        {
+          "hcpcs": "99304",
+          "hcpcs_description": "Initial nursing facility care, per day, evaluation and management, 25 minutes ",
+          "service_cnt": 29,
+          "bene_uniq_cnt": 26,
+          "avg_allowed_amt": 94,
+          "avg_charge_amt": 250,
+          "avg_payment_amt": 75.2
+        },
+        {
+          "hcpcs": "96372",
+          "hcpcs_description": "Therapeutic, prophylactic or diagnostic injection, subcutaneous or intramuscular",
+          "service_cnt": 22,
+          "bene_uniq_cnt": 13,
+          "avg_allowed_amt": 26.86,
+          "avg_charge_amt": 50,
+          "avg_payment_amt": 15.354090909
+        },
+        {
+          "hcpcs": "99215",
+          "hcpcs_description": "Office / outpatient visit, established patient, 40 minutes",
+          "service_cnt": 21,
+          "bene_uniq_cnt": 21,
+          "avg_allowed_amt": 149.33,
+          "avg_charge_amt": 225,
+          "avg_payment_amt": 86.418571429
+        },
+        {
+          "hcpcs": "69210",
+          "hcpcs_description": "Remove impacted ear wax",
+          "service_cnt": 20,
+          "bene_uniq_cnt": 15,
+          "avg_allowed_amt": 55.4,
+          "avg_charge_amt": 100,
+          "avg_payment_amt": 43.1825
+        },
+        {
+          "hcpcs": "99205",
+          "hcpcs_description": "Office / outpatient visit, new patient, 60 minutes",
+          "service_cnt": 17,
+          "bene_uniq_cnt": 17,
+          "avg_allowed_amt": 211.31,
+          "avg_charge_amt": 350,
+          "avg_payment_amt": 157.74588235
+        },
+        {
+          "hcpcs": "90732",
+          "hcpcs_description": "Pneumococcal vaccine",
+          "service_cnt": 17,
+          "bene_uniq_cnt": 17,
+          "avg_allowed_amt": 65.265294118,
+          "avg_charge_amt": 100,
+          "avg_payment_amt": 65.265294118
+        },
+        {
+          "hcpcs": "G0009",
+          "hcpcs_description": "Administration of pneumococcal vaccine",
+          "service_cnt": 16,
+          "bene_uniq_cnt": 16,
+          "avg_allowed_amt": 26.86,
+          "avg_charge_amt": 30,
+          "avg_payment_amt": 26.86
+        }
+      ],
+      "licenses": [
+        {
+          "number": "208314",
+          "state": "MA"
+        }
+      ],
+      "uid": "77f2d5208fb35f6616cbd0ab8e2430c4",
+      "npi": "1396784823"
+    },
+    {
+      "practices": [
+        {
+          "location_slug": "ma-waltham",
+          "within_search_area": true,
+          "distance": 0.9640044873800397,
+          "lat": 42.376546,
+          "lon": -71.235858,
+          "uid": "e6675df0d7996f70a9392b8104b712cd",
+          "name": "Mawya Shocair, MD",
+          "accepts_new_patients": true,
+          "insurance_uids": [
+            "multiplan-phcsppo",
+            "multiplan-multiplanppo",
+            "aetna-aetnasignatureadministratorsppo",
+            "tuftshealthplan-tuftsppo",
+            "harvardpilgrim-harvardpilgrimppo",
+            "aetna-aetnahmo",
+            "aetna-aetnamanagedchoiceposopenaccess",
+            "bcbsbluecard-bcbsbluecardppo",
+            "aetna-aetnachoiceposii",
+            "unitedhealthcare-uhcchoicepluspos",
+            "unitedhealthcare-uhcnavigatehmo",
+            "unitedhealthcare-uhcnavigatepos",
+            "unitedhealthcare-uhcoptionsppo",
+            "bluecrossblueshieldofmassachusetts-bcbsmabluecareelectppo",
+            "bluecrossblueshieldofmassachusetts-bcbsmahmobluewithmanagedcarebehavioralhealth",
+            "bluecrossblueshieldofmassachusetts-bcbsmapreferredblueppo",
+            "firsthealthcoventryhealthcare-firsthealthppo"
+          ],
+          "visit_address": {
+            "city": "Waltham",
+            "lat": 42.376546,
+            "lon": -71.235858,
+            "state": "MA",
+            "state_long": "Massachusetts",
+            "street": "6 Lexington St",
+            "street2": "Ste 2",
+            "zip": "02452"
+          },
+          "office_hours": [],
+          "phones": [
+            {
+              "number": "7818998778",
+              "type": "landline"
+            },
+            {
+              "number": "7818990300",
+              "type": "fax"
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "code": "en"
+            }
+          ]
+        },
+        {
+          "location_slug": "ma-waltham",
+          "within_search_area": true,
+          "distance": 0.9640044873800397,
+          "lat": 42.376546,
+          "lon": -71.235858,
+          "uid": "0b68cda56cd7cd667230203387948fcf",
+          "name": "Drs Shocair And Reda PC",
+          "accepts_new_patients": true,
+          "insurance_uids": [
+            "multiplan-phcsppo",
+            "multiplan-multiplanppo",
+            "aetna-aetnasignatureadministratorsppo",
+            "tuftshealthplan-tuftsppo",
+            "harvardpilgrim-harvardpilgrimppo",
+            "aetna-aetnahmo",
+            "aetna-aetnamanagedchoiceposopenaccess",
+            "bcbsbluecard-bcbsbluecardppo",
+            "aetna-aetnachoiceposii",
+            "unitedhealthcare-uhcchoicepluspos",
+            "unitedhealthcare-uhcnavigatehmo",
+            "unitedhealthcare-uhcnavigatepos",
+            "unitedhealthcare-uhcoptionsppo",
+            "bluecrossblueshieldofmassachusetts-bcbsmabluecareelectppo",
+            "bluecrossblueshieldofmassachusetts-bcbsmahmobluewithmanagedcarebehavioralhealth",
+            "bluecrossblueshieldofmassachusetts-bcbsmapreferredblueppo",
+            "firsthealthcoventryhealthcare-firsthealthppo"
+          ],
+          "visit_address": {
+            "city": "Waltham",
+            "lat": 42.376546,
+            "lon": -71.235858,
+            "state": "MA",
+            "state_long": "Massachusetts",
+            "street": "6 Lexington St",
+            "street2": "Ste 2",
+            "zip": "02452"
+          },
+          "office_hours": [],
+          "phones": [
+            {
+              "number": "7818990300",
+              "type": "fax"
+            },
+            {
+              "number": "7818937395",
+              "type": "landline"
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "code": "en"
+            }
+          ]
+        }
+      ],
+      "educations": [
+        {
+          "school": "Brigham and Women's Hospital",
+          "graduation_year": "Complete in 1975",
+          "degree": "residency"
+        }
+      ],
+      "profile": {
+        "first_name": "Mawya",
+        "last_name": "Shocair",
+        "slug": "mawya-shocair",
+        "title": "MD",
+        "image_url": "https://asset1.betterdoctor.com/assets/general_doctor_female.png",
+        "gender": "female",
+        "languages": [
+          {
+            "name": "English",
+            "code": "en"
+          }
+        ],
+        "bio": "Dr. Mawya Shocair, MD--specialist in nephrology--currently practices medicine at Waltham, Massachusetts.\n\nDr. Shocair is licensed to practice medicine at Massachusetts.\n\nDr. Shocair has been found during an automated background check to be clear of any malpractice history and holds one or more active medical licenses."
+      },
+      "ratings": [],
+      "insurances": [
+        {
+          "insurance_plan": {
+            "uid": "multiplan-phcsppo",
+            "name": "PHCS PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "multiplan",
+            "name": "Multiplan"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "multiplan-multiplanppo",
+            "name": "Multiplan PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "multiplan",
+            "name": "Multiplan"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnasignatureadministratorsppo",
+            "name": "Aetna Signature Administrators PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "tuftshealthplan-tuftsppo",
+            "name": "Tufts PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "tuftshealthplan",
+            "name": "Tufts Health Plan"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "harvardpilgrim-harvardpilgrimppo",
+            "name": "Harvard Pilgrim PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "harvardpilgrim",
+            "name": "Harvard Pilgrim"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnahmo",
+            "name": "Aetna HMO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnamanagedchoiceposopenaccess",
+            "name": "Aetna Managed Choice POS Open Access",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bcbsbluecard-bcbsbluecardppo",
+            "name": "BCBS Blue Card PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bcbsbluecard",
+            "name": "BCBS Blue Card"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnachoiceposii",
+            "name": "Aetna Choice POS II",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "unitedhealthcare-uhcchoicepluspos",
+            "name": "UHC Choice Plus POS",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "unitedhealthcare",
+            "name": "United Healthcare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "unitedhealthcare-uhcnavigatehmo",
+            "name": "UHC Navigate HMO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "unitedhealthcare",
+            "name": "United Healthcare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "unitedhealthcare-uhcnavigatepos",
+            "name": "UHC Navigate POS",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "unitedhealthcare",
+            "name": "United Healthcare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "unitedhealthcare-uhcoptionsppo",
+            "name": "UHC Options PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "unitedhealthcare",
+            "name": "United Healthcare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmabluecareelectppo",
+            "name": "BCBS MA Blue Care Elect PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmahmobluewithmanagedcarebehavioralhealth",
+            "name": "BCBS MA HMO Blue with Managed Care Behavioral Health",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmapreferredblueppo",
+            "name": "BCBS MA Preferred Blue PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "firsthealthcoventryhealthcare-firsthealthppo",
+            "name": "First Health PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "firsthealthcoventryhealthcare",
+            "name": "First Health Coventry Healthcare"
+          }
+        }
+      ],
+      "specialties": [
+        {
+          "uid": "nephrologist",
+          "name": "Nephrology",
+          "description": "Specializes in patients with kidney disorders.",
+          "category": "medical",
+          "actor": "Nephrologist",
+          "actors": "Nephrologists"
+        }
+      ],
+      "claims": [
+        {
+          "hcpcs": "99213",
+          "hcpcs_description": "Office / outpatient visit, established patient, 15 minutes",
+          "service_cnt": 670,
+          "bene_uniq_cnt": 163,
+          "avg_allowed_amt": 75.64,
+          "avg_charge_amt": 120,
+          "avg_payment_amt": 52.690358209
+        },
+        {
+          "hcpcs": "90961",
+          "hcpcs_description": "End-stage renal disease (ESRD) services monthly, patients 20 year and older; with 2–3 visits",
+          "service_cnt": 268,
+          "bene_uniq_cnt": 31,
+          "avg_allowed_amt": 247.1,
+          "avg_charge_amt": 400,
+          "avg_payment_amt": 194.34664179
+        },
+        {
+          "hcpcs": "99214",
+          "hcpcs_description": "Office / outpatient visit, established patient, 25 minutes",
+          "service_cnt": 122,
+          "bene_uniq_cnt": 91,
+          "avg_allowed_amt": 111.56,
+          "avg_charge_amt": 160,
+          "avg_payment_amt": 77.957622951
+        },
+        {
+          "hcpcs": "99232",
+          "hcpcs_description": "Subsequent hospital care",
+          "service_cnt": 121,
+          "bene_uniq_cnt": 39,
+          "avg_allowed_amt": 72.81,
+          "avg_charge_amt": 125,
+          "avg_payment_amt": 58.25
+        },
+        {
+          "hcpcs": "G0008",
+          "hcpcs_description": "Administration of influenza virus vaccine",
+          "service_cnt": 102,
+          "bene_uniq_cnt": 102,
+          "avg_allowed_amt": 26.86,
+          "avg_charge_amt": 50,
+          "avg_payment_amt": 26.86
+        },
+        {
+          "hcpcs": "Q2037",
+          "hcpcs_description": "Influenza virus vaccine, split virus, individuals 3 years of age and older, intramuscular (fluvirin)",
+          "service_cnt": 102,
+          "bene_uniq_cnt": 102,
+          "avg_allowed_amt": 13.87745098,
+          "avg_charge_amt": 25,
+          "avg_payment_amt": 13.87745098
+        },
+        {
+          "hcpcs": "93000",
+          "hcpcs_description": "Electrocardiogram, complete",
+          "service_cnt": 67,
+          "bene_uniq_cnt": 58,
+          "avg_allowed_amt": 20.88,
+          "avg_charge_amt": 50,
+          "avg_payment_amt": 14.456716418
+        },
+        {
+          "hcpcs": "99223",
+          "hcpcs_description": "Initial hospital care",
+          "service_cnt": 45,
+          "bene_uniq_cnt": 37,
+          "avg_allowed_amt": 203.21,
+          "avg_charge_amt": 300,
+          "avg_payment_amt": 162.57
+        },
+        {
+          "hcpcs": "90937",
+          "hcpcs_description": "Hemodialysis, repeated evaluation(s)",
+          "service_cnt": 37,
+          "bene_uniq_cnt": 14,
+          "avg_allowed_amt": 108.24,
+          "avg_charge_amt": 425,
+          "avg_payment_amt": 86.59
+        },
+        {
+          "hcpcs": "90732",
+          "hcpcs_description": "Pneumococcal vaccine",
+          "service_cnt": 31,
+          "bene_uniq_cnt": 30,
+          "avg_allowed_amt": 64.939677419,
+          "avg_charge_amt": 100,
+          "avg_payment_amt": 64.939677419
+        },
+        {
+          "hcpcs": "G0009",
+          "hcpcs_description": "Administration of pneumococcal vaccine",
+          "service_cnt": 31,
+          "bene_uniq_cnt": 30,
+          "avg_allowed_amt": 26.86,
+          "avg_charge_amt": 30,
+          "avg_payment_amt": 26.86
+        },
+        {
+          "hcpcs": "90935",
+          "hcpcs_description": "Hemodialysis, one evaluation",
+          "service_cnt": 23,
+          "bene_uniq_cnt": 13,
+          "avg_allowed_amt": 75.92,
+          "avg_charge_amt": 175,
+          "avg_payment_amt": 60.74
+        },
+        {
+          "hcpcs": "99231",
+          "hcpcs_description": "Subsequent hospital care",
+          "service_cnt": 15,
+          "bene_uniq_cnt": 11,
+          "avg_allowed_amt": 39.7,
+          "avg_charge_amt": 65,
+          "avg_payment_amt": 31.76
+        },
+        {
+          "hcpcs": "99204",
+          "hcpcs_description": "Office / outpatient visit, new patient, 45 minutes",
+          "service_cnt": 11,
+          "bene_uniq_cnt": 11,
+          "avg_allowed_amt": 170.62,
+          "avg_charge_amt": 300,
+          "avg_payment_amt": 124.24909091
+        }
+      ],
+      "licenses": [
+        {
+          "number": "37601",
+          "state": "MA"
+        }
+      ],
+      "uid": "5d34d67ff37ffee9db90c6a4b08ada5f",
+      "npi": "1457308140"
+    },
+    {
+      "practices": [
+        {
+          "location_slug": "ma-waltham",
+          "within_search_area": true,
+          "distance": 1.3983506986281906,
+          "lat": 42.36952,
+          "lon": -71.24795,
+          "uid": "7024c7652f44ed86e65550497160f9e5",
+          "name": "Mohammad Reda, MD",
+          "accepts_new_patients": true,
+          "insurance_uids": [
+            "cigna-cignaopenaccessplus",
+            "cigna-cignahmo",
+            "cigna-cignappo",
+            "gwhcigna-greatwestppo"
+          ],
+          "visit_address": {
+            "city": "Waltham",
+            "lat": 42.36952,
+            "lon": -71.24795,
+            "state": "MA",
+            "state_long": "Massachusetts",
+            "street": "20 Hope Ave",
+            "street2": "Ste 305",
+            "zip": "02453"
+          },
+          "office_hours": [],
+          "phones": [
+            {
+              "number": "7818992603",
+              "type": "landline"
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "code": "en"
+            }
+          ]
+        },
+        {
+          "location_slug": "ma-waltham",
+          "within_search_area": true,
+          "distance": 0.9640044873800397,
+          "lat": 42.376546,
+          "lon": -71.235858,
+          "uid": "e6675df0d7996f70a9392b8104b712cd",
+          "name": "Mohammad Reda, MD",
+          "accepts_new_patients": true,
+          "insurance_uids": [
+            "aetna-aetnamanagedchoiceposopenaccess",
+            "tuftshealthplan-tuftsppo",
+            "aetna-aetnasignatureadministratorsppo",
+            "aetna-aetnahmo",
+            "harvardpilgrim-harvardpilgrimppo",
+            "bcbsbluecard-bcbsbluecardppo",
+            "aetna-aetnachoiceposii",
+            "unitedhealthcare-uhcchoicepluspos",
+            "unitedhealthcare-uhcnavigatehmo",
+            "unitedhealthcare-uhcnavigatepos",
+            "unitedhealthcare-uhcoptionsppo",
+            "bluecrossblueshieldofmassachusetts-bcbsmabluecareelectppo",
+            "bluecrossblueshieldofmassachusetts-bcbsmahmobluewithmanagedcarebehavioralhealth",
+            "bluecrossblueshieldofmassachusetts-bcbsmapreferredblueppo",
+            "firsthealthcoventryhealthcare-firsthealthppo"
+          ],
+          "visit_address": {
+            "city": "Waltham",
+            "lat": 42.376546,
+            "lon": -71.235858,
+            "state": "MA",
+            "state_long": "Massachusetts",
+            "street": "6 Lexington St",
+            "street2": "Ste 2",
+            "zip": "02452"
+          },
+          "office_hours": [],
+          "phones": [
+            {
+              "number": "7818998778",
+              "type": "landline"
+            },
+            {
+              "number": "7818990300",
+              "type": "fax"
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "code": "en"
+            }
+          ]
+        },
+        {
+          "location_slug": "ma-waltham",
+          "within_search_area": true,
+          "distance": 0.9640044873800397,
+          "lat": 42.376546,
+          "lon": -71.235858,
+          "uid": "0b68cda56cd7cd667230203387948fcf",
+          "name": "Drs Shocair And Reda PC",
+          "accepts_new_patients": true,
+          "insurance_uids": [
+            "aetna-aetnamanagedchoiceposopenaccess",
+            "tuftshealthplan-tuftsppo",
+            "aetna-aetnasignatureadministratorsppo",
+            "aetna-aetnahmo",
+            "harvardpilgrim-harvardpilgrimppo",
+            "bcbsbluecard-bcbsbluecardppo",
+            "aetna-aetnachoiceposii",
+            "unitedhealthcare-uhcchoicepluspos",
+            "unitedhealthcare-uhcnavigatehmo",
+            "unitedhealthcare-uhcnavigatepos",
+            "unitedhealthcare-uhcoptionsppo",
+            "bluecrossblueshieldofmassachusetts-bcbsmabluecareelectppo",
+            "bluecrossblueshieldofmassachusetts-bcbsmahmobluewithmanagedcarebehavioralhealth",
+            "bluecrossblueshieldofmassachusetts-bcbsmapreferredblueppo",
+            "firsthealthcoventryhealthcare-firsthealthppo"
+          ],
+          "visit_address": {
+            "city": "Waltham",
+            "lat": 42.376546,
+            "lon": -71.235858,
+            "state": "MA",
+            "state_long": "Massachusetts",
+            "street": "6 Lexington St",
+            "street2": "Ste 2",
+            "zip": "02452"
+          },
+          "office_hours": [],
+          "phones": [
+            {
+              "number": "7818990300",
+              "type": "fax"
+            },
+            {
+              "number": "7818937395",
+              "type": "landline"
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "code": "en"
+            }
+          ]
+        }
+      ],
+      "educations": [],
+      "profile": {
+        "first_name": "Mohammad",
+        "middle_name": "Ghiath",
+        "last_name": "Reda",
+        "slug": "mohammad-reda",
+        "title": "MD",
+        "image_url": "https://asset2.betterdoctor.com/assets/general_doctor_male.png",
+        "gender": "male",
+        "languages": [
+          {
+            "name": "English",
+            "code": "en"
+          }
+        ],
+        "bio": "Specializing in pulmonary disease, Dr. Mohammad Reda, MD is one of the country's top rated doctors. He currently treats patients in Waltham, Massachusetts.\n\nDr. Reda is licensed to see patients in Massachusetts.\n\nBased on his credentials, network and experience, Dr. Reda has been found to be in the top 20% of all doctors in the United States.\n\nIn addition, Dr. Reda has been found to hold one or more active medical licenses, and successfully passed a malpractice history screening."
+      },
+      "ratings": [
+        {
+          "active": true,
+          "provider": "betterdoctor",
+          "provider_uid": "24529ef6edd05bce94d2e107f3f10366",
+          "rating": 4,
+          "review_count": 0,
+          "image_url_small": "https://asset2.betterdoctor.com/assets/consumer/stars/stars-small-4.0.png",
+          "image_url_small_2x": "https://asset2.betterdoctor.com/assets/consumer/stars/stars-small-4.0@2x.png",
+          "image_url_large": "https://asset2.betterdoctor.com/assets/consumer/stars/stars-large-4.0.png",
+          "image_url_large_2x": "https://asset2.betterdoctor.com/assets/consumer/stars/stars-large-4.0@2x.png"
+        }
+      ],
+      "insurances": [
+        {
+          "insurance_plan": {
+            "uid": "cigna-cignaopenaccessplus",
+            "name": "CIGNA Open Access Plus",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "cigna",
+            "name": "Cigna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "cigna-cignahmo",
+            "name": "CIGNA HMO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "cigna",
+            "name": "Cigna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "cigna-cignappo",
+            "name": "CIGNA PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "cigna",
+            "name": "Cigna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "gwhcigna-greatwestppo",
+            "name": "Great West PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "gwhcigna",
+            "name": "GWH-Cigna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnamanagedchoiceposopenaccess",
+            "name": "Aetna Managed Choice POS Open Access",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "tuftshealthplan-tuftsppo",
+            "name": "Tufts PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "tuftshealthplan",
+            "name": "Tufts Health Plan"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnasignatureadministratorsppo",
+            "name": "Aetna Signature Administrators PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnahmo",
+            "name": "Aetna HMO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "harvardpilgrim-harvardpilgrimppo",
+            "name": "Harvard Pilgrim PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "harvardpilgrim",
+            "name": "Harvard Pilgrim"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bcbsbluecard-bcbsbluecardppo",
+            "name": "BCBS Blue Card PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bcbsbluecard",
+            "name": "BCBS Blue Card"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnachoiceposii",
+            "name": "Aetna Choice POS II",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "unitedhealthcare-uhcchoicepluspos",
+            "name": "UHC Choice Plus POS",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "unitedhealthcare",
+            "name": "United Healthcare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "unitedhealthcare-uhcnavigatehmo",
+            "name": "UHC Navigate HMO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "unitedhealthcare",
+            "name": "United Healthcare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "unitedhealthcare-uhcnavigatepos",
+            "name": "UHC Navigate POS",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "unitedhealthcare",
+            "name": "United Healthcare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "unitedhealthcare-uhcoptionsppo",
+            "name": "UHC Options PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "unitedhealthcare",
+            "name": "United Healthcare"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmabluecareelectppo",
+            "name": "BCBS MA Blue Care Elect PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmahmobluewithmanagedcarebehavioralhealth",
+            "name": "BCBS MA HMO Blue with Managed Care Behavioral Health",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmapreferredblueppo",
+            "name": "BCBS MA Preferred Blue PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "firsthealthcoventryhealthcare-firsthealthppo",
+            "name": "First Health PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "firsthealthcoventryhealthcare",
+            "name": "First Health Coventry Healthcare"
+          }
+        }
+      ],
+      "specialties": [
+        {
+          "uid": "pulmonologist",
+          "name": "Pulmonary Disease",
+          "description": "Specializes in lungs and airways.",
+          "category": "medical",
+          "actor": "Pulmonologist",
+          "actors": "Pulmonologists"
+        }
+      ],
+      "claims": [
+        {
+          "hcpcs": "99213",
+          "hcpcs_description": "Office / outpatient visit, established patient, 15 minutes",
+          "service_cnt": 1172,
+          "bene_uniq_cnt": 351,
+          "avg_allowed_amt": 75.64,
+          "avg_charge_amt": 120,
+          "avg_payment_amt": 51.816006826
+        },
+        {
+          "hcpcs": "99214",
+          "hcpcs_description": "Office / outpatient visit, established patient, 25 minutes",
+          "service_cnt": 263,
+          "bene_uniq_cnt": 164,
+          "avg_allowed_amt": 111.56,
+          "avg_charge_amt": 160,
+          "avg_payment_amt": 80.079011407
+        },
+        {
+          "hcpcs": "Q2037",
+          "hcpcs_description": "Influenza virus vaccine, split virus, individuals 3 years of age and older, intramuscular (fluvirin)",
+          "service_cnt": 114,
+          "bene_uniq_cnt": 114,
+          "avg_allowed_amt": 13.878070175,
+          "avg_charge_amt": 25,
+          "avg_payment_amt": 13.878070175
+        },
+        {
+          "hcpcs": "G0008",
+          "hcpcs_description": "Administration of influenza virus vaccine",
+          "service_cnt": 114,
+          "bene_uniq_cnt": 114,
+          "avg_allowed_amt": 26.86,
+          "avg_charge_amt": 50,
+          "avg_payment_amt": 26.86
+        },
+        {
+          "hcpcs": "93000",
+          "hcpcs_description": "Electrocardiogram, complete",
+          "service_cnt": 62,
+          "bene_uniq_cnt": 58,
+          "avg_allowed_amt": 20.88,
+          "avg_charge_amt": 50,
+          "avg_payment_amt": 14.54516129
+        },
+        {
+          "hcpcs": "J1030",
+          "hcpcs_description": "Injection, methylprednisolone acetate, 40 mg",
+          "service_cnt": 61,
+          "bene_uniq_cnt": 23,
+          "avg_allowed_amt": 3.5927868852,
+          "avg_charge_amt": 10,
+          "avg_payment_amt": 2.8336065574
+        },
+        {
+          "hcpcs": "20610",
+          "hcpcs_description": "Drain / inject, joint / bursa",
+          "service_cnt": 20,
+          "bene_uniq_cnt": 13,
+          "avg_allowed_amt": 76.957,
+          "avg_charge_amt": 157.5,
+          "avg_payment_amt": 55.832
+        },
+        {
+          "hcpcs": "99212",
+          "hcpcs_description": "Office / outpatient visit, established patient, 10 minutes",
+          "service_cnt": 19,
+          "bene_uniq_cnt": 15,
+          "avg_allowed_amt": 46.19,
+          "avg_charge_amt": 85,
+          "avg_payment_amt": 34.098947368
+        },
+        {
+          "hcpcs": "90732",
+          "hcpcs_description": "Pneumococcal vaccine",
+          "service_cnt": 14,
+          "bene_uniq_cnt": 14,
+          "avg_allowed_amt": 64.544285714,
+          "avg_charge_amt": 100,
+          "avg_payment_amt": 64.544285714
+        },
+        {
+          "hcpcs": "G0009",
+          "hcpcs_description": "Administration of pneumococcal vaccine",
+          "service_cnt": 13,
+          "bene_uniq_cnt": 13,
+          "avg_allowed_amt": 26.86,
+          "avg_charge_amt": 30,
+          "avg_payment_amt": 26.86
+        }
+      ],
+      "licenses": [
+        {
+          "number": "37624",
+          "state": "MA"
+        }
+      ],
+      "uid": "24529ef6edd05bce94d2e107f3f10366",
+      "npi": "1720055536"
+    },
+    {
+      "practices": [
+        {
+          "location_slug": "ma-waltham",
+          "within_search_area": true,
+          "distance": 1.0745173829744674,
+          "lat": 42.37608,
+          "lon": -71.25101,
+          "uid": "696387f6594ef06d54e8bebcd3c4c0c2",
+          "name": "FAILLA & DEFRANCESCO FAMILY DENTISTRY, LLC",
+          "accepts_new_patients": true,
+          "insurance_uids": [
+            "cignadental-cignatotaldppo",
+            "guardiandental-guardiandentalguardpreferred",
+            "deltadental-deltadentalpremier"
+          ],
+          "visit_address": {
+            "city": "Waltham",
+            "lat": 42.37608,
+            "lon": -71.25101,
+            "state": "MA",
+            "state_long": "Massachusetts",
+            "street": "976 Main St",
+            "zip": "02451"
+          },
+          "office_hours": [],
+          "phones": [
+            {
+              "number": "7817360712",
+              "type": "fax"
+            },
+            {
+              "number": "7818943143",
+              "type": "landline"
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "code": "en"
+            }
+          ]
+        }
+      ],
+      "educations": [],
+      "profile": {
+        "first_name": "Robert",
+        "last_name": "Defrancesco",
+        "slug": "robert-defrancesco",
+        "title": "DMD",
+        "image_url": "https://asset2.betterdoctor.com/assets/general_doctor_male.png",
+        "gender": "male",
+        "languages": [
+          {
+            "name": "English",
+            "code": "en"
+          }
+        ],
+        "bio": "Dr. Robert Defrancesco, DMD--specialist in dentistry--currently treats patients in Waltham, Massachusetts.\n\nDr. Defrancesco is licensed to see patients in Massachusetts.\n\nIn addition to having active medical licenses, Dr. Defrancesco has been found during an automated background check to be clear of any malpractice history and holds one or more active medical licenses."
+      },
+      "ratings": [],
+      "insurances": [
+        {
+          "insurance_plan": {
+            "uid": "cignadental-cignatotaldppo",
+            "name": "CIGNA Total DPPO",
+            "category": [
+              "dental"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "cignadental",
+            "name": "Cigna Dental"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "guardiandental-guardiandentalguardpreferred",
+            "name": "Guardian DentalGuard Preferred",
+            "category": [
+              "dental"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "guardiandental",
+            "name": "Guardian Dental"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "deltadental-deltadentalpremier",
+            "name": "Delta Dental Premier",
+            "category": [
+              "dental"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "deltadental",
+            "name": "Delta Dental"
+          }
+        }
+      ],
+      "specialties": [
+        {
+          "uid": "general-dentist",
+          "name": "General Dentistry",
+          "description": "Specializes in teeth and oral health.",
+          "category": "dental",
+          "actor": "Dentist",
+          "actors": "Dentists"
+        }
+      ],
+      "licenses": [
+        {
+          "number": "18231",
+          "state": "MA"
+        }
+      ],
+      "uid": "de56912379951f8b23480430089f143d",
+      "npi": "1316937212"
+    },
+    {
+      "practices": [
+        {
+          "location_slug": "ma-waltham",
+          "within_search_area": true,
+          "distance": 1.0796158425904998,
+          "lat": 42.37616,
+          "lon": -71.233281,
+          "uid": "8b74c5157af3d66382af01ac3bcd05de",
+          "name": "Dan Cruz, MD",
+          "accepts_new_patients": true,
+          "insurance_uids": [
+            "bcbsbluecard-bcbsbluecardppo",
+            "aetna-aetnamanagedchoiceposopenaccess",
+            "multiplan-multiplanppo",
+            "aetna-aetnachoiceposii",
+            "bluecrossblueshieldofmassachusetts-bcbsmabluecareelectppo",
+            "bluecrossblueshieldofmassachusetts-bcbsmahmobluewithmanagedcarebehavioralhealth",
+            "bluecrossblueshieldofmassachusetts-bcbsmapreferredblueppo",
+            "firsthealthcoventryhealthcare-firsthealthppo"
+          ],
+          "visit_address": {
+            "city": "Waltham",
+            "lat": 42.37616,
+            "lon": -71.233281,
+            "state": "MA",
+            "state_long": "Massachusetts",
+            "street": "564 Main St",
+            "zip": "02452"
+          },
+          "office_hours": [],
+          "phones": [
+            {
+              "number": "7816933800",
+              "type": "business_landline"
+            },
+            {
+              "number": "7816933817",
+              "type": "business_fax"
+            },
+            {
+              "number": "7816933800",
+              "type": "landline"
+            },
+            {
+              "number": "7816933817",
+              "type": "fax"
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "code": "en"
+            }
+          ]
+        }
+      ],
+      "educations": [],
+      "profile": {
+        "first_name": "Dan",
+        "last_name": "Cruz",
+        "slug": "dan-cruz",
+        "title": "MD",
+        "image_url": "https://asset2.betterdoctor.com/assets/general_doctor_male.png",
+        "languages": [
+          {
+            "name": "English",
+            "code": "en"
+          }
+        ],
+        "bio": "Dr. Dan Cruz, MD practices medicine at Waltham, Massachusetts and specializes in family medicine.\n\nDr. Cruz is licensed to practice medicine at Massachusetts.\n\nIn addition to having active medical licenses, Dr. Cruz has been found during an automated background check to be clear of any malpractice history and holds one or more active medical licenses."
+      },
+      "ratings": [],
+      "insurances": [
+        {
+          "insurance_plan": {
+            "uid": "bcbsbluecard-bcbsbluecardppo",
+            "name": "BCBS Blue Card PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bcbsbluecard",
+            "name": "BCBS Blue Card"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnamanagedchoiceposopenaccess",
+            "name": "Aetna Managed Choice POS Open Access",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "multiplan-multiplanppo",
+            "name": "Multiplan PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "multiplan",
+            "name": "Multiplan"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "aetna-aetnachoiceposii",
+            "name": "Aetna Choice POS II",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "aetna",
+            "name": "Aetna"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmabluecareelectppo",
+            "name": "BCBS MA Blue Care Elect PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmahmobluewithmanagedcarebehavioralhealth",
+            "name": "BCBS MA HMO Blue with Managed Care Behavioral Health",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "bluecrossblueshieldofmassachusetts-bcbsmapreferredblueppo",
+            "name": "BCBS MA Preferred Blue PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "bluecrossblueshieldofmassachusetts",
+            "name": "Blue Cross Blue Shield of Massachusetts"
+          }
+        },
+        {
+          "insurance_plan": {
+            "uid": "firsthealthcoventryhealthcare-firsthealthppo",
+            "name": "First Health PPO",
+            "category": [
+              "medical"
+            ]
+          },
+          "insurance_provider": {
+            "uid": "firsthealthcoventryhealthcare",
+            "name": "First Health Coventry Healthcare"
+          }
+        }
+      ],
+      "specialties": [
+        {
+          "uid": "family-practitioner",
+          "name": "Family Medicine",
+          "description": "Specializes in your and your family's total health.",
+          "category": "medical",
+          "actor": "Family Practitioner",
+          "actors": "Family Practitioners"
+        }
+      ],
+      "licenses": [
+        {
+          "number": "255714",
+          "state": "MA"
+        }
+      ],
+      "uid": "6f3120b5f0e6eabbf19fc40b649790c4",
+      "npi": "1134430374"
+    },
+    {
+      "practices": [
+        {
+          "location_slug": "ma-waltham",
+          "within_search_area": true,
+          "distance": 1.0796158425904998,
+          "lat": 42.37616,
+          "lon": -71.233281,
+          "uid": "648f66d4140f0d18c2c785c30b1a022f",
+          "name": "Mark Hansberry, PT",
+          "accepts_new_patients": true,
+          "insurance_uids": [],
+          "visit_address": {
+            "city": "Waltham",
+            "lat": 42.37616,
+            "lon": -71.233281,
+            "state": "MA",
+            "state_long": "Massachusetts",
+            "street": "564 Main St",
+            "street2": "Ste 209",
+            "zip": "02452"
+          },
+          "office_hours": [],
+          "phones": [
+            {
+              "number": "7818948880",
+              "type": "landline"
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "code": "en"
+            }
+          ]
+        }
+      ],
+      "educations": [],
+      "profile": {
+        "first_name": "Mark",
+        "last_name": "Hansberry",
+        "slug": "mark-hansberry-ma-pt",
+        "title": "PT",
+        "image_url": "https://asset2.betterdoctor.com/assets/general_doctor_male.png",
+        "gender": "male",
+        "languages": [
+          {
+            "name": "English",
+            "code": "en"
+          }
+        ],
+        "bio": ""
+      },
+      "ratings": [],
+      "insurances": [],
+      "specialties": [
+        {
+          "uid": "physical-therapist",
+          "name": "Physical Therapy",
+          "description": "Specializes in physical therapy.",
+          "category": "medical",
+          "actor": "Physical Therapist",
+          "actors": "Physical Therapists"
+        }
+      ],
+      "licenses": [
+        {
+          "number": "19972",
+          "state": "MA"
+        }
+      ],
+      "uid": "7eb5043ff94234496a71816f0aaf7983",
+      "npi": "1790045748"
+    }
+  ]
+}
