@@ -1,5 +1,4 @@
 import { Meteor } from 'meteor/meteor';
-
 Meteor.startup(() => {
   if (Results.find().count() === 0) {
        console.log("Importing json to db")
