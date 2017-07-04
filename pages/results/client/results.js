@@ -1,5 +1,12 @@
+Template.results.onCreated(function resultsCreated(){
+  //this.state = new ReactiveDict();
+  Meteor.subscribe('results');
+});
+
+
+
 //fill in what template this works with
-Template.something.events({
+Template.results.events({
   //this is for a insert button, change it to a span or other thing as needed
   'click button'(elt, instance){
     const name = instance.$('#name').val();
@@ -19,7 +26,7 @@ Template.something.events({
 
 
 //fill in what template this goes with
-Template.something.events({
+Template.results.events({
   //this is for a remove button, change it to a span or other thing as needed
   'click button'(elt,instance) {
         console.dir(this);
