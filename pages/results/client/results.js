@@ -1,8 +1,24 @@
 Template.results.onCreated(function resultsCreated(){
   //this.state = new ReactiveDict();
   Meteor.subscribe('results');
+
+
 });
 
+Template.results.events({
+  'submit form': function(event, template) {
+    event.preventDefault();
+    var query = template.$('input[type=text]').val();
+    if (query)
+      Session.set('query', query);
+  }
+});
+
+Template.results.helpers({
+  results: function() {
+    return Results.find();
+  }
+});
 
 
 //fill in what template this works with
