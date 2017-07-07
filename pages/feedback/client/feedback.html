@@ -23,11 +23,13 @@
             <td>Feedback</td>
           </tr>
         </thead>
-        {{#each f in feedbacklist}}
         <tbody>
+        {{#each f in feedbacklist}}
+
           {{> feedbackrow feed = f}}
-        </tbody>
+
         {{/each}}
+        </tbody>
       </table>
       <hr>
     </div>
