@@ -1,16 +1,12 @@
 <head>
-  <title>
-		DocFinder
-	</title>
-  <meta name="description" content="Free webapp that helps patients find the most effective healthcare providers for them in their area.
-  Don't leave your healthcare to chance! Become more informed today.">
+  <title>DocFinder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-
 <template name="layout">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <!-- Sidebar -->
   <div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left" style="display:none" id="mySidebar">
-    <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+    <button class="w3-bar-item w3-button w3-large"
+    onclick="w3_close()">Close &times;</button>
     <a href="/" class="w3-bar-item w3-button">Home</a>
     <a href="/about" class="w3-bar-item w3-button">About</a>
     <a href="/contact" class="w3-bar-item w3-button">Contact</a>
@@ -18,26 +14,28 @@
     <a href="/feedback" class="w3-bar-item w3-button">Feedback</a>
   </div>
 
-  <!-- Page Content -->
-  <div id=bar>
-    <button class="w3-button w3-xlarge" onclick="w3_open()">☰</button>
-    <div class="w3-container">
-      <h1>DocFinder</h1>
+  <div class="w3-main" id="main">
+    <div id="yes">
+      <button class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
     </div>
+    <div class="w3-container" id="mainheader">
+      <br>
+      <h1 class="text-center">DocFinder</h1>
+    </div>
+    {{>yield}}
   </div>
 
   <script>
-    function w3_open() {
-      document.getElementById("main").style.marginLeft = "25%";
-      document.getElementById("mySidebar").style.width = "25%";
-      document.getElementById("mySidebar").style.display = "block";
-      document.getElementById("openNav").style.display = 'none';
-    }
-    function w3_close() {
-      document.getElementById("main").style.marginLeft = "0%";
-      document.getElementById("mySidebar").style.display = "none";
-      document.getElementById("openNav").style.display = "inline-block";
-    }
+  function w3_open() {
+    document.getElementById("main").style.marginLeft = "25%";
+    document.getElementById("mySidebar").style.width = "25%";
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("openNav").style.display = 'none';
+  }
+  function w3_close() {
+    document.getElementById("main").style.marginLeft = "0%";
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("openNav").style.display = "inline-block";
+  }
   </script>
-{{> yield}}
 </template>
