@@ -1,30 +1,10 @@
 <template name="results">
-<div class = "results">
-      {{#if results.count}}
-        <hr>
-
-        <table class="table table-bordered table-hover">
-          <thead>
-            <tr>
-                <th>First</th>
-                <th>Last</th>
-                <th>Title</th>
-            </tr>
-        </thead>
-        <tbody>
-          {{#each results}}
-            {{> profile}}
-          {{/each}}
-        </tbody>
-        </table>
-    {{/if}}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class = "table-responsive" id="results">
+      </div>
+    </div>
+  </div>
 </div>
-</template>
-
-<template name="profile">
-    <tr>
-          <td>{{profile.first_name}}</td>
-          <td> {{profile.last_name}}</td>
-          <td>{{profile.title}}</td>
-    </tr>
 </template>

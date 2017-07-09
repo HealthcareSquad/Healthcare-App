@@ -1,8 +1,12 @@
 Template.results.onCreated(function resultsCreated(){
-  //this.state = new ReactiveDict();
-  Meteor.subscribe('results');
-
-
+  window.onload = jQuery.getJSON('https://api.betterdoctor.com/2016-03-01/doctors?location=ma-waltham&skip=0&limit=10&user_key=876a19607233e092fdc4a30a9c079614', function(data) {
+    let txt = "<table class=\"table-hover\">";
+    for (x in data.data) {
+      txt += "<tr><td>" + data.data[x].profile.first_name + ' ' + data.data[x].profile.last_name + ', ' + data.data[x].profile.title + "</td></tr>";
+    }
+    txt += "</table>";
+    document.getElementById("results").innerHTML = txt;
+    });
 });
 
 Template.results.events({
@@ -19,6 +23,7 @@ Template.results.helpers({
     return Results.find();
   }
 });
+
 
 
 //fill in what template this works with
