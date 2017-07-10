@@ -9,9 +9,8 @@ Template.home.events({
     const url= "https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key="+key;
     console.log(url);
     jQuery.getJSON(url, function(data){
-
-      console.log(data.results[0].geometry.location.lat);
-      console.log(data.results[0].geometry.location.lng);
+      const latitude = data.results[0].geometry.location.lat;
+      const longitude = data.results[0].geometry.location.lng;
     });
 
 
