@@ -21,3 +21,6 @@ iron:router
 twbs:bootstrap
 accounts-password
 accounts-ui
+jquery
+handlebars
+http
