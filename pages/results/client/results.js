@@ -22,7 +22,7 @@ Template.results.events({
     event.preventDefault();
     uid = doc.target.dataset.uid;
     jQuery.getJSON('https://api.betterdoctor.com/2016-03-01/doctors/' + uid + '?user_key=876a19607233e092fdc4a30a9c079614', function(data){
-      document.getElementById("docModalName").innerHTML = "<h4>" + data.data.profile.first_name + " " + data.data.profile.last_name + "</h4><br><h5>" + data.data;
+      document.getElementById("docModalName").innerHTML = "<h4>" + data.data.profile.first_name + " " + data.data.profile.last_name + "</h4><br><p>More to come!</p>";
     });
   }
 });
