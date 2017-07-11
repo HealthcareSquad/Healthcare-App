@@ -35,3 +35,8 @@ input[type=text]:focus {
 ::-webkit-input-placeholder {
    font-size: 15px!important;
 }
+
+button#find {
+  color: #875785;
+  background-color: #7ab8ed;
+}
