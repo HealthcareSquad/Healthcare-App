@@ -1,4 +1,4 @@
-h1 {
+#DocFinder {
   font-size: 120px;
   font: Arial;
   text-align: center;
@@ -39,4 +39,10 @@ input[type=text]:focus {
 button#find {
   color: #875785;
   background-color: #7ab8ed;
+}
+
+#tagline {
+  font: Arial;
+  text-align: center;
+  font-size: 30px;
 }
