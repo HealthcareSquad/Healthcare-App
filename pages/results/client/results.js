@@ -52,7 +52,16 @@ Template.results.events({
       }
       txt += "</p>";
       document.getElementById("docLicenses").innerHTML = txt;
-
+      txt = "<p>Contact Information</p><br><ul>";
+      for (x in data.data.practices){
+        txt += "<li>" + data.data.practices[x].name + "<br>" + data.data.practices[x].visit_address.street + "<br>" + data.data.practices[x].visit_address.city + ", " + data.data.practices[x].visit_address.state + "<br>" + data.data.practices[x].phones[0].number;
+        if (data.data.practices[x].website){
+          txt += "<br><a href=" + data.data.practices[x].website + " target=\"_blank\">Website</a>";
+        }
+        txt += "</li><br>"
+      }
+      txt += "</ul>";
+      document.getElementById("docAddresses").innerHTML = txt;
 
     });
   }
