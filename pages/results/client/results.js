@@ -58,7 +58,7 @@ Template.results.events({
         if (data.data.practices[x].website){
           txt += "<br><a href=" + data.data.practices[x].website + " target=\"_blank\">Website</a>";
         }
-        txt += "</li><br>"
+        txt += "</li><br>";
       }
       txt += "</ul>";
       document.getElementById("docAddresses").innerHTML = txt;
