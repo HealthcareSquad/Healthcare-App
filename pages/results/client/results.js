@@ -12,6 +12,7 @@ Template.results.onCreated(function resultsCreated(){
         }
         txt += "</tr>";
       }
+
       txt += "</tbody></table>";
       document.getElementById("results").innerHTML = txt;
     });
@@ -22,7 +23,7 @@ Template.results.events({
     event.preventDefault();
     uid = doc.target.dataset.uid;
     jQuery.getJSON('https://api.betterdoctor.com/2016-03-01/doctors/' + uid + '?user_key=876a19607233e092fdc4a30a9c079614', function(data){
-      document.getElementById("docModalName").innerHTML = "<h4>" + data.data.profile.first_name + " " + data.data.profile.last_name + "</h4><br><p>More to come!</p>";
+    document.getElementById("docModalName").innerHTML = "<h4>" + data.data.profile.first_name + " " + data.data.profile.last_name + "</h4><br><p>More to come!</p>";
     });
   }
 });
@@ -32,23 +33,3 @@ Template.results.helpers({
     return Results.find();
   }
 });
-
-
-//fill in what template this works with
-Template.results.events({
-  //this is for a insert button, change it to a span or other thing as needed
-  'click button'(elt, instance){
-    const name = instance.$('#name').val();
-    const specialized = instance.$('#specialized').val();
-    const insurance = instance.$('#insurance').val();
-    //whatever other constants we need
-    var doctor =
-      { name:name,
-        specialized:specialized,
-        insurance:insurance
-        //again, whatever other things we need
-      };
-    Meteor.call('results.insert',doctor);
-
-  }
-})
