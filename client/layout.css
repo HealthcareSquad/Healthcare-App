@@ -1,20 +1,26 @@
 /* CSS declarations go here */
 #mySidebar {
-
-  background-color: #2e61a5;
-}
-
-h1 {
-  font: Arial;
-  font-size: 90px;
-}
-
-#yes {
-  background-color: #2e61a5;
+  background-color: #7ab8ed;
+  margin: auto;
 }
 
 body {
-  /*background: #ffffff;*/
-  /*background-image: url("http://www.wallpapers4u.org/wp-content/uploads/angle_minimalism_light_66200_1920x1080.jpg");*/
-  background-image: url("diamond_upholstery.png");
+  background: #875787;
 }
+
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #7ab8ed;
+  text-align: center;
+}
+
+#footnote {
+  padding-top: .5em;
+}
+
+html { height: 100%; }
+body { min-height: 100%; position: relative; padding-bottom: 3em; }
