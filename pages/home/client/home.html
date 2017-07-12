@@ -1,4 +1,80 @@
 <template name="home">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    var accessToken = "f984d307361f4004ac180e3aeb02dd7d";
+    var baseUrl = "https://api.api.ai/v1/";
+    $(document).ready(function() {
+      $("#rec").click(function(event) {
+        switchRecognition();
+      });
+    });
+    var recognition;
+    function startRecognition() {
+      recognition = new webkitSpeechRecognition();
+      recognition.onstart = function(event) {
+        updateRec();
+      };
+      recognition.onresult = function(event) {
+        var text = "";
+          for (var i = event.resultIndex; i < event.results.length; ++i) {
+            text += event.results[i][0].transcript;
+          }
+          setInput(text);
+        stopRecognition();
+      };
+      recognition.onend = function() {
+        stopRecognition();
+      };
+      recognition.lang = "en-US";
+      recognition.start();
+    }
+
+    function stopRecognition() {
+      if (recognition) {
+        recognition.stop();
+        recognition = null;
+      }
+      updateRec();
+    }
+    function switchRecognition() {
+      if (recognition) {
+        stopRecognition();
+      } else {
+        startRecognition();
+      }
+    }
+    function setInput(text) {
+      $("#input").val(text);
+      send();
+    }
+    function updateRec() {
+      $("#rec").text(recognition ? "Stop" : "Speak");
+    }
+    function send() {
+      var text = $("#input").val();
+      $.ajax({
+        type: "POST",
+        url: baseUrl + "query?v=20150910",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {
+          "Authorization": "Bearer " + accessToken
+        },
+        data: JSON.stringify({ query: text, lang: "en", sessionId: "somerandomthing" }),
+        success: function(data) {
+          setResponse(JSON.stringify(data, undefined, 2));
+          responsiveVoice.speak(data.result.fulfillment.speech);
+        },
+        error: function() {
+          setResponse("Internal Server Error");
+        }
+      });
+      setResponse("Loading...");
+    }
+    function setResponse(val) {
+      $("#response").text(val);
+    }
+  </script>
   <br>
   <br>
   <br>
@@ -11,8 +87,15 @@
   <h1>DocFinder</h1>
   <br>
   <div class="search">
-      <input type="text" id="find" placeholder="Enter a location or address">
-      <button id="find" class="btn btn-info">Find</button>
+    <input id="input" type="text" hidden>
+    <button class="btn-success btn-large" id="rec">Speak</button>
+
+
+
+
+
+      <!-- <input type="text" id="find" placeholder="Enter a location or address">
+      <button id="find" class="btn btn-info">Find</button> -->
 
     <!--so what you need to do is get the search bar to accept a string of input, which will be somehow sent to the
     server method, which will get coordinates from the geocoding api, which will then be passed to the better doctors api,
