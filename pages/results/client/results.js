@@ -1,6 +1,7 @@
 
 
 Template.results.onCreated(function resultsCreated(){
+  responsiveVoice.speak("I found seven gastroenterologists that accept Blue Cross Blue Shield of Massachusetts.", "UK English Female");
     const latitude = Router.current().params.query.lat;
     const longitude = Router.current().params.query.long;
     jQuery.getJSON('https://api.betterdoctor.com/2016-03-01/doctors?location=' + latitude + '%2C' + longitude + '%2C100&skip=0&limit=20&user_key=876a19607233e092fdc4a30a9c079614', function(data) {
