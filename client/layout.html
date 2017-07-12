@@ -2,32 +2,29 @@
   <title>DocFinder</title>
 </head>
 <template name="layout">
-  <div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left" style="display:none" id="mySidebar">
-    <button class="w3-bar-item w3-button w3-large"
-    onclick="w3_close()"><h2>Close &times;</h2></button><hr>
-    <a href="/" class="w3-bar-item w3-button"><h2>Home</h2></a><hr>
-    <a href="/about" class="w3-bar-item w3-button"><h2>About</h2></a><hr>
-    <a href="/feedback" class="w3-bar-item w3-button"><h2>Contact</h2></a><hr>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/feedback">Contact</a>
   </div>
 
-  <div class="w3-main" id="main">
-    <div id="yes">
-      <button class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
-    </div>
-    {{>yield}}
+  <div id="main">
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
   </div>
 
   <script>
-  function w3_open() {
-    document.getElementById("main").style.marginLeft = "25%";
-    document.getElementById("mySidebar").style.width = "25%";
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("openNav").style.display = 'none';
+  function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
   }
-  function w3_close() {
-    document.getElementById("main").style.marginLeft = "0%";
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("openNav").style.display = "inline-block";
+
+  function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+      document.body.style.backgroundColor = "white";
   }
   </script>
+  {{>yield}}
 </template>
