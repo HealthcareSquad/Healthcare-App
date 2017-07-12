@@ -1,3 +1,5 @@
+
+
 Template.results.onCreated(function resultsCreated(){
     const latitude = Router.current().params.query.lat;
     const longitude = Router.current().params.query.long;
@@ -17,6 +19,7 @@ Template.results.onCreated(function resultsCreated(){
       document.getElementById("results").innerHTML = txt;
     });
 });
+
 
 Template.results.events({
   'click a':function(doc){
@@ -52,6 +55,29 @@ Template.results.events({
       }
       txt += "</p>";
       document.getElementById("docLicenses").innerHTML = txt;
+      jQuery.getJSON('')
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'doughnut',
+
+        // The data for our dataset
+        data: {
+          labels: ["Doc payments will go here......"],
+          datasets: [{
+              label: "My First dataset",
+            backgroundColor: 'rgb(13, 84, 22)',
+            borderColor: 'rgb(13, 84, 22)',
+            data: [100],
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+  });
+
+
+
       txt = "<p>Contact Information</p><br><ul>";
       for (x in data.data.practices){
         txt += "<li>" + data.data.practices[x].name + "<br>" + data.data.practices[x].visit_address.street + "<br>" + data.data.practices[x].visit_address.city + ", " + data.data.practices[x].visit_address.state + "<br>" + data.data.practices[x].phones[0].number;

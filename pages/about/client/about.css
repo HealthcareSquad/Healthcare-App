@@ -1,10 +1,28 @@
+.photo {
+  text-align: center;
+  color: #e9f6e8;
+}
+
+img {
+  text-align: center;
+  width: 650px;
+
+}
+
+#caption {
+  font-size: 12px;
+  color: #fff;
+}
+
 p {
   font: Arial;
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
+  padding-left: 300px;
+  padding-right: 300px;
 }
 
 #mainheader {
-  font: Arial;
-  color: #875787;
+  font-size: 105px;
+  color: #7ab8ed;
 }

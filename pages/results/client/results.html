@@ -1,10 +1,15 @@
+
+
 <template name="results">
+
+
 <div class="container">
   <div class="row">
       <div class = "table-responsive" id="results">
       </div>
     </div>
 </div>
+
 
 <div class="modal fade" id="docModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -26,7 +31,7 @@
         </div>
           <hr>
           <div class="container">
-          <div class="row">
+        <div class="row">
             <div class="col-xs-2" id="langSpoken">
             </div>
             <div class="col-xs-4" id="docLicenses">
@@ -35,10 +40,11 @@
         </div>
         <hr>
         <div class="container">
-            <div class="row">
-              <div class="col-xs-6" id="docPayments">
-                <p>Big pharma payments go here.....</p>
-              </div>
+          <div class="row">
+            <div class="col-xs-6" id="docPayments">
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+              <canvas id="myChart"></canvas>
+            </div>
           </div>
         </div>
         <hr>
@@ -47,7 +53,7 @@
           <div class="col-xs-6" id="docAddresses">
           </div>
         </div>
-      </div>
+    </div>
 
       </div>
       <div class="modal-footer">
