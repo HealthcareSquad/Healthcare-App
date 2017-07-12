@@ -63,7 +63,17 @@
         data: JSON.stringify({ query: text, lang: "en", sessionId: "somerandomthing" }),
         success: function(data) {
           setResponse(JSON.stringify(data, undefined, 2));
+          console.log(data);
           responsiveVoice.speak(data.result.fulfillment.speech);
+          if (data.result.actionIncomplete === false){
+            let tmp = '';
+            for (x in data.result.parameters){
+              if (data.result.parameters[x].length != 0){
+                  tmp += x.substring(0,2) + ":" + data.result.parameters[x] + ", ";
+              }
+            }
+            console.log(tmp);
+          }
         },
         error: function() {
           setResponse("Internal Server Error");
