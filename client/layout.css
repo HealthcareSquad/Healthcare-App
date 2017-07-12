@@ -2,7 +2,7 @@
 body {
     font-family: "Lato", sans-serif;
     transition: background-color .5s;
-    background-color: #ffffff;
+    background-color: #DCDCDD;
 }
 
 .sidenav {
@@ -16,6 +16,7 @@ body {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    background-color: #4C5C68;
 }
 
 .sidenav a {
@@ -25,6 +26,7 @@ body {
     color: #818181;
     display: block;
     transition: 0.3s;
+    background-color: #4C5C68;
 }
 
 .sidenav a:hover, .offcanvas a:focus{

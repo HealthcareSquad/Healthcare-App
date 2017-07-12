@@ -2,7 +2,7 @@
   font-size: 120px;
   font: Arial;
   text-align: center;
-  color: #7ab8ed;
+  color: #1985A1;
 }
 
 
@@ -11,7 +11,7 @@ input[type=text] {
     height: 50px;
     opacity: .9;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 2px solid #DCDCDD;
     border-radius: 4px;
     font-size: 16px;
     background-repeat: no-repeat;
@@ -37,12 +37,13 @@ input[type=text]:focus {
 }
 
 button#find {
-  color: #875785;
-  background-color: #7ab8ed;
+  color: #DCDCDD;
+  background-color: #46494C
 }
 
 #tagline {
   font: Arial;
   text-align: center;
   font-size: 30px;
+  color: #46494C;
 }
