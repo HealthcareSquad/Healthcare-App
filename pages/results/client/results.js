@@ -3,8 +3,22 @@
 Template.results.onCreated(function resultsCreated(){
     const input = Router.current().params.query.params;
     inputArr = input.split('&');
-    console.log(inputArr);
-    jQuery.getJSON('https://api.betterdoctor.com/2016-03-01/doctors?location=' + inputArr[0].replace('lat=','') + '%2C' + inputArr[1].replace('long=','') + '%2C100&skip=0&limit=20&user_key=876a19607233e092fdc4a30a9c079614', function(data) {
+    let specialty = '';
+    let language = '';
+    let insurance = '';
+    let condition = '';
+
+
+    let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + inputArr[0].replace('lat=','') + '%2C' + inputArr[1].replace('long=','') + '%2C5&skip=0&limit=20&sort=best-match-asc&user_key=876a19607233e092fdc4a30a9c079614';
+    // if (specialty != ''){
+    //   url += "specialty_uid=" + insurance + "&";
+    // }
+    // if (language != ''){
+    //   url += ""
+    // }
+
+
+    jQuery.getJSON(url , function(data) {
       let txt = "<table class=\"table table-hover\"><thead><tr><td>Name</td><td>Location(s)</td></tr></thead><tbody data-link=\'row\' class=\'rowlink\'>";
       for (x in data.data) {
         txt += "<tr><td><a id=\'docLink\' data-uid=\'" + data.data[x].uid + "\'href=\'#docModal\' data-toggle=\'modal\'>" + data.data[x].profile.first_name + ' ' + data.data[x].profile.last_name + ', ' + data.data[x].profile.title + "</a></td><td>" + data.data[x].practices[0].name;
@@ -27,8 +41,8 @@ Template.results.events({
     event.preventDefault();
     uid = doc.target.dataset.uid;
     jQuery.getJSON('https://api.betterdoctor.com/2016-03-01/doctors/' + uid + '?user_key=876a19607233e092fdc4a30a9c079614', function(data){
-      document.getElementById("docModalName").innerHTML = "<p><strong>" + data.data.profile.first_name + " " + data.data.profile.last_name + ", " + data.data.profile.title + "</strong></p>";
-      document.getElementById("profImage").innerHTML = "<img src=\"" + data.data.profile.image_url + "\"><br>";
+      document.getElementById("docModalName").innerHTML = "<p class=\"text-center\"><strong>" + data.data.profile.first_name + " " + data.data.profile.last_name + ", " + data.data.profile.title + "</strong></p>";
+      document.getElementById("profImage").innerHTML = "<img src=\"" + data.data.profile.image_url + "\" style=\"max-width: 100%;max-height: 100%\">";
       document.getElementById("docBio").innerHTML = "<p class=\'h5\'>" + data.data.profile.bio + "</p>";
       let txt = "<em><p class=\"h6 text-center\">Specializes in " + data.data.specialties[0].name;
       if (data.data.specialties.length > 1){
