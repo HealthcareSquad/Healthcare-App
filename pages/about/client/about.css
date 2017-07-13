@@ -1,28 +1,26 @@
-#mainheader {
-  font-size: 105px;
+#header {
+  font-size: 80px;
+  font: Arial;
+  text-align: center;
   color: #1985A1;
 }
 
+img {
+  width: 600px;
+}
 .photo {
   text-align: center;
 }
 
-img {
-  text-align: center;
-  width: 650px;
-
-}
-
 #caption {
-  font-size: 12px;
-  color: #4C5C68;
+  font-size: 15px;
 }
 
-p {
-  font: Arial;
-  text-align: center;
-  font-size: 25px;
+#desc {
+  font-size: 24px;
+  color: #46494C;
   padding-left: 300px;
   padding-right: 300px;
-  color: #46494C;
+  padding-bottom: 50px;
+>>>>>>> 12d833f94457546525ca7e77932c35be5e79bf84
 }
