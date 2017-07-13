@@ -10,19 +10,31 @@ Template.results.onCreated(function resultsCreated(){
     let condition = '';
 
 
-    let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + inputArr[0].replace('lat=','') + ',' + inputArr[1].replace('long=','') + ',5&skip=0&limit=20&sort=best-match-asc&user_key=' + key;
-    // if (specialty != ''){
-    //   url += "specialty_uid=" + insurance + "&";
-    // }
-    // if (language != ''){
-    //   url += ""
-    // }
+    let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + inputArr[0].replace('lat=','') + ',' + inputArr[1].replace('long=','') + ',6';
+    for (x in inputArr){
+      //
+      // if (inputArr[x].substring(0,2) === 'in'){
+      //   url += "insurance_uid=" + inputArr[x].replace('in=','') + "&";
+      // }else
+      if (inputArr[x].substring(0,2) === 'sp'){
+        url += "&specialty_uid=" + inputArr[x].replace('sp=','');
+      }
+      // }else if (inputArr[x].substring(0,2) === 'la'){
+      //   url += "&language=" + inputArr[x].replace('la=','');
+      // }
+    }
+    url += '&skip=0&limit=20&sort=best-match-asc&user_key=' + key;
 
-    console.log
+
+
     jQuery.getJSON(url , function(data) {
       let txt = "<table class=\"table table-hover\"><thead><tr><td>Name</td><td>Location(s)</td></tr></thead><tbody data-link=\'row\' class=\'rowlink\'>";
       for (x in data.data) {
-        txt += "<tr><td><a id=\'docLink\' data-uid=\'" + data.data[x].uid + "\'href=\'#docModal\' data-toggle=\'modal\'>" + data.data[x].profile.first_name + ' ' + data.data[x].profile.last_name + ', ' + data.data[x].profile.title + "</a></td><td>" + data.data[x].practices[0].name;
+        txt += "<tr><td><a id=\'docLink\' data-uid=\'" + data.data[x].uid + "\'href=\'#docModal\' data-toggle=\'modal\'>" + data.data[x].profile.first_name + ' ' + data.data[x].profile.last_name;
+        if (data.data[x].profile.title){
+          txt += ', ' + data.data[x].profile.title;
+        }
+         txt += "</a></td><td>" + data.data[x].practices[0].name;
         if (data.data[x].practices.length > 1){
           txt += ", and " + data.data[x].practices.length + " others</a></td>";
         }else{
@@ -66,7 +78,7 @@ Template.results.events({
       txt += "</p>";
       document.getElementById("langSpoken").innerHTML = txt;
       if (data.data.licenses.length > 0){
-      txt = "<p>Licensed to practice in: " + data.data.licenses[0].state;
+      txt = "<p class=\'text-center\'>Licensed to practice in: " + data.data.licenses[0].state;
       for (i=1;i<data.data.licenses.length;i++){
         txt += ", " + data.data.licenses[i].state;
       }
