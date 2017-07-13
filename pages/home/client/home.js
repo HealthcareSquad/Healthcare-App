@@ -1,7 +1,7 @@
-  var latitude;
-  var longitude;
+
 
   Template.home.events({
+    
   // 'click button'(element,instance){
   //   const place= instance.$('#find').val();
   //   var address = place.replace(/ /g, '+');

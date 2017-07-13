@@ -1,5 +1,26 @@
 <template name="home">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <p id="DocFinder">DocFinder</p>
+  <br>
+  <div class="search">
+    <input id="input" type="text" >
+    <button class="btn-success btn-large" id="rec">Speak</button>
+  </div>
+  <div>
+    <br>
+    <p id="tagline">Find the doctor you need. Where you need. When you need.</p>
+  </div>
   <script type="text/javascript">
     var latitude;
     var longitude;
@@ -115,34 +136,4 @@
       $("#response").text(val);
     }
   </script>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <h1>DocFinder</h1>
-  <br>
-  <div class="search">
-    <input id="input" type="text" >
-    <button class="btn-success btn-large" id="rec">Speak<i class="fa fa-microphone"></i></button>
-
-
-
-
-
-      <!-- <input type="text" id="find" placeholder="Enter a location or address">
-      <button id="find" class="btn btn-info">Find</button> -->
-
-    <!--so what you need to do is get the search bar to accept a string of input, which will be somehow sent to the
-    server method, which will get coordinates from the geocoding api, which will then be passed to the better doctors api,
-    which will know how to print those into a table in the results page-->
-  </div>
-  <div>
-    <br>
-    <p>Find the doctor you need. Where you need. When you need.</p>
-  </div>
 </template>
