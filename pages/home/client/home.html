@@ -1,6 +1,8 @@
 <template name="home">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="text/javascript">
+    var latitude;
+    var longitude;
     var accessToken = "f984d307361f4004ac180e3aeb02dd7d";
     var baseUrl = "https://api.api.ai/v1/";
     $(document).ready(function() {
@@ -48,7 +50,7 @@
       send();
     }
     function updateRec() {
-      $("#rec").text(recognition ? "Stop" : "Speak");
+      $("#rec").text(recognition ? "Wait" : "Speak");
     }
     function send() {
       var text = $("#input").val();
@@ -70,23 +72,22 @@
             let tmp = '';
             for (x in data.result.parameters){
               if (data.result.parameters[x].length != 0){
-                  tmp += x.substring(0,2) + ":" + data.result.parameters[x] + ", ";
-
-                  if(x === "address"){
+                  if(x != 'city' && x != 'address' && x != 'state'){
+                    tmp +=  "&" + x.substring(0,2) + '=' + data.result.parameters[x];
+                  }else if(x === "address"){
                     adrs += data.result.parameters[x] + " ";
-                  }
-                  if(x === "city"){
+                  }else if(x === "city"){
                     adrs += data.result.parameters[x] + " ";
-                  }
-                  if(x === "state"){
+                  }else if(x === "state"){
                     adrs += data.result.parameters[x];
                   }
               }
             }
 
-          var address = adrs.replace(/ /g, '+');
-          const key= "AIzaSyAgcB5vtpwngFC9WQtyX7oDUtUNlR0hnQs";
-         const url= "https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key="+key;
+
+        var address = adrs.replace(/ /g, '+');
+        const key= "AIzaSyAgcB5vtpwngFC9WQtyX7oDUtUNlR0hnQs";
+        const url= "https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key="+key;
 
          jQuery.getJSON(url, function(info){
              if (info.status === "ZERO_RESULTS"){
@@ -94,10 +95,13 @@
               }else{
                 latitude = info.results[0].geometry.location.lat;
                 longitude = info.results[0].geometry.location.lng;
-                console.log(latitude);
-                console.log(longitude);
+                tmp = 'lat=' + latitude + '&long=' + longitude + tmp;
+                console.log(tmp);
+                Router.go('results', {}, {query:{params:tmp}});
              }
             });
+
+
           }
 
         },
@@ -123,8 +127,8 @@
   <h1>DocFinder</h1>
   <br>
   <div class="search">
-    <input id="input" type="text" hidden>
-    <button class="btn-success btn-large" id="rec">Speak</button>
+    <input id="input" type="text" >
+    <button class="btn-success btn-large" id="rec">Speak<i class="fa fa-microphone"></i></button>
 
 
 

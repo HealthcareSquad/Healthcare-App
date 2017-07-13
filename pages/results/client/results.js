@@ -1,10 +1,10 @@
 
 
 Template.results.onCreated(function resultsCreated(){
-
-    const latitude = Router.current().params.query.lat;
-    const longitude = Router.current().params.query.long;
-    jQuery.getJSON('https://api.betterdoctor.com/2016-03-01/doctors?location=' + latitude + '%2C' + longitude + '%2C100&skip=0&limit=20&user_key=876a19607233e092fdc4a30a9c079614', function(data) {
+    const input = Router.current().params.query.params;
+    inputArr = input.split('&');
+    console.log(inputArr);
+    jQuery.getJSON('https://api.betterdoctor.com/2016-03-01/doctors?location=' + inputArr[0].replace('lat=','') + '%2C' + inputArr[1].replace('long=','') + '%2C100&skip=0&limit=20&user_key=876a19607233e092fdc4a30a9c079614', function(data) {
       let txt = "<table class=\"table table-hover\"><thead><tr><td>Name</td><td>Location(s)</td></tr></thead><tbody data-link=\'row\' class=\'rowlink\'>";
       for (x in data.data) {
         txt += "<tr><td><a id=\'docLink\' data-uid=\'" + data.data[x].uid + "\'href=\'#docModal\' data-toggle=\'modal\'>" + data.data[x].profile.first_name + ' ' + data.data[x].profile.last_name + ', ' + data.data[x].profile.title + "</a></td><td>" + data.data[x].practices[0].name;
@@ -64,12 +64,12 @@ Template.results.events({
 
         // The data for our dataset
         data: {
-          labels: ["Doc payments will go here......"],
+          labels: ["1","2","3","4"],
           datasets: [{
               label: "My First dataset",
-            backgroundColor: 'rgb(13, 84, 22)',
+            backgroundColor: ['rgb(13, 84, 22)', 'rgba(255, 99, 132, 0.2)','rgba(54, 162, 235, 0.2)','rgba(255, 206, 86, 0.2)'],
             borderColor: 'rgb(13, 84, 22)',
-            data: [100],
+            data: [50,10,5,30],
         }]
     },
 
