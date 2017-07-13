@@ -1,6 +1,10 @@
+#mainheader {
+  font-size: 105px;
+  color: #1985A1;
+}
+
 .photo {
   text-align: center;
-  color: #e9f6e8;
 }
 
 img {
@@ -11,7 +15,7 @@ img {
 
 #caption {
   font-size: 12px;
-  color: #fff;
+  color: #4C5C68;
 }
 
 p {
@@ -20,9 +24,5 @@ p {
   font-size: 25px;
   padding-left: 300px;
   padding-right: 300px;
-}
-
-#mainheader {
-  font-size: 105px;
-  color: #7ab8ed;
+  color: #46494C;
 }
