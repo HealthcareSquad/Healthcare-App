@@ -2,6 +2,7 @@
 
 Template.results.onCreated(function resultsCreated(){
     const input = Router.current().params.query.params;
+    const key = '876a19607233e092fdc4a30a9c079614';
     inputArr = input.split('&');
     let specialty = '';
     let language = '';
@@ -9,7 +10,7 @@ Template.results.onCreated(function resultsCreated(){
     let condition = '';
 
 
-    let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + inputArr[0].replace('lat=','') + '%2C' + inputArr[1].replace('long=','') + '%2C5&skip=0&limit=20&sort=best-match-asc&user_key=876a19607233e092fdc4a30a9c079614';
+    let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + inputArr[0].replace('lat=','') + ',' + inputArr[1].replace('long=','') + ',5&skip=0&limit=20&sort=best-match-asc&user_key=' + key;
     // if (specialty != ''){
     //   url += "specialty_uid=" + insurance + "&";
     // }
@@ -17,7 +18,7 @@ Template.results.onCreated(function resultsCreated(){
     //   url += ""
     // }
 
-
+    console.log
     jQuery.getJSON(url , function(data) {
       let txt = "<table class=\"table table-hover\"><thead><tr><td>Name</td><td>Location(s)</td></tr></thead><tbody data-link=\'row\' class=\'rowlink\'>";
       for (x in data.data) {
@@ -64,12 +65,14 @@ Template.results.events({
       }
       txt += "</p>";
       document.getElementById("langSpoken").innerHTML = txt;
+      if (data.data.licenses.length > 0){
       txt = "<p>Licensed to practice in: " + data.data.licenses[0].state;
       for (i=1;i<data.data.licenses.length;i++){
         txt += ", " + data.data.licenses[i].state;
       }
       txt += "</p>";
       document.getElementById("docLicenses").innerHTML = txt;
+    }
       jQuery.getJSON('')
       var ctx = document.getElementById('myChart').getContext('2d');
       var chart = new Chart(ctx, {

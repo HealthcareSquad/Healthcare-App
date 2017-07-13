@@ -1,6 +1,4 @@
 <template name="home">
-  <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <br>
   <br>
@@ -8,19 +6,24 @@
   <br>
   <br>
   <br>
-  <br>
-  <br>
-  <br>
+
   <p id="DocFinder">DocFinder</p>
   <br>
+  <br>
+  <br>
   <div class="search">
-    <input id="input" type="text" >
-    <button class="btn-success btn-large" id="rec">Speak</button>
+    <input id="input" type="text" hidden>
+    <button type="button" class="btn btn-default btn-circle btn-xl" id="rec">Ready</button>
+    <!-- <i class="material-icons" style="vertical-align: middle;font-size:43px;color:green" id="micButt">mic</i> -->
   </div>
   <div>
     <br>
+    <br>
     <p id="tagline">Find the doctor you need. Where you need. When you need.</p>
   </div>
+
+
+
   <script type="text/javascript">
     var latitude;
     var longitude;
@@ -71,7 +74,7 @@
       send();
     }
     function updateRec() {
-      $("#rec").text(recognition ? "Wait" : "Speak");
+      $("#rec").text(recognition ? "Listening" : "Ready");
     }
     function send() {
       var text = $("#input").val();
