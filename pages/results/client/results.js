@@ -5,7 +5,7 @@ Template.results.onCreated(function resultsCreated(){
     const key = '876a19607233e092fdc4a30a9c079614';
     inputArr = input.split('&');
 
-    let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + inputArr[0].replace('lat=','') + ',' + inputArr[1].replace('long=','') + ',6';
+    let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + inputArr[0].replace('lat=','') + ',' + inputArr[1].replace('long=','') + ',5';
     for (x in inputArr){
       if (inputArr[x].substring(0,2) === 'in'){
         url += "&query=" + inputArr[x].replace('in=','');
@@ -18,11 +18,14 @@ Template.results.onCreated(function resultsCreated(){
     url += '&skip=0&limit=50&sort=best-match-asc&user_key=' + key;
 
     jQuery.getJSON(url , function(data) {
-      let txt = "<h2>I found " + data.meta.total + " results.";
+      let txt = "<h2><em>I found " + data.meta.total + " results.";
+      let speak = "Alright, I found " + data.meta.total + " doctors within five miles of your location that match your criteria.";
       if (data.meta.total > 50){
         txt += " Showing the top 50:";
+        speak += " Showing the top 50.";
       }
-      txt += "</h2>";
+      txt += "</em></h2>";
+      responsiveVoice.speak(speak);
       document.getElementById("numReturned").innerHTML = txt;
       txt = "";
       for (x in data.data) {
