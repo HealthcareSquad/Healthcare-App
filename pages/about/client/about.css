@@ -1,6 +1,5 @@
 #header {
   font-size: 80px;
-  font: Arial;
   text-align: center;
   color: #1985A1;
 }
@@ -22,5 +21,5 @@ img {
   padding-left: 300px;
   padding-right: 300px;
   padding-bottom: 50px;
->>>>>>> 12d833f94457546525ca7e77932c35be5e79bf84
+  line-height: inherit;
 }
