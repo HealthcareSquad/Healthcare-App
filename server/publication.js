@@ -14,8 +14,3 @@ Meteor.publish('profiles',
   return Profiles.find();
 })
 // dont forget subscribe method and find by user_id
-
-Meteor.publish('favorites',
-  function(){
-  return Favorites.find();
-})
