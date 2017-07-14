@@ -13,7 +13,10 @@
   <br>
   <div class="search">
     <input id="input" type="text" hidden>
-    <button type="button" class="btn btn-default btn-circle btn-xl" id="rec">Ready</button>
+    <button class="btn btn-default btn-circle btn-xl" id="rec">
+      <i class="fa fa-microphone "></i>
+      <!--<i class="fa fa-microphone fa-4x"></i>-->
+    </button>
     <!-- <i class="material-icons" style="vertical-align: middle;font-size:43px;color:green" id="micButt">mic</i> -->
   </div>
   <div>
@@ -25,6 +28,7 @@
 
 
   <script type="text/javascript">
+    document.getElementById("rec").style.backgroundColor = "#1985A1";
     var latitude;
     var longitude;
     var accessToken = "f984d307361f4004ac180e3aeb02dd7d";
@@ -74,7 +78,13 @@
       send();
     }
     function updateRec() {
-      $("#rec").text(recognition ? "Listening" : "Ready");
+      $("#rec").backgroundColor(recognition ? colorchange() : changecolor() );
+    }
+    function colorchange() {
+      document.getElementById("rec").style.backgroundColor = "#fc6f6f";
+    }
+    function changecolor() {
+      document.getElementById("rec").style.backgroundColor = "#1985A1";
     }
     function send() {
       var text = $("#input").val();
