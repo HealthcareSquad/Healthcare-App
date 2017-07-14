@@ -5,6 +5,13 @@ body {
     background-color: #DCDCDD;
 }
 
+#mySidenav a{
+  color: #1985A1;
+  text-align: center;
+  padding-right: 35px;
+  font-size: 50px;
+}
+
 .sidenav {
     height: 100%;
     width: 0;

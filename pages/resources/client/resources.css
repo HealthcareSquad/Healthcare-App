@@ -1,0 +1,24 @@
+.main {
+  text-align: center;
+}
+
+#header {
+  text-align: center;
+  color: #1985A1;
+  font-size: 80px;
+}
+
+#head2 {
+  color: #4C5C68;
+  font-size: 40px;
+}
+
+a {
+  font-size: 30px;
+  color: #1985A1;
+}
+
+#thanks {
+  font-size: 30px;
+  color: #1985A1;
+}
