@@ -4,31 +4,24 @@ Template.results.onCreated(function resultsCreated(){
     const input = Router.current().params.query.params;
     const key = '876a19607233e092fdc4a30a9c079614';
     inputArr = input.split('&');
-    let specialty = '';
-    let language = '';
-    let insurance = '';
-    let condition = '';
-
 
     let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + inputArr[0].replace('lat=','') + ',' + inputArr[1].replace('long=','') + ',6';
     for (x in inputArr){
-      //
       // if (inputArr[x].substring(0,2) === 'in'){
       //   url += "insurance_uid=" + inputArr[x].replace('in=','') + "&";
       // }else
       if (inputArr[x].substring(0,2) === 'sp'){
         url += "&specialty_uid=" + inputArr[x].replace('sp=','');
+      }else if (inputArr[x].substring(0,3) === 'la='){
+        url += "&language=" + inputArr[x].replace('la=','');
       }
-      // }else if (inputArr[x].substring(0,2) === 'la'){
-      //   url += "&language=" + inputArr[x].replace('la=','');
-      // }
     }
     url += '&skip=0&limit=20&sort=best-match-asc&user_key=' + key;
 
-
-
     jQuery.getJSON(url , function(data) {
-      let txt = "<table class=\"table table-hover\"><thead><tr><td>Name</td><td>Location(s)</td></tr></thead><tbody data-link=\'row\' class=\'rowlink\'>";
+      let txt = "<h4>Your search returned " + data.meta.total + " results.</h4>";
+      document.getElementById("numReturned").innerHTML = txt;
+      txt = "<table class=\"table table-hover\"><thead><tr><td>Name</td><td>Location(s)</td></tr></thead><tbody data-link=\'row\' class=\'rowlink\'>";
       for (x in data.data) {
         txt += "<tr><td><a id=\'docLink\' data-uid=\'" + data.data[x].uid + "\'href=\'#docModal\' data-toggle=\'modal\'>" + data.data[x].profile.first_name + ' ' + data.data[x].profile.last_name;
         if (data.data[x].profile.title){
