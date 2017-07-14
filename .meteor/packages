@@ -24,3 +24,6 @@ accounts-ui
 jquery
 handlebars
 http
+accounts-facebook
+accounts-google
+accounts-github

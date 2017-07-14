@@ -4,53 +4,45 @@ Template.results.onCreated(function resultsCreated(){
     const input = Router.current().params.query.params;
     const key = '876a19607233e092fdc4a30a9c079614';
     inputArr = input.split('&');
-    let specialty = '';
-    let language = '';
-    let insurance = '';
-    let condition = '';
-
 
     let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + inputArr[0].replace('lat=','') + ',' + inputArr[1].replace('long=','') + ',6';
     for (x in inputArr){
-      //
-      // if (inputArr[x].substring(0,2) === 'in'){
-      //   url += "insurance_uid=" + inputArr[x].replace('in=','') + "&";
-      // }else
-      if (inputArr[x].substring(0,2) === 'sp'){
+      if (inputArr[x].substring(0,2) === 'in'){
+        url += "&query=" + inputArr[x].replace('in=','');
+      }else if (inputArr[x].substring(0,2) === 'sp'){
         url += "&specialty_uid=" + inputArr[x].replace('sp=','');
+      }else if (inputArr[x].substring(0,3) === 'la='){
+        url += "&language=" + inputArr[x].replace('la=','');
       }
-      // }else if (inputArr[x].substring(0,2) === 'la'){
-      //   url += "&language=" + inputArr[x].replace('la=','');
-      // }
     }
-    url += '&skip=0&limit=20&sort=best-match-asc&user_key=' + key;
-
-
+    url += '&skip=0&limit=50&sort=best-match-asc&user_key=' + key;
 
     jQuery.getJSON(url , function(data) {
-      let txt = "<table class=\"table table-hover\"><thead><tr><td>Name</td><td>Location(s)</td></tr></thead><tbody data-link=\'row\' class=\'rowlink\'>";
+      let txt = "<h2>I found " + data.meta.total + " results.";
+      if (data.meta.total > 50){
+        txt += " Showing the top 50:";
+      }
+      txt += "</h2>";
+      document.getElementById("numReturned").innerHTML = txt;
+      txt = "";
       for (x in data.data) {
-        txt += "<tr><td><a id=\'docLink\' data-uid=\'" + data.data[x].uid + "\'href=\'#docModal\' data-toggle=\'modal\'>" + data.data[x].profile.first_name + ' ' + data.data[x].profile.last_name;
+        txt += "<tr data-href=\'#docModal\' height=\'100\' class=\'text-center clickable-row\'\'><td>" + data.data[x].practices[0].distance.toString().substring(0,4) + "</td><td>";
+        txt += "<a id=\'docLink\' data-uid=\'" + data.data[x].uid + "\'href=\'#docModal\' data-toggle=\'modal\'>" + data.data[x].profile.first_name + ' ' + data.data[x].profile.last_name;
         if (data.data[x].profile.title){
           txt += ', ' + data.data[x].profile.title;
         }
-         txt += "</a></td><td>" + data.data[x].practices[0].name;
-        if (data.data[x].practices.length > 1){
-          txt += ", and " + data.data[x].practices.length + " others</a></td>";
-        }else{
-          txt += "</td>";
-        }
+         txt += "</a></td><td>test</td>" ;
         txt += "</tr>";
       }
 
-      txt += "</tbody></table>";
+      // txt += "</tbody>";
       document.getElementById("results").innerHTML = txt;
     });
 });
 
 
 Template.results.events({
-  'click a':function(doc){
+  'click #docLink':function(doc){
     event.preventDefault();
     uid = doc.target.dataset.uid;
     jQuery.getJSON('https://api.betterdoctor.com/2016-03-01/doctors/' + uid + '?user_key=876a19607233e092fdc4a30a9c079614', function(data){
