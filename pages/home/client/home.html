@@ -100,7 +100,7 @@
         success: function(data) {
           setResponse(JSON.stringify(data, undefined, 2));
           console.log(data);
-          responsiveVoice.speak(data.result.fulfillment.speech);
+          responsiveVoice.speak("," + data.result.fulfillment.speech);
           let adrs = "";
           if (data.result.actionIncomplete === false){
             let tmp = '';

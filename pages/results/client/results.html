@@ -3,19 +3,30 @@
 <template name="results">
 
 
-<div class="container">
-  <div class="row" id="numReturned">
-  </div>
+
+<!-- <div class="container"> -->
+
+  <div class="offset-md-4" id="numReturned"></div>
+  <hr>
   <br>
-  <div class="row">
+  <div class ="row">
+    <div class="col-sm-6">
       <div class = "table-responsive" >
-        <table class="table table-bordered table-condensed table-hover" style="font-size:25px">
-          <thead class="text-center"><tr><td><strong>Distance Away (miles)</strong></td><td><strong>Name</strong></td><td><strong>Favorite</strong></td></tr></thead><br><tbody data-link='row' class='rowlink' id="results">
+        <table class="table table-bordered table-condensed table-hover" style="font-size:20px">
+          <thead class="text-center"><tr><td><strong>Name</strong></td><td><strong>Distance (miles)</strong></td><td><strong>Favorite</strong></td></tr></thead><br><tbody data-link='row' class='rowlink' id="results">
           </tbody>
           </table>
       </div>
     </div>
+    <br><br><br><br>
+    <div class="col-sm-6" id="map"></div>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAy2p_5PUZON-7hFdoUHtqbfyLNQZNfIu4&callback=initMap">
+      console.log("defering");
+    </script>
+
 </div>
+<!-- </div> -->
 
 
 <div class="modal fade" id="docModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

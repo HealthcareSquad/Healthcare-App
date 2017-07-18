@@ -1,4 +1,5 @@
 
+// function initMap() {}
 
 Template.results.onCreated(function resultsCreated(){
     const input = Router.current().params.query.params;
@@ -15,11 +16,30 @@ Template.results.onCreated(function resultsCreated(){
         url += "&language=" + inputArr[x].replace('la=','');
       }
     }
-    url += '&skip=0&limit=50&sort=best-match-asc&user_key=' + key;
+    url += '&skip=0&limit=50&sort=distance-asc&user_key=' + key;
+
+    window.initMap = function(){
+      // if (navigator.geolocation) {
+      //   navigator.geolocation.getCurrentPosition(function (position) {
+      //     var userLoc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)});
+      // }else{
+       var userLoc = {lat:parseFloat(inputArr[0].replace('lat=','')) , lng: parseFloat(inputArr[1].replace('long=',''))};
+      // }
+       var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 11,
+         center: userLoc
+       });
+       var marker = new google.maps.Marker({
+         position: userLoc,
+         map: map,
+         icon:'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+         description:"You"
+       });
+
 
     jQuery.getJSON(url , function(data) {
       let txt = "<h2><em>I found " + data.meta.total + " results.";
-      let speak = "Alright, I found " + data.meta.total + " doctors within five miles of your location that match your criteria.";
+      let speak = ".Alright, I found " + data.meta.total + " doctors within five miles of your location that match your criteria,";
       if (data.meta.total > 50){
         txt += " Showing the top 50:";
         speak += " Showing the top 50.";
@@ -28,24 +48,42 @@ Template.results.onCreated(function resultsCreated(){
       responsiveVoice.speak(speak);
       document.getElementById("numReturned").innerHTML = txt;
       txt = "";
+      var markers = [];
+      var infoWindows = [];
       for (x in data.data) {
-        txt += "<tr data-href=\'#docModal\' height=\'100\' class=\'text-center clickable-row\'\'><td>" + data.data[x].practices[0].distance.toString().substring(0,4) + "</td><td>";
-        txt += "<a id=\'docLink\' data-uid=\'" + data.data[x].uid + "\'href=\'#docModal\' data-toggle=\'modal\'>" + data.data[x].profile.first_name + ' ' + data.data[x].profile.last_name;
+        txt += "<tr data-href=\'#docModal\' height=\'50\' class=\'text-center clickable-row\'\'><td class=\'text-left\'><a id=\'docLink\' data-uid=\'" + data.data[x].uid + "\'href=\'#docModal\' data-toggle=\'modal\'>" + data.data[x].profile.first_name + ' ' + data.data[x].profile.last_name;
         if (data.data[x].profile.title){
           txt += ', ' + data.data[x].profile.title;
         }
-         txt += "</a></td><td>test</td>" ;
+        txt += "</a></td><td>" + data.data[x].practices[0].distance.toString().substring(0,4);
+        txt += "</td><td>O</td>" ;
         txt += "</tr>";
+        var pos = new google.maps.LatLng(data.data[x].practices[0].lat,data.data[x].practices[0].lon);
+        markers[x] = new google.maps.Marker({
+          position: pos,
+          map: map,
+          id:x
+        });
+
+          infoWindows[x] = new google.maps.InfoWindow({
+          content:"<a id=\'docLink\' data-uid=\'" + data.data[x].uid + "\'href=\'#docModal\' data-toggle=\'modal\'>" + data.data[x].profile.first_name + ' ' + data.data[x].profile.last_name + "</a>"
+        });
+
+        markers[x].addListener('click',function(){
+          infoWindows[this.id].open(map,markers[this.id])
+        });
       }
+
 
       // txt += "</tbody>";
       document.getElementById("results").innerHTML = txt;
     });
+  }
 });
 
 
 Template.results.events({
-  'click #docLink':function(doc){
+  'click #docLink':function createDocModal(doc){
     event.preventDefault();
     uid = doc.target.dataset.uid;
     jQuery.getJSON('https://api.betterdoctor.com/2016-03-01/doctors/' + uid + '?user_key=876a19607233e092fdc4a30a9c079614', function(data){
@@ -107,7 +145,7 @@ Template.results.events({
       for (x in data.data.practices){
         txt += "<li>" + data.data.practices[x].name + "<br>" + data.data.practices[x].visit_address.street + "<br>" + data.data.practices[x].visit_address.city + ", " + data.data.practices[x].visit_address.state + "<br>" + data.data.practices[x].phones[0].number;
         if (data.data.practices[x].website){
-          txt += "<br><a href=" + data.data.practices[x].website + " target=\"_blank\">Website</a>";
+          txt += "<br><a href=" + data.data.practices[x].website + " target=\"_blank\" style=\'font-size:15px\'>Website</a>";
         }
         txt += "</li><br>";
       }
