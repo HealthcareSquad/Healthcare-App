@@ -39,7 +39,7 @@ Template.results.onCreated(function resultsCreated(){
 
     jQuery.getJSON(url , function(data) {
       let txt = "<h2><em>I found " + data.meta.total + " results.";
-      let speak = ".Alright, I found " + data.meta.total + " doctors within five miles of your location that match your criteria,";
+      let speak = "Alright, I found " + data.meta.total + " doctors within five miles of your location that match your criteria,";
       if (data.meta.total > 50){
         txt += " Showing the top 50:";
         speak += " Showing the top 50.";

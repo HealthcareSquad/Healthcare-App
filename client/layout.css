@@ -14,7 +14,7 @@ body {
 
 #map {
         height: 700px;
-        width: 50%;
+        width: 48%;
         position: fixed;
        }
 
@@ -120,4 +120,9 @@ pre {
 
 a {
   font-size:20px;
+}
+
+.affix {
+    top:50px;
+    position:fixed;
 }
