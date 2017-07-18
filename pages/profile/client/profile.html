@@ -1,0 +1,54 @@
+<template name = "profiles">
+<br>
+{{> loginButtons}}
+<h1>User Profiles</h1>
+
+<br>
+<br>
+{{> addProfile}}
+<hr>
+  {{#if currentUser}}
+    {{#each p in profileslist}}
+    <li>{{>profilerow profile=p}}</li>
+    {{/each}}
+  {{else}}
+  <h1> You must log in to see the info!</h1>
+  {{/if}}
+</template>
+<template name="profilerow">
+
+    {{profile.name}}--{{profile.insurance}}--{{profile.location}}--{{profile.prescription}}
+
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+
+
+
+</template>
+
+<!--
+name
+insurance(s)
+location(s)
+favorites
+prescriptions
+security question/password recovery
+-->
+<template name = "addProfile">
+Full Name:<br>
+<input type="text" id="name" placeholder="My Name">
+<br>
+Insurance(s):<br>
+<input type="text" id="insurance" placeholder="My Insurance">
+<br>
+Location(s):<br>
+<input type="text" id="location" placeholder="My Location">
+<br>
+Prescription(s):<br>
+<input type="text" id="prescription" placeholder="My Prescriptions">
+
+<br><br>
+<button id="addProfile" class="btn btn-primary">
+  Submit
+</button>
+
+</template>
