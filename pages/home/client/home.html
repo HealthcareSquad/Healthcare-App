@@ -113,6 +113,10 @@
               if (data.result.parameters[x].length != 0){
                   if(x != 'city' && x != 'address' && x != 'state'){
                     tmp +=  "&" + x.substring(0,2) + '=' + data.result.parameters[x];
+
+                  if(data.results.resolvedQuery.includes("near me" || "around me" || "current location"))
+
+
                   }else if(x === "address"){
                     adrs += data.result.parameters[x] + " ";
                   }else if(x === "city"){

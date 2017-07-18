@@ -9,7 +9,9 @@ Template.results.onCreated(function resultsCreated(){
     let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + inputArr[0].replace('lat=','') + ',' + inputArr[1].replace('long=','') + ',5';
     for (x in inputArr){
       if (inputArr[x].substring(0,2) === 'in'){
-        url += "&query=" + inputArr[x].replace('in=','');
+        if (inputArr[x].replace('in=','') != "none"){
+          url += "&query=" + inputArr[x].replace('in=','');
+        }
       }else if (inputArr[x].substring(0,2) === 'sp'){
         url += "&specialty_uid=" + inputArr[x].replace('sp=','');
       }else if (inputArr[x].substring(0,3) === 'la='){
@@ -118,26 +120,63 @@ Template.results.events({
       txt += "</p>";
       document.getElementById("docLicenses").innerHTML = txt;
     }
-      jQuery.getJSON('')
-      var ctx = document.getElementById('myChart').getContext('2d');
-      var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'doughnut',
+      jQuery.getJSON('https://openpaymentsdata.cms.gov/resource/vq63-hu5i.json?physician_first_name=' + data.data.profile.first_name.toUpperCase() + '&physician_last_name=' + data.data.profile.last_name.toUpperCase() + '&recipient_state=' + data.data.practices[0].visit_address.state, function(payments){
+        jQuery('#docPayments').empty();
+        document.getElementById("docPayments").innerHTML = "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js\"></script><canvas id=\"myChart\"></canvas>";
+        console.log(payments);
 
-        // The data for our dataset
-        data: {
-          labels: ["1","2","3","4"],
-          datasets: [{
-              label: "My First dataset",
-            backgroundColor: ['rgb(13, 84, 22)', 'rgba(255, 99, 132, 0.2)','rgba(54, 162, 235, 0.2)','rgba(255, 206, 86, 0.2)'],
-            borderColor: 'rgb(13, 84, 22)',
-            data: [50,10,5,30],
-        }]
-    },
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var payees = [];
+        var amounts = [];
+        for (x in payments){
+          payees.push(payments[x].applicable_manufacturer_or_applicable_gpo_making_payment_name);
+          amounts.push(parseFloat(payments[x].total_amount_of_payment_usdollars));
+        }
+        var sum = amounts.reduce(function (a, b) {
+          return a + b;
+          }, 0);
+        if (sum > 0){
+          new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'pie',
 
-    // Configuration options go here
-    options: {}
-  });
+            // The data for our dataset
+            data: {
+              labels: payees,
+              datasets: [{
+                label: "Big Pharma Payments",
+                 backgroundColor: ['rgb(178, 34, 34, 0.2)',
+                'rgba(255, 140, 0, 0.2)',
+                'rgba(34, 139, 34, 0.2)',
+                'rgba(46, 139, 87, 0.2)',
+                'rgba(0, 128, 128, 0.2)',
+                'rgba(25, 25, 112, 0.2)',
+                'rgba(199, 21, 133, 0.2)',
+                'rgba(139, 69, 19, 0.2)',
+                'rgba(112, 128, 144, 0.2)',
+                'rgba(105, 105, 105, 0.2)'],
+                borderColor: 'rgb(13, 84, 22)',
+                data: amounts,
+            }]
+        },
+        // Configuration options go here
+        options: {
+          title:{
+            display:true,
+            text:'Received $' + sum + " in payments from pharmaceutical companies in 2016.",
+            fontSize:15
+          }
+        }
+      });
+    }else{
+      document.getElementById("docPayments").innerHTML = "<p>Received $0 in payments from pharmaceutical companies in 2016.</p>";
+    }
+
+
+
+
+      })
+
 
 
 
