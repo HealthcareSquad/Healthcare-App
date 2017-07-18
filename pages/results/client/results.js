@@ -129,7 +129,7 @@ Template.results.events({
         var payees = [];
         var amounts = [];
         for (x in payments){
-          payees.push(payments[x].applicable_manufacturer_or_applicable_gpo_making_payment_name);
+          payees.push(payments[x].applicable_manufacturer_or_applicable_gpo_making_payment_name + " to promote " + payments[x].name_of_drug_or_biological_or_device_or_medical_supply_1);
           amounts.push(parseFloat(payments[x].total_amount_of_payment_usdollars));
         }
         var sum = amounts.reduce(function (a, b) {
