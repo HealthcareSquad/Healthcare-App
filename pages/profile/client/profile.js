@@ -24,7 +24,7 @@ Template.addProfile.events({
     var info = {name:name, insurance:insurance, location:location, prescription:prescription, owner:Meteor.userId()};
     //add favorites variable
 
-    Meteor.call('profiles.insert',info);
+    Meteor.call('profiles.update',info);
   }
 })
 
@@ -34,7 +34,29 @@ Template.profiles.events({
   var feedID = this.profile._id
 
   Meteor.call('profiles.remove',feedID);
-  }
+},
+ update(){//this is where everything is updated
+      if(!(instance.$('#name').val() == "")){//if the field is not empty
+        const name = instance.$('#name').val();//save the value and call the meteor update function
+        Meteor.call('profiles.name.update', name)
+        instance.$('#name').val("");//reset the input area
+      }
+      if(!(instance.$('#insurance').val() == "")){
+        const insurance = instance.$('#insurance').val();
+        Meteor.call('profiles.insurance.update', insurance)
+        instance.$('#insurace').val("");
+      }
+      if(!(instance.$('#location').val() == "")){
+        const location = instance.$('#location').val();
+        Meteor.call('profiles.location.update', location)
+        instance.$('#location').val("");
+      }
+      if(!(instance.$('#prescription').val() == "")){
+        const prescription = instance.$('#prescription').val();
+        Meteor.call('profiles.prescription.update', prescription)
+        instance.$('#prescription').val("");
+      }
+    }
 })
 
 // probably want an upsert method
