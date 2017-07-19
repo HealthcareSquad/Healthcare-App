@@ -53,11 +53,16 @@ Template.results.onCreated(function resultsCreated(){
       var markers = [];
       var infoWindows = [];
       for (x in data.data) {
+        var distances = [];
+        for (y in data.data[x].practices){
+          distances.push(data.data[x].practices[y].distance);
+        }
+        var dist = Math.min.apply(Math, distances);
         txt += "<tr data-href=\'#docModal\' height=\'50\' class=\'text-center clickable-row\'\'><td class=\'text-left\'><a id=\'docLink\' data-uid=\'" + data.data[x].uid + "\'href=\'#docModal\' data-toggle=\'modal\'>" + data.data[x].profile.first_name + ' ' + data.data[x].profile.last_name;
         if (data.data[x].profile.title){
           txt += ', ' + data.data[x].profile.title;
         }
-        txt += "</a></td><td>" + data.data[x].practices[0].distance.toString().substring(0,4);
+        txt += "</a></td><td>" + dist.toString().substring(0,4);
         txt += "</td><td>O</td>" ;
         txt += "</tr>";
         var pos = new google.maps.LatLng(data.data[x].practices[0].lat,data.data[x].practices[0].lon);
@@ -136,6 +141,7 @@ Template.results.events({
           return a + b;
           }, 0);
         if (sum > 0){
+          Chart.defaults.global.legend.display = false;
           new Chart(ctx, {
             // The type of chart we want to create
             type: 'pie',
@@ -161,24 +167,38 @@ Template.results.events({
         },
         // Configuration options go here
         options: {
+          responsive:true,
+          legend:{
+            display:false
+          },
           title:{
             display:true,
-            text:'Received $' + sum + " in payments from pharmaceutical companies in 2016.",
-            fontSize:15
+            text:"Received $" + sum + " in payments from pharmaceutical companies in 2016.",
+            fontSize:17
           }
         }
       });
+
+      // Chart.pluginService.register({
+      //   beforeDraw: function(chart) {
+      //     var width = chart.chart.width,
+      //         height = chart.chart.height,
+      //     ctx.restore();
+      //     var fontSize = (height / 150).toFixed(2);
+      //     ctx.textBaseline = "middle";
+      //     var text = concat,
+      //         textX = Math.round((width - ctx.measureText(text).width) / 2),
+      //         textY = (height / 2) + 16;
+      //
+      //     ctx.fillText(text, textX, textY);
+      //     ctx.save();
+      //   }
+      // });
     }else{
       document.getElementById("docPayments").innerHTML = "<p>Received $0 in payments from pharmaceutical companies in 2016.</p>";
     }
 
-
-
-
       })
-
-
-
 
       txt = "<p>Contact Information</p><br><ul>";
       for (x in data.data.practices){
