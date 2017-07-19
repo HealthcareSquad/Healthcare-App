@@ -27,3 +27,6 @@ http
 accounts-facebook
 accounts-google
 accounts-github
+facebook-config-ui
+github-config-ui
+google-config-ui
