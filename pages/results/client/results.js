@@ -183,9 +183,13 @@ Template.results.events({
       //   beforeDraw: function(chart) {
       //     var width = chart.chart.width,
       //         height = chart.chart.height,
+      //         ctx = chart.chart.ctx;
+      //
       //     ctx.restore();
       //     var fontSize = (height / 150).toFixed(2);
+      //     ctx.font = fontSize + "em sans-serif";
       //     ctx.textBaseline = "middle";
+      //     concat = "$" + sum;
       //     var text = concat,
       //         textX = Math.round((width - ctx.measureText(text).width) / 2),
       //         textY = (height / 2) + 16;
