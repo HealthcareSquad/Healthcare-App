@@ -1,0 +1,25 @@
+#header {
+  font-size: 80px;
+  text-align: center;
+  color: #1985A1;
+}
+
+#desc {
+  font-size: 30px;
+  color: #46494C;
+  padding-left: 300px;
+  padding-right: 300px;
+  padding-bottom: 50px;
+  line-height: inherit;
+  text-align: center;
+}
+
+ul {
+  font-size: 30px;
+  color: #46494C;
+  padding-left: 300px;
+  padding-right: 300px;
+  padding-bottom: 50px;
+  line-height: inherit;
+  text-align: center;
+}

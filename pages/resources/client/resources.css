@@ -14,11 +14,15 @@
 }
 
 a {
-  font-size: 30px;
   color: #1985A1;
 }
 
-#thanks {
+.reflink {
+  font-size: 30px;
+}
+
+.thanks {
   font-size: 30px;
   color: #1985A1;
+  line-height: .7em;
 }
