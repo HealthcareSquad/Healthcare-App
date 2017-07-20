@@ -15,14 +15,15 @@ Template.addProfile.events({
     const insurance = instance.$('#insurance').val();
     const location = instance.$('#location').val();
     const prescription = instance.$('#prescription').val();
+    var fav = [];
     console.log('adding'+name);
 
     instance.$('#name').val("");
     instance.$('#insurance').val("");
     instance.$('#location').val("");
     instance.$('#prescription').val("");
-    var info = {name:name, insurance:insurance, location:location, prescription:prescription, owner:Meteor.userId()};
-    //add favorites variable
+    var info = {name:name, insurance:insurance, location:location, prescription:prescription, favorites:fav, owner:Meteor.userId()};
+    
 
     Meteor.call('profiles.update',info);
   }

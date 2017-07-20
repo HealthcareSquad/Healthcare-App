@@ -63,7 +63,7 @@ Template.results.onCreated(function resultsCreated(){
           txt += ', ' + data.data[x].profile.title;
         }
         txt += "</a></td><td>" + dist.toString().substring(0,4);
-        txt += "</td><td>O</td>" ;
+        txt += "</td><td><button class=\"btn btn-default btn-sm\">Add</button></td>" ;
         txt += "</tr>";
         var pos = new google.maps.LatLng(data.data[x].practices[0].lat,data.data[x].practices[0].lon);
         markers[x] = new google.maps.Marker({
@@ -129,10 +129,7 @@ Template.results.events({
       var insurers = [];
       for (i=0;i<data.data.insurances.length-1;i++){
         var current = data.data.insurances[i].insurance_provider.name;
-
-          insurers.push(" " + current);
-
-
+        insurers.push(" " + current);
       }
       var uniques = [];
       $.each(insurers, function(i, el){
