@@ -13,8 +13,8 @@ body {
 }
 
 #map {
-        height: 700px;
-        width: 48%;
+        height: 458.4px;
+        width: 56%;
         position: fixed;
        }
 
@@ -23,6 +23,18 @@ body {
   top:20px;
   right:50px;
   z-index: 99;
+}
+
+#resultsTop{
+  position:fixed;
+  z-index:99;
+  opacity:1;
+  background-color: #DCDCDD;
+  top:0;
+}
+
+#openButton{
+  position:fixed;
 }
 
 
@@ -103,7 +115,7 @@ body {
 
 h1 {
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-	font-size: 24px;
+	font-size: 60px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;

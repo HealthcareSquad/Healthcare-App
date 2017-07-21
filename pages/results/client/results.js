@@ -97,6 +97,11 @@ Template.results.onCreated(function resultsCreated(){
       }
 
 
+    
+      document.getElementById("results").innerHTML = txt;
+      document.getElementById("mapWrapper").style.position = "fixed";
+      document.getElementById("mapWrapper").style.top = "25%";
+      document.getElementById("mapWrapper").style.left = "48%";
 
     });
   }
@@ -157,7 +162,7 @@ Template.results.events({
       $.each(insurers, function(i, el){
           if($.inArray(el, uniques) === -1) uniques.push(el);
       });
-      document.getElementById("docInsurances").innerHTML = "Accepted insurers: " + uniques;
+      document.getElementById("docInsurances").innerHTML = "<p>Accepted Insurers</p><br>" + uniques;
 
     }
       jQuery.getJSON('https://openpaymentsdata.cms.gov/resource/vq63-hu5i.json?physician_first_name=' + data.data.profile.first_name.toUpperCase() + '&physician_last_name=' + data.data.profile.last_name.toUpperCase() + '&recipient_state=' + data.data.practices[0].visit_address.state, function(payments){
@@ -233,11 +238,5 @@ Template.results.events({
       document.getElementById("docAddresses").innerHTML = txt;
 
     });
-  }
-});
-
-Template.results.helpers({
-  results: function() {
-    return Results.find();
   }
 });
