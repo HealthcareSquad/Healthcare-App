@@ -63,7 +63,7 @@ Template.results.onCreated(function resultsCreated(){
           txt += ', ' + data.data[x].profile.title;
         }
         txt += "</a></td><td>" + dist.toString().substring(0,4);
-        txt += "</td><td>O</td>" ;
+        txt += "</td><td><button class=\"btn btn-default btn-sm\">Add</button></td>" ;
         txt += "</tr>";
         var pos = new google.maps.LatLng(data.data[x].practices[0].lat,data.data[x].practices[0].lon);
         markers[x] = new google.maps.Marker({
@@ -124,6 +124,19 @@ Template.results.events({
       }
       txt += "</p>";
       document.getElementById("docLicenses").innerHTML = txt;
+
+
+      var insurers = [];
+      for (i=0;i<data.data.insurances.length-1;i++){
+        var current = data.data.insurances[i].insurance_provider.name;
+        insurers.push(" " + current);
+      }
+      var uniques = [];
+      $.each(insurers, function(i, el){
+          if($.inArray(el, uniques) === -1) uniques.push(el);
+      });
+      document.getElementById("docInsurances").innerHTML = "Accepted insurers: " + uniques;
+
     }
       jQuery.getJSON('https://openpaymentsdata.cms.gov/resource/vq63-hu5i.json?physician_first_name=' + data.data.profile.first_name.toUpperCase() + '&physician_last_name=' + data.data.profile.last_name.toUpperCase() + '&recipient_state=' + data.data.practices[0].visit_address.state, function(payments){
         jQuery('#docPayments').empty();
