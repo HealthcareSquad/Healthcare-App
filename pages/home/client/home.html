@@ -66,6 +66,7 @@
       });
     });
     var recognition;
+    var tmp = '';
     function startRecognition() {
       recognition = new webkitSpeechRecognition();
       recognition.onstart = function(event) {
@@ -127,14 +128,15 @@
         success: function(data) {
           setResponse(JSON.stringify(data, undefined, 2));
           console.log(data);
+
           responsiveVoice.speak("," + data.result.fulfillment.speech);
           let adrs = "";
+
           if (data.result.resolvedQuery === "help"){
             responsiveVoice.speak("When you are ready to return to the homepage, just let me know!");
             Router.go('commands');
           }
-          if (data.result.action === "DocFinder.DocFinder-yes"){
-            let tmp = '';
+          if (data.result.contexts[0].name === "docfinder-followup" && data.result.action != "DocFinder.DocFinder-yes"){
             for (x in data.result.parameters){
               if (data.result.parameters[x].length != 0){
                   if(x != 'city' && x != 'address' && x != 'state'){
@@ -161,13 +163,14 @@
                 }else{
                   latitude = info.results[0].geometry.location.lat;
                   longitude = info.results[0].geometry.location.lng;
+                  console.log(tmp);
                   tmp = 'lat=' + latitude + '&long=' + longitude + '&page=0' + tmp;
                   console.log(tmp);
-                  Router.go('results', {}, {query:{params:tmp}});
              }
             });
-
-
+          }
+          if (data.result.action === "DocFinder.DocFinder-yes"){
+            Router.go('results', {}, {query:{params:tmp}});
           }
 
         },

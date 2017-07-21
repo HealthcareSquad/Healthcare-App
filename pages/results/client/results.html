@@ -189,6 +189,8 @@
           var spliturl = url.split('&skip=');
           console.log(spliturl);
           url.replace("")
+        }else if (data.result.metadata.intentName === 'Home'){
+          Router.go('home');
         }
       },
       error: function() {

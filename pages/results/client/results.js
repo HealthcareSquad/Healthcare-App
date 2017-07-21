@@ -6,14 +6,15 @@ Template.results.onCreated(function resultsCreated(){
     let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + inputArr[0].replace('lat=','') + ',' + inputArr[1].replace('long=','') + ',5';
     for (x in inputArr){
       if (inputArr[x].substring(0,2) === 'in'){
-        if (inputArr[x].replace('in=','') != "none"){
+        if (inputArr[x].replace('in=','') != "no-insurance"){
           url += "&query=" + inputArr[x].replace('in=','');
         }
       }else if (inputArr[x].substring(0,2) === 'sp'){
         url += "&specialty_uid=" + inputArr[x].replace('sp=','');
-      }else if (inputArr[x].substring(0,3) === 'la='){
-        url += "&language=" + inputArr[x].replace('la=','');
       }
+      // else if (inputArr[x].substring(0,3) === 'la='){
+      //   url += "&language=" + inputArr[x].replace('la=','');
+      // }
     }
     url += '&skip=' + counter*50 + '&limit=50&sort=distance-asc&user_key=' + key;
 
