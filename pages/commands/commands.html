@@ -1,12 +1,143 @@
 <template name ="commands">
-  <p id="header">DocFinder Commands</p>
-  <br><br><br>
-  <p id="desc">There are multiple ways to find a nearby doctor using DocFinder:
-    <ul>
-      <li>Search by your location and insurance company, to be provided a list of doctor's within a 5 mile radius of your location</li>
-      <li>Location can be given simply as a city and state or as the exact street address. More precise location information will provide more exact results.</li>
-      <li>Additionally, you can search according to a doctor's spoken language. Simply, say "I need a doctor who knows Spanish."</li>
-      <li>DocFinder is conversational! Feel free to say "What's up" or any other greeting and DocFinder will respond.</li>
-    </ul>
-  </p>
+  <h1>What are the DocFinder commands?</h1>
+  There are multiple ways to find a nearby doctor using DocFinder.
+  <ul>
+    <li>Search by your location and insurance company, to be provided a list of doctor's within a 5 mile radius of your location</li>
+    <li>Location can be given simply as a city and state or as the exact street address. More precise location information will provide more exact results.</li>
+    <li>Additionally, you can search according to a doctor's spoken language. Simply, say "I need a doctor who knows Spanish."</li>
+    <li>DocFinder is conversational! Feel free to say "What's up" or any other greeting and DocFinder will respond.</li>
+
+  </ul>
+  <br><br>
+
+<div align="center">
+  <input id="input" type="text" hidden>
+  <button class="btn btn-default btn-circle btn-lg" id="rec">
+    <i class="fa fa-microphone "></i>
+    <!--<i class="fa fa-microphone fa-4x"></i>-->
+  </button>
+</div>
+  <script type="text/javascript">
+    document.getElementById("rec").style.backgroundColor = "#1985A1";
+    var latitude;
+    var longitude;
+    var accessToken = "f984d307361f4004ac180e3aeb02dd7d";
+    var baseUrl = "https://api.api.ai/v1/";
+    $(document).ready(function() {
+      $("#rec").click(function(event) {
+        switchRecognition();
+      });
+    });
+    var recognition;
+    function startRecognition() {
+      recognition = new webkitSpeechRecognition();
+      recognition.onstart = function(event) {
+        updateRec();
+      };
+      recognition.onresult = function(event) {
+        var text = "";
+          for (var i = event.resultIndex; i < event.results.length; ++i) {
+            text += event.results[i][0].transcript;
+          }
+          setInput(text);
+        stopRecognition();
+      };
+      recognition.onend = function() {
+        stopRecognition();
+      };
+      recognition.lang = "en-US";
+      recognition.start();
+    }
+
+    function stopRecognition() {
+      if (recognition) {
+        recognition.stop();
+        recognition = null;
+      }
+      updateRec();
+    }
+    function switchRecognition() {
+      if (recognition) {
+        stopRecognition();
+      } else {
+        startRecognition();
+      }
+    }
+    function setInput(text) {
+      $("#input").val(text);
+      send();
+    }
+    function updateRec() {
+      $("#rec").backgroundColor(recognition ? colorchange() : changecolor() );
+    }
+    function colorchange() {
+      document.getElementById("rec").style.backgroundColor = "#fc6f6f";
+    }
+    function changecolor() {
+      document.getElementById("rec").style.backgroundColor = "#1985A1";
+    }
+    function send() {
+      var text = $("#input").val();
+      $.ajax({
+        type: "POST",
+        url: baseUrl + "query?v=20150910",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {
+          "Authorization": "Bearer " + accessToken
+        },
+        data: JSON.stringify({ query: text, lang: "en", sessionId: "somerandomthing" }),
+        success: function(data) {
+          setResponse(JSON.stringify(data, undefined, 2));
+          console.log(data);
+          responsiveVoice.speak("," + data.result.fulfillment.speech);
+          let adrs = "";
+          if (data.result.actionIncomplete === false){
+            let tmp = '';
+            for (x in data.result.parameters){
+              if (data.result.parameters[x].length != 0){
+                  if(x != 'city' && x != 'address' && x != 'state'){
+                    tmp +=  "&" + x.substring(0,2) + '=' + data.result.parameters[x];
+
+                  }else if(x === "address"){
+                    adrs += data.result.parameters[x] + " ";
+                  }else if(x === "city"){
+                    adrs += data.result.parameters[x] + " ";
+                  }else if(x === "state"){
+                    adrs += data.result.parameters[x];
+                  }
+              }
+            }
+
+
+            var address = adrs.replace(/ /g, '+');
+            const key= "AIzaSyAgcB5vtpwngFC9WQtyX7oDUtUNlR0hnQs";
+            const url= "https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key="+key;
+
+           jQuery.getJSON(url, function(info){
+               if (info.status === "ZERO_RESULTS"){
+                  alert('We were unable to find any locations that match your search. Try another address or location?');
+                }else{
+                  latitude = info.results[0].geometry.location.lat;
+                  longitude = info.results[0].geometry.location.lng;
+                  tmp = 'lat=' + latitude + '&long=' + longitude + tmp;
+                  console.log(tmp);
+                  Router.go('results', {}, {query:{params:tmp}});
+             }
+            });
+
+
+          }
+
+        },
+        error: function() {
+          setResponse("Internal Server Error");
+        }
+      });
+      setResponse("Loading...");
+    }
+    function setResponse(val) {
+      $("#response").text(val);
+    }
+  </script>
 </template>

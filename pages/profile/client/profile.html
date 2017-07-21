@@ -8,22 +8,12 @@
 {{> addProfile}}
 <hr>
   {{#if currentUser}}
-    {{#each p in profileslist}}
-    <li>{{>profilerow profile=p}}</li>
-    {{/each}}
+
   {{else}}
   <h1> You must log in to see the info!</h1>
   {{/if}}
 </template>
-<template name="profilerow">
 
-    {{profile.name}}--{{profile.insurance}}--{{profile.location}}--{{profile.prescription}}
-
-    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-
-
-
-</template>
 
 <!--
 name

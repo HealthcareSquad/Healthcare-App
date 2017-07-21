@@ -6,7 +6,16 @@
 
 <!-- <div class="container"> -->
 
-  <div class="offset-md-4" id="numReturned"></div>
+<div class="row">
+  <div class="col-sm-6" id="numReturned"></div>
+  <div class="col-sm-6" align="right" id="audioButton">
+  <input id="input" type="text" hidden>
+  <button class="btn btn-default btn-circle btn-large" id="rec">
+    <i class="fa fa-microphone "></i>
+    <!--<i class="fa fa-microphone fa-4x"></i>-->
+  </button>
+</div>
+</div>
   <hr>
   <br>
   <div class ="row">
@@ -27,12 +36,11 @@
       </div>
     </div>
     <br><br><br><br>
-    <div data-spy="affix" class="col-sm-6" id="map" style="border: 3px solid black"></div>
+    <div class="col-sm-6" id="map" style="border: 3px solid black"></div>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAy2p_5PUZON-7hFdoUHtqbfyLNQZNfIu4&callback=initMap">
       console.log("defering");
     </script>
-
 </div>
 <!-- </div> -->
 
@@ -90,4 +98,129 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  document.getElementById("rec").style.backgroundColor = "#1985A1";
+  var latitude;
+  var longitude;
+  var accessToken = "f984d307361f4004ac180e3aeb02dd7d";
+  var baseUrl = "https://api.api.ai/v1/";
+  $(document).ready(function() {
+    $("#rec").click(function(event) {
+      switchRecognition();
+    });
+  });
+  var recognition;
+  function startRecognition() {
+    recognition = new webkitSpeechRecognition();
+    recognition.onstart = function(event) {
+      updateRec();
+    };
+    recognition.onresult = function(event) {
+      var text = "";
+        for (var i = event.resultIndex; i < event.results.length; ++i) {
+          text += event.results[i][0].transcript;
+        }
+        setInput(text);
+      stopRecognition();
+    };
+    recognition.onend = function() {
+      stopRecognition();
+    };
+    recognition.lang = "en-US";
+    recognition.start();
+  }
+
+  function stopRecognition() {
+    if (recognition) {
+      recognition.stop();
+      recognition = null;
+    }
+    updateRec();
+  }
+  function switchRecognition() {
+    if (recognition) {
+      stopRecognition();
+    } else {
+      startRecognition();
+    }
+  }
+  function setInput(text) {
+    $("#input").val(text);
+    send();
+  }
+  function updateRec() {
+    $("#rec").backgroundColor(recognition ? colorchange() : changecolor() );
+  }
+  function colorchange() {
+    document.getElementById("rec").style.backgroundColor = "#fc6f6f";
+  }
+  function changecolor() {
+    document.getElementById("rec").style.backgroundColor = "#1985A1";
+  }
+  function send() {
+    var text = $("#input").val();
+    $.ajax({
+      type: "POST",
+      url: baseUrl + "query?v=20150910",
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      headers: {
+        "Authorization": "Bearer " + accessToken
+      },
+      data: JSON.stringify({ query: text, lang: "en", sessionId: "somerandomthing" }),
+      success: function(data) {
+        setResponse(JSON.stringify(data, undefined, 2));
+        console.log(data);
+        responsiveVoice.speak("," + data.result.fulfillment.speech);
+        let adrs = "";
+        if (data.result.actionIncomplete === false){
+          let tmp = '';
+          for (x in data.result.parameters){
+            if (data.result.parameters[x].length != 0){
+                if(x != 'city' && x != 'address' && x != 'state'){
+                  tmp +=  "&" + x.substring(0,2) + '=' + data.result.parameters[x];
+
+                }else if(x === "address"){
+                  adrs += data.result.parameters[x] + " ";
+                }else if(x === "city"){
+                  adrs += data.result.parameters[x] + " ";
+                }else if(x === "state"){
+                  adrs += data.result.parameters[x];
+                }
+            }
+          }
+
+
+          var address = adrs.replace(/ /g, '+');
+          const key= "AIzaSyAgcB5vtpwngFC9WQtyX7oDUtUNlR0hnQs";
+          const url= "https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key="+key;
+
+         jQuery.getJSON(url, function(info){
+             if (info.status === "ZERO_RESULTS"){
+                alert('We were unable to find any locations that match your search. Try another address or location?');
+              }else{
+                latitude = info.results[0].geometry.location.lat;
+                longitude = info.results[0].geometry.location.lng;
+                tmp = 'lat=' + latitude + '&long=' + longitude + tmp;
+                console.log(tmp);
+                Router.go('results', {}, {query:{params:tmp}});
+           }
+          });
+
+
+        }
+
+      },
+      error: function() {
+        setResponse("Internal Server Error");
+      }
+    });
+    setResponse("Loading...");
+  }
+  function setResponse(val) {
+    $("#response").text(val);
+  }
+</script>
+
 </template>
