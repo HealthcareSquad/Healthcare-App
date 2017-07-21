@@ -15,7 +15,7 @@ Template.addProfile.events({
     const insurance = instance.$('#insurance').val();
     const location = instance.$('#location').val();
     const prescription = instance.$('#prescription').val();
-    var fav = [];
+    const fav = [];
     console.log('adding'+name);
 
     instance.$('#name').val("");
@@ -23,9 +23,10 @@ Template.addProfile.events({
     instance.$('#location').val("");
     instance.$('#prescription').val("");
     var info = {name:name, insurance:insurance, location:location, prescription:prescription, favorites:fav, owner:Meteor.userId()};
-    
+
 
     Meteor.call('profiles.update',info);
+    console.log(Profiles.findOne({owner:Meteor.userId()}));
   }
 })
 

@@ -1,6 +1,3 @@
-
-// function initMap() {}
-
 Template.results.onCreated(function resultsCreated(){
     const input = Router.current().params.query.params;
     const key = '876a19607233e092fdc4a30a9c079614';
@@ -52,20 +49,33 @@ Template.results.onCreated(function resultsCreated(){
       txt = "";
       var markers = [];
       var infoWindows = [];
+
       for (x in data.data) {
-        var distances = [];
+        var xsave = 0;
+        var ysave = 0;
+        var finaldistance = 0;
+
         for (y in data.data[x].practices){
-          distances.push(data.data[x].practices[y].distance);
+          if(finaldistance===0){
+            xsave = x;
+            ysave = y;
+            finaldistance = data.data[x].practices[y].distance;
+          }else if(finaldistance > data.data[x].practices[y].distance){
+            xsave = x;
+            ysave = y;
+            finaldistance = data.data[x].practices[y].distance;
+          }
+
         }
-        var dist = Math.min.apply(Math, distances);
+
         txt += "<tr data-href=\'#docModal\' height=\'50\' class=\'text-center clickable-row\'\'><td class=\'text-left\'><a id=\'docLink\' data-uid=\'" + data.data[x].uid + "\'href=\'#docModal\' data-toggle=\'modal\'>" + data.data[x].profile.first_name + ' ' + data.data[x].profile.last_name;
         if (data.data[x].profile.title){
           txt += ', ' + data.data[x].profile.title;
         }
-        txt += "</a></td><td>" + dist.toString().substring(0,4);
-        txt += "</td><td><button class=\"btn btn-default btn-sm\">Add</button></td>" ;
+        txt += "</a></td><td>" + finaldistance.toString().substring(0,4);
+        txt += "</td><td><button class=\"btn btn-default btn-sm\" id=\"" + data.data[x].uid + "\" data-uid=\"" + data.data[x].uid + "\">Add</button></td>" ;
         txt += "</tr>";
-        var pos = new google.maps.LatLng(data.data[x].practices[0].lat,data.data[x].practices[0].lon);
+        var pos = new google.maps.LatLng(data.data[xsave].practices[ysave].lat,data.data[xsave].practices[ysave].lon);
         markers[x] = new google.maps.Marker({
           position: pos,
           map: map,
@@ -79,15 +89,27 @@ Template.results.onCreated(function resultsCreated(){
         markers[x].addListener('click',function(){
           infoWindows[this.id].open(map,markers[this.id])
         });
+
+      }
+      document.getElementById("results").innerHTML = txt;
+      for (x in data.data) {
+        document.getElementById(data.data[x].uid).style.backgroundColor = "#1985A1";
       }
 
 
-      // txt += "</tbody>";
-      document.getElementById("results").innerHTML = txt;
+
     });
   }
 });
-
+Template.results.events({
+  'click button': function clickclick(element){
+    uid = element.target.dataset.uid;
+    var profile = Profiles.findOne({owner:Meteor.userId()});
+    profile.favorites.push(uid);
+    document.getElementById(uid).style.backgroundColor = "#fc6f6f";
+    console.log(uid);
+  }
+})
 
 Template.results.events({
   'click #docLink':function createDocModal(doc){
@@ -192,25 +214,7 @@ Template.results.events({
         }
       });
 
-      // Chart.pluginService.register({
-      //   beforeDraw: function(chart) {
-      //     var width = chart.chart.width,
-      //         height = chart.chart.height,
-      //         ctx = chart.chart.ctx;
-      //
-      //     ctx.restore();
-      //     var fontSize = (height / 150).toFixed(2);
-      //     ctx.font = fontSize + "em sans-serif";
-      //     ctx.textBaseline = "middle";
-      //     concat = "$" + sum;
-      //     var text = concat,
-      //         textX = Math.round((width - ctx.measureText(text).width) / 2),
-      //         textY = (height / 2) + 16;
-      //
-      //     ctx.fillText(text, textX, textY);
-      //     ctx.save();
-      //   }
-      // });
+
     }else{
       document.getElementById("docPayments").innerHTML = "<p>Received $0 in payments from pharmaceutical companies in 2016.</p>";
     }

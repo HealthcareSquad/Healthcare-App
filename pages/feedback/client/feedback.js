@@ -1,5 +1,5 @@
 Template.feedback.onCreated(function feedbackCreated(){
-//  this.state = new ReactiveDict();
+
   Meteor.subscribe('feedback');
 });
 
