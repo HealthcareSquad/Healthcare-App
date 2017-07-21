@@ -2,7 +2,7 @@ Template.results.onCreated(function resultsCreated(){
     const input = Router.current().params.query.params;
     const key = '876a19607233e092fdc4a30a9c079614';
     inputArr = input.split('&');
-
+    var counter = parseInt(inputArr[2].replace('page=',''));
     let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + inputArr[0].replace('lat=','') + ',' + inputArr[1].replace('long=','') + ',5';
     for (x in inputArr){
       if (inputArr[x].substring(0,2) === 'in'){
@@ -15,7 +15,7 @@ Template.results.onCreated(function resultsCreated(){
         url += "&language=" + inputArr[x].replace('la=','');
       }
     }
-    url += '&skip=0&limit=50&sort=distance-asc&user_key=' + key;
+    url += '&skip=' + counter*50 + '&limit=50&sort=distance-asc&user_key=' + key;
 
     window.initMap = function(){
       // if (navigator.geolocation) {
@@ -97,11 +97,13 @@ Template.results.onCreated(function resultsCreated(){
       }
 
 
-    
+
       document.getElementById("results").innerHTML = txt;
       document.getElementById("mapWrapper").style.position = "fixed";
       document.getElementById("mapWrapper").style.top = "25%";
       document.getElementById("mapWrapper").style.left = "48%";
+      document.getElementById("urlImport").innerHTML = url;
+
 
     });
   }

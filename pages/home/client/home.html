@@ -133,7 +133,7 @@
             responsiveVoice.speak("When you are ready to return to the homepage, just let me know!");
             Router.go('commands');
           }
-          if (data.result.actionIncomplete === false){
+          if (data.result.action === "DocFinder.DocFinder-yes"){
             let tmp = '';
             for (x in data.result.parameters){
               if (data.result.parameters[x].length != 0){
@@ -161,7 +161,7 @@
                 }else{
                   latitude = info.results[0].geometry.location.lat;
                   longitude = info.results[0].geometry.location.lng;
-                  tmp = 'lat=' + latitude + '&long=' + longitude + tmp;
+                  tmp = 'lat=' + latitude + '&long=' + longitude + '&page=0' + tmp;
                   console.log(tmp);
                   Router.go('results', {}, {query:{params:tmp}});
              }
