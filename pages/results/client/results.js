@@ -1,9 +1,14 @@
 Template.results.onCreated(function resultsCreated(){
+    //Query is received as a string sent by the router and saved as 'input'. Key is BetterDoctor API key.
     const input = Router.current().params.query.params;
     const key = '876a19607233e092fdc4a30a9c079614';
+    //Split input by parameters.....
     inputArr = input.split('&');
+    //(in development) Keeps track of what page of results user is on
     var counter = parseInt(inputArr[2].replace('page=',''));
+    //Start of API call.......
     let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + inputArr[0].replace('lat=','') + ',' + inputArr[1].replace('long=','') + ',5';
+    //Parsing query sent by router and appending to API call.......
     for (x in inputArr){
       if (inputArr[x].substring(0,2) === 'in'){
         if (inputArr[x].replace('in=','') != "no-insurance"){
@@ -17,8 +22,9 @@ Template.results.onCreated(function resultsCreated(){
       // }
     }
     url += '&skip=' + counter*50 + '&limit=50&sort=distance-asc&user_key=' + key;
-
+    //Creates Google Map centered on user
     window.initMap = function(){
+      //Optional geolocation services.......
       // if (navigator.geolocation) {
       //   navigator.geolocation.getCurrentPosition(function (position) {
       //     var userLoc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)});
@@ -34,9 +40,10 @@ Template.results.onCreated(function resultsCreated(){
          map: map,
          icon:'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
          description:"You"
-       });
+    });
 
-
+    //This function retrieves JSON document returned by Better Doctor API and saves it as a document called 'data'.
+    //Constructs a table of results as well.
     jQuery.getJSON(url , function(data) {
       let txt = "<h2><em>I found " + data.meta.total + " results.";
       let speak = "Alright, I found " + data.meta.total + " doctors within five miles of your location that match your criteria,";
@@ -69,6 +76,7 @@ Template.results.onCreated(function resultsCreated(){
 
         }
 
+        //Doctor's Better Doctor UID is stored as a data attribute of the <a> wrapper around the doctor's name.
         txt += "<tr data-href=\'#docModal\' height=\'50\' class=\'text-center clickable-row\'\'><td class=\'text-left\'><a id=\'docLink\' data-uid=\'" + data.data[x].uid + "\'href=\'#docModal\' data-toggle=\'modal\'>" + data.data[x].profile.first_name + ' ' + data.data[x].profile.last_name;
         if (data.data[x].profile.title){
           txt += ', ' + data.data[x].profile.title;
@@ -76,29 +84,30 @@ Template.results.onCreated(function resultsCreated(){
         txt += "</a></td><td>" + finaldistance.toString().substring(0,4);
         txt += "</td><td><button class=\"btn btn-default btn-sm\" id=\"" + data.data[x].uid + "\" data-uid=\"" + data.data[x].uid + "\">Add</button></td>" ;
         txt += "</tr>";
+        //Each doctor has a pin added to the map at the nearest practice to the user.
         var pos = new google.maps.LatLng(data.data[xsave].practices[ysave].lat,data.data[xsave].practices[ysave].lon);
         markers[x] = new google.maps.Marker({
           position: pos,
           map: map,
           id:x
         });
-
-          infoWindows[x] = new google.maps.InfoWindow({
+          //The pin also links to the doctor's profile
+        infoWindows[x] = new google.maps.InfoWindow({
           content:"<a id=\'docLink\' data-uid=\'" + data.data[x].uid + "\'href=\'#docModal\' data-toggle=\'modal\'>" + data.data[x].profile.first_name + ' ' + data.data[x].profile.last_name + "</a>"
         });
-
         markers[x].addListener('click',function(){
           infoWindows[this.id].open(map,markers[this.id])
         });
-
       }
+      //String injection into the results div on the html page.....
       document.getElementById("results").innerHTML = txt;
       for (x in data.data) {
         document.getElementById(data.data[x].uid).style.backgroundColor = "#1985A1";
       }
 
 
-
+      //Map is positioned as a fixed div on the right side of screen. Had to fudge this one a lot to get it to work
+      //thanks to Google's weird API characteristics.....
       document.getElementById("results").innerHTML = txt;
       document.getElementById("mapWrapper").style.position = "fixed";
       document.getElementById("mapWrapper").style.top = "25%";
@@ -109,6 +118,8 @@ Template.results.onCreated(function resultsCreated(){
     });
   }
 });
+
+//Click event to add a doctor to user's favorites
 Template.results.events({
   'click button': function clickclick(element){
     uid = element.target.dataset.uid;
@@ -119,9 +130,13 @@ Template.results.events({
   }
 })
 
+//Click event to open a doctor's respective profile as a modal. Calls Better Doctor API and uses the content of the returned
+//JSON to fill out elements. Also calls OpenPaymentsData API to get info on 2016 big pharma payments to docs. A pie chart is created
+//to visualize these data.
 Template.results.events({
   'click #docLink':function createDocModal(doc){
     event.preventDefault();
+    //uid is gotten from the data attribute of the element clicked
     uid = doc.target.dataset.uid;
     jQuery.getJSON('https://api.betterdoctor.com/2016-03-01/doctors/' + uid + '?user_key=876a19607233e092fdc4a30a9c079614', function(data){
       document.getElementById("docModalName").innerHTML = "<p class=\"text-center\"><strong>" + data.data.profile.first_name + " " + data.data.profile.last_name + ", " + data.data.profile.title + "</strong></p>";

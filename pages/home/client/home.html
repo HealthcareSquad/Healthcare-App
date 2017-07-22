@@ -136,7 +136,7 @@
             responsiveVoice.speak("When you are ready to return to the homepage, just let me know!");
             Router.go('commands');
           }
-          if (data.result.contexts[0].name === "docfinder-followup" && data.result.action != "DocFinder.DocFinder-yes"){
+          if (data.result.contexts[0].name === "docfinder-followup" && data.result.action != "DocFinder.DocFinder-yes" && tmp == ''){
             for (x in data.result.parameters){
               if (data.result.parameters[x].length != 0){
                   if(x != 'city' && x != 'address' && x != 'state'){
