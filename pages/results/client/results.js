@@ -82,7 +82,7 @@ Template.results.onCreated(function resultsCreated(){
           txt += ', ' + data.data[x].profile.title;
         }
         txt += "</a></td><td>" + finaldistance.toString().substring(0,4);
-        txt += "</td><td><button class=\"btn btn-default btn-sm\" id=\"" + data.data[x].uid + "\" data-uid=\"" + data.data[x].uid + "\">Add</button></td>" ;
+        txt += "</td><td><button class=\"btn btn-default btn-sm\" id=\"" + data.data[x].uid + "\" data-uid=\"" + data.data[x].uid + "\"><i class=\"fa fa-star\" aria-hidden=\"true\"></i></button></td>" ;
         txt += "</tr>";
         //Each doctor has a pin added to the map at the nearest practice to the user.
         var pos = new google.maps.LatLng(data.data[xsave].practices[ysave].lat,data.data[xsave].practices[ysave].lon);
@@ -124,11 +124,16 @@ Template.results.events({
   'click button': function clickclick(element){
     uid = element.target.dataset.uid;
     var profile = Profiles.findOne({owner:Meteor.userId()});
+    console.log(profile);
     profile.favorites.push(uid);
     document.getElementById(uid).style.backgroundColor = "#fc6f6f";
     console.log(uid);
   }
-})
+});
+
+Template.results.onCreated(function() {
+  Meteor.subscribe('profiles');
+});
 
 //Click event to open a doctor's respective profile as a modal. Calls Better Doctor API and uses the content of the returned
 //JSON to fill out elements. Also calls OpenPaymentsData API to get info on 2016 big pharma payments to docs. A pie chart is created
