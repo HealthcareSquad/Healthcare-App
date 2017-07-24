@@ -62,8 +62,7 @@ Template.profiles.events({
   'click #login'(elt, instance){
     const username = instance.$('#username').val();
     const password = instance.$('#password').val();
-    console.log(username);
-
+    Meteor.loginWithPassword(username,password);
   }
 })
 
