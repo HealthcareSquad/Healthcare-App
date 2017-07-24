@@ -1,0 +1,50 @@
+<template name='create'>
+  {{#if currentUser}}
+  <div class="container" align="center">
+    {{> addProfile}}
+  </div>
+  {{else}}
+  <div class="container" align="center">
+  <br>
+  <br>
+  Username:<br>
+  <input type="text" id="username">
+  <br>
+  Password:<br>
+  <input type="password" id="password" >
+  <br>
+  Confirm password:<br>
+  <input type="password" id="confirm" >
+
+  <br><br>
+  <button id="createUser" class="btn btn-primary">
+    Submit
+  </button>
+</div>
+  {{/if}}
+</template>
+
+
+<template name = "addProfile">
+  <br><br><br>
+
+<div class="container" align="center">
+Full Name:<br>
+<input type="text" id="name" placeholder="My Name">
+<br>
+Insurance(s):<br>
+<input type="text" id="insurance" placeholder="My Insurance">
+<br>
+Location:<br>
+<input type="text" id="location" placeholder="My Location">
+<br>
+Prescription(s):<br>
+<input type="text" id="prescription" placeholder="My Prescriptions">
+
+<br><br>
+<button id="addProfile" class="btn btn-primary">
+  Submit
+</button>
+</div>
+
+</template>

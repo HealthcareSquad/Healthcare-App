@@ -19,14 +19,8 @@ shell-server@0.2.4            # Server-side component of the `meteor shell` comm
 
 iron:router
 twbs:bootstrap
-accounts-password@1.4.0
-accounts-ui@1.1.9
-jquery@1.11.10
+
+accounts-password
+jquery
 handlebars
-http@1.2.12
-accounts-facebook@1.2.1
-accounts-google@1.2.0
-accounts-github@1.3.0
-facebook-config-ui@1.0.0
-github-config-ui@1.0.0
-google-config-ui@1.0.0
+http

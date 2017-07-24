@@ -12,14 +12,24 @@
 </head>
 
 <template name="layout">
-  <div id="mySidenav" class="sidenav">
+  <div id="mySidenav" class="sidenav" align="center">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/feedback">Contact</a>
-    <a href="/resources">Resources</a>
+    {{#if currentUser}}
     <a href="/profiles">Profile</a>
+    {{else}}
+    <a href="/profiles">Login</a>
+    {{/if}}
     <a href="/commands">Help</a>
+    <br><br>
+    <a href="/about" style="font-size:20px">About</a>
+    <a href="/resources" style="font-size:20px">Resources</a>
+    <a href="/feedback" style="font-size:20px">Contact</a>
+
+    <br><br>
+    {{#if currentUser}}
+    <button class="btn btn-danger" id="logout">Logout</button>
+    {{/if}}
   </div>
   <div id="main">
     <span style="font-size:30px;cursor:pointer" id="openButton" onclick="openNav()">&#9776;</span>
@@ -42,10 +52,25 @@
       }
     }
 
-    function closeNav() {
-      document.getElementById("main").style.marginLeft = "0%";
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("openNav").style.display = "inline-block";
-    }
+
+
+
+function closeNav() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("openNav").style.display = "inline-block";
+}
+
+
+
+  // function openNav() {
+  //     document.getElementById("mySidenav").style.width = "250px";
+  //     document.getElementById("main").style.marginLeft = "250px";
+  // }
+  //
+  // function closeNav() {
+  //     document.getElementById("mySidenav").style.width = "0";
+  //     document.getElementById("main").style.marginLeft= "0";
+  // }
   </script>
 </template>
