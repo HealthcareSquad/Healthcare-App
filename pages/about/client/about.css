@@ -1,4 +1,4 @@
-#header {
+#aboutheader {
   font-size: 80px;
   text-align: center;
   color: #1985A1;
@@ -15,11 +15,38 @@ img {
   font-size: 15px;
 }
 
-#desc {
+#aboutdesc {
   font-size: 24px;
   color: #46494C;
   padding-left: 300px;
   padding-right: 300px;
   padding-bottom: 50px;
   line-height: inherit;
+}
+
+@media screen and (max-width: 800px) {
+  #aboutheader {
+    font-size: 50px;
+    text-align: center;
+    color: #1985A1;
+  }
+
+  img {
+    width: 300px;
+  }
+  .photo {
+    text-align: center;
+  }
+
+  #caption {
+    font-size: 10px;
+  }
+
+  #aboutdesc {
+    font-size: 12px;
+    color: #46494C;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+  }
 }

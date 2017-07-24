@@ -1,57 +1,63 @@
 <template name="home">
+  <div class="container">
+    <!-- HTML for the DocFinder Header -->
+    <div class="row">
+      <div class="col">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p id="DocFinder">DocFinder</p>
+      </div>
+    </div>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <p id="DocFinder">DocFinder</p>
-
+  <!-- Script for Opening Prompt and Cookies -->
   <script>
-
-  function createCookie() {
-        var date = new Date();
-        date.setTime(date.getTime()+(500*24*60*60*1000));
-        var expires = "; expires="+date.toGMTString();
-        document.cookie = "hasVisited="+1+expires+"; path=/";
-  }
-
-  function readCookie() {
-    var nameEQ = "hasVisited=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        if (!c.includes(nameEQ)){
-          responsiveVoice.speak("Welcome to DocFinder! If this is your first time here start by clicking the microphone and saying, help me find a doctor.");
-        }else{
-          createCookie();
-        }
+    function createCookie() {
+          var date = new Date();
+          date.setTime(date.getTime()+(500*24*60*60*1000));
+          var expires = "; expires="+date.toGMTString();
+          document.cookie = "hasVisited="+1+expires+"; path=/";
     }
-  }
-
-  readCookie();
-
-  // Opening prompter so people know what to say to the app when opening.
+    function readCookie() {
+      var nameEQ = "hasVisited=";
+      var ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+          var c = ca[i];
+          if (!c.includes(nameEQ)){
+            responsiveVoice.speak("Welcome to DocFinder! If this is your first time here start by clicking the microphone and saying, help me find a doctor.");
+          }else{
+            createCookie();
+          }
+      }
+    }
+    readCookie();
+    // Opening prompter so people know what to say to the app when opening.
   </script>
-  <br>
-  <br>
-  <br>
-  <div class="search">
-    <input id="input" type="text" hidden>
-    <button class="btn btn-default btn-circle btn-xl" id="rec">
-      <i class="fa fa-microphone "></i>
-      <!--<i class="fa fa-microphone fa-4x"></i>-->
-    </button>
-    <!-- <i class="material-icons" style="vertical-align: middle;font-size:43px;color:green" id="micButt">mic</i> -->
-  </div>
-  <div>
-    <br>
-    <br>
-    <p id="tagline">Find the doctor you need. Where you need. When you need.</p>
-  </div>
 
+  <!-- HTML for Microphone Button -->
+  <div class="row">
+    <div class="col">
+      <br>
+      <br>
+      <br>
+      <div class="search">
+        <input id="input" type="text" hidden>
+        <button class="btn btn-default btn-circle btn-xl" id="rec">
+          <i class="fa fa-microphone "></i>
+          <!--<i class="fa fa-microphone fa-4x"></i>-->
+        </button>
+        <!-- <i class="material-icons" style="vertical-align: middle;font-size:43px;color:green" id="micButt">mic</i> -->
+      </div>
+      <div>
+        <br>
+        <br>
+        <p id="tagline">Find the doctor you need. Where you need. When you need.</p>
+      </div>
+    </div>
+  </div>
 
 
   <script type="text/javascript">
@@ -181,4 +187,5 @@
       $("#response").text(val);
     }
   </script>
+  </div>
 </template>

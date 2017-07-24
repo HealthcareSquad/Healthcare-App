@@ -154,3 +154,12 @@ a {
     top:50px;
     position:fixed;
 }
+
+/* Phone Optimization */
+@media screen and (max-width: 800px) {
+
+  #main {
+    margin-left: inherit;
+    width: inherit;
+  }
+}
