@@ -1,16 +1,42 @@
 <template name = "profiles">
-<br>
-{{> loginButtons}}
-<h1>User Profile</h1>
 
 <br>
 <br>
-{{> addProfile}}
 <hr>
   {{#if currentUser}}
+  {{> addProfile}}
 
   {{else}}
-  <h1> You must log in to see the info!</h1>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="container">
+<div class="row" align="center">
+  <p id="DocFinder">DocFinder</p>
+</div>
+</div>
+  <br>
+  <br>
+  <br>
+  <div class="container">
+    <div class="row" align="center">
+  <input type="text" align="center" id="username" placeholder="Username">
+  <input type="password" align="center" id="password" placeholder="Password">
+</div>
+<br>
+<div class="row" align="center">
+  <button class="btn btn-default" id="login">Login</button>
+</div>
+  <br>
+<br>
+<div class="row" align="center">
+  <p>First time here? </p><button class="btn btn-success" id=createAccount>Create an account</button>
+</div>
+</div>
+
   {{/if}}
 </template>
 

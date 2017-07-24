@@ -28,7 +28,7 @@ Template.addProfile.events({
     Meteor.call('profiles.update',info);
     console.log(Profiles.findOne({owner:Meteor.userId()}));
   }
-})
+});
 
 Template.profiles.events({
   'click span'(element, instance) {
@@ -58,7 +58,13 @@ Template.profiles.events({
         Meteor.call('profiles.prescription.update', prescription)
         instance.$('#prescription').val("");
       }
-    }
+    },
+  'click #login'(elt, instance){
+    const username = instance.$('#username').val();
+    const password = instance.$('#password').val();
+    console.log(username);
+
+  }
 })
 
 // probably want an upsert method
