@@ -5,22 +5,18 @@ Template.create.onCreated(function() {
 
 Template.create.events({
   'click button'(elt,instance){
-    const name = instance.$('#name').val();
-    const insurance = instance.$('#insurance').val();
-    const location = instance.$('#location').val();
-    const prescription = instance.$('#prescription').val();
-    const fav = [];
-    console.log('adding'+name);
+    const username = instance.$('#username').val();
+    const password = instance.$('#password').val();
+    const confirm = instance.$('#confirm').val();
+    console.log('adding '+username);
 
-    instance.$('#name').val("");
-    instance.$('#insurance').val("");
-    instance.$('#location').val("");
-    instance.$('#prescription').val("");
-    var info = {name:name, insurance:insurance, location:location, prescription:prescription, favorites:fav, owner:Meteor.userId()};
+    instance.$('#username').val("");
+    instance.$('#password').val("");
+    instance.$('#confirm').val("");
 
 
-    Meteor.call('profiles.update',info);
-    console.log(Profiles.findOne({owner:Meteor.userId()}));
+  
+
   }
 });
 
