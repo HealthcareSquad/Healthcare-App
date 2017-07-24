@@ -12,14 +12,22 @@
 </head>
 
 <template name="layout">
-  <div id="mySidenav" class="sidenav">
+  <div id="mySidenav" class="sidenav" align="center">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/feedback">Contact</a>
-    <a href="/resources">Resources</a>
     <a href="/profiles">Profile</a>
     <a href="/commands">Help</a>
+    <br><br>
+    <a href="/resources" style="font-size:20px">Resources</a>
+    <a href="/about" style="font-size:20px">About</a>
+    <a href="/feedback" style="font-size:20px">Contact</a>
+
+    <br><br>
+    {{#if currentUser}}
+    <button class="btn btn-danger" id="logout">Logout</button>
+    {{else}}
+    <button class="btn btn-success" id="goLogin">Login</button>
+    {{/if}}
   </div>
 
   <div id="main">
@@ -41,6 +49,8 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("openNav").style.display = "inline-block";
 }
+
+
 
   // function openNav() {
   //     document.getElementById("mySidenav").style.width = "250px";
