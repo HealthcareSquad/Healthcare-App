@@ -4,19 +4,30 @@ Template.create.onCreated(function() {
 });
 
 Template.create.events({
-  'click button'(elt,instance){
+  'click #createUser'(elt,instance){
     const username = instance.$('#username').val();
     const password = instance.$('#password').val();
     const confirm = instance.$('#confirm').val();
-    console.log('adding '+username);
-
-    instance.$('#username').val("");
-    instance.$('#password').val("");
-    instance.$('#confirm').val("");
-
-
-  
-
+    if (password != confirm){
+      alert('The two password fields do not match. Please try again');
+    }else{
+      var newUserData = {
+        username:username,
+        password:password
+      };
+      Meteor.call('insertUser',newUserData);
+      Meteor.loginWithPassword(username,password);
+    }
+  },
+  'click #addProfile'(elt,instance){
+    var profile = {
+      name:instance.$('#name').val(),
+      insurance:instance.$('#insurance').val().split(','),
+      location:instance.$('#location').val(),
+      prescriptions:instance.$('#prescription').val().split(',')
+    };
+    Meteor.call('updateUser',profile);
+    Router.go('profiles');
   }
 });
 
