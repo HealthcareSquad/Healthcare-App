@@ -1,8 +1,21 @@
 /* CSS declarations go here */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  /*background-color: #1a40b5;*/
+}
+
+
 body {
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    transition: background-color .5s;
     background-color: #DCDCDD;
+}
+
+.home {
+  background-color: #1a40b5;
+  color: white;
 }
 
 #mySidenav a{
