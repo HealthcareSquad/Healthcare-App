@@ -99,16 +99,14 @@ Template.results.onCreated(function resultsCreated(){
           infoWindows[this.id].open(map,markers[this.id])
         });
       }
-      //String injection into the results div on the html page.....
-      document.getElementById("results").innerHTML = txt;
-      for (x in data.data) {
-        document.getElementById(data.data[x].uid).style.backgroundColor = "#1985A1";
-      }
 
 
       //Map is positioned as a fixed div on the right side of screen. Had to fudge this one a lot to get it to work
       //thanks to Google's weird API characteristics.....
       document.getElementById("results").innerHTML = txt;
+      for (x in data.data) {
+        document.getElementById(data.data[x].uid).style.backgroundColor = "#1985A1";
+      }
       document.getElementById("mapWrapper").style.position = "fixed";
       document.getElementById("mapWrapper").style.top = "25%";
       document.getElementById("mapWrapper").style.left = "48%";
@@ -121,19 +119,21 @@ Template.results.onCreated(function resultsCreated(){
 
 //Click event to add a doctor to user's favorites
 Template.results.events({
-  'click button': function clickclick(element){
+  'click button': function(element){
     uid = element.target.dataset.uid;
-    var profile = Profiles.findOne({owner:Meteor.userId()});
-    console.log(profile);
-    profile.favorites.push(uid);
-    document.getElementById(uid).style.backgroundColor = "#fc6f6f";
     console.log(uid);
+    document.getElementById(uid).style.backgroundColor = "#fc6f6f";
+    var list = Meteor.user().profile.favorites;
+    list.push(uid);
+    console.log(list);
+    Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.favorites": list}});
+    console.log(Meteor.user());
   }
 });
 
-Template.results.onCreated(function() {
-  Meteor.subscribe('profiles');
-});
+//Template.results.onCreated(function() {
+//  Meteor.subscribe('profiles');
+//});
 
 //Click event to open a doctor's respective profile as a modal. Calls Better Doctor API and uses the content of the returned
 //JSON to fill out elements. Also calls OpenPaymentsData API to get info on 2016 big pharma payments to docs. A pie chart is created
