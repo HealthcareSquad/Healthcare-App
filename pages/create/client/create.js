@@ -24,7 +24,8 @@ Template.create.events({
       name:instance.$('#name').val(),
       insurance:instance.$('#insurance').val().split(','),
       location:instance.$('#location').val(),
-      prescriptions:instance.$('#prescription').val().split(',')
+      prescriptions:instance.$('#prescription').val().split(','),
+      favorites:instance.$('#doctors').val().split(',')
     };
     Meteor.call('updateUser',profile);
     Router.go('profiles');

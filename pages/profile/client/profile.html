@@ -4,10 +4,18 @@
 <br>
 <hr>
   {{#if currentUser}}
-  <div class="container" align="center">
-  <p>Hello!</p>
-</div>
-
+    <div class="container" align="center" id="personal">
+      <h2>{{currentUser.profile.name}}, from {{currentUser.profile.location}}, insured by {{currentUser.profile.insurance}}.</h2>
+    </div>
+    <hr>
+    <div class="col-sm-6" id="prescrip">
+      <h2>Your Prescriptions</h2>
+      {{currentUser.profile.prescriptions}}
+    </div>
+    <div class="col-sm-6" id="favorite">
+      <h2>Favorite Doctors</h2>
+      {{currentUser.profile.favorites}}
+    </div>
   {{else}}
   <br>
   <br>

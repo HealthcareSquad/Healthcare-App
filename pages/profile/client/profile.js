@@ -1,8 +1,11 @@
+Template.profiles.onCreated(function(){
+  console.log(Meteor.user());
+
+}),
 Template.profiles.events({
   'click span'(element, instance) {
   console.log(this.profile._id);
   var feedID = this.profile._id;
-
   Meteor.call('profiles.remove',feedID);
 },
 
@@ -14,7 +17,5 @@ Template.profiles.events({
     Meteor.loginWithPassword(username,password);
 
   }
-
-
 
 });
