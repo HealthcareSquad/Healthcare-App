@@ -11,6 +11,73 @@
     <div class="col-sm-6" id="prescrip">
       <h2>Your Prescriptions</h2>
       {{currentUser.profile.prescriptions}}
+
+      <br>
+      <hr>
+      Look up information for medication you may be interested in. Learn about possible side effects and alternatives. Simply type in the medication name (generic or brand) to begin.
+      <h2>Drug Medication: </h2><input type="text" id="drug" placeholder="drug name">
+      <button onclick="myFunction()" >SUBMIT</button>
+      <br>
+      <br>
+      <section>
+
+      </section>
+      <hr>
+      DocFinder is not a liscensed professional. Please contact a professional for medical advice.
+      <script>
+      function myFunction() {
+        var section = document.querySelector('section');
+          var x = document.getElementById("drug").value;
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', 'https://api.iodine.com/drug/'+ x +'.json', false);
+          xhr.setRequestHeader('x-api-key', '5654b09181b031000100003050c82a1d684a4d02741758a45b062743');
+          xhr.send();
+
+          /*request.onload = function() {
+            var drugJSON = request.response;
+            showDrug(drugJSON);
+          }
+          */
+
+          var drug = JSON.parse(xhr.response);
+          console.log(drug);
+
+          var myH2 = document.createElement('h2');
+          myH2.textContent = drug.name.full;
+          var myArticle = document.createElement('article');
+          myArticle.appendChild(myH2);
+          var myPara1 = document.createElement('p');
+          myPara1.textContent = drug.basics.moa;
+          var myList = document.createElement('ul');
+          for (var j = 0; j < drug.pharmacistTips.length; j++) {
+            var listItem = document.createElement('li');
+            listItem.textContent = drug.pharmacistTips[j];
+            myList.appendChild(listItem);
+          }
+          var myList2 = document.createElement('ul');
+          for (var i = 0; i < drug.alternatives.length; i++) {
+            var listItem2 = document.createElement('li');
+            listItem2.textContent = drug.alternatives[i].name.full;
+            myList2.appendChild(listItem2);
+          }
+          var myPara2 = document.createElement('p');
+          myPara2.textContent = "Pharmacist Tips:"
+          var myPara3 = document.createElement('p');
+          myPara3.textContent = "Alternative Medications:"
+          myArticle.appendChild(myPara1);
+          myArticle.appendChild(myPara2);
+          myArticle.appendChild(myList);
+          myArticle.appendChild(myPara3);
+          myArticle.appendChild(myList2);
+
+          section.appendChild(myArticle);
+
+
+      }
+      </script>
+
+
+
     </div>
     <div class="col-sm-6" id="favorite">
       <h2>Favorite Doctors</h2>
