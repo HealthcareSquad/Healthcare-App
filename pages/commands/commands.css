@@ -1,18 +1,16 @@
 #commandheader {
-  font-size: 80px;
   text-align: center;
   color: #1985A1;
 }
 
 #commandtag {
-  font-size: 40px;
+  font-size: 30px;
   text-align: center;
   color: #46494C;
 }
 
 #commands {
   font-size: 24px;
-  text-align: center;
   color: #46494C;
 }
 
