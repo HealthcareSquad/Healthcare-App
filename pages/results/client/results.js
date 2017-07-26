@@ -1,4 +1,10 @@
 Template.results.onCreated(function resultsCreated(){
+    this.autorun(function () {
+      console.log(Meteor.user());
+
+    });
+
+
     //Query is received as a string sent by the router and saved as 'input'. Key is BetterDoctor API key.
     const input = Router.current().params.query.params;
     const key = '876a19607233e092fdc4a30a9c079614';
@@ -45,6 +51,7 @@ Template.results.onCreated(function resultsCreated(){
     //This function retrieves JSON document returned by Better Doctor API and saves it as a document called 'data'.
     //Constructs a table of results as well.
     jQuery.getJSON(url , function(data) {
+
       let txt = "<h2><em>I found " + data.meta.total + " results.";
       let speak = "Alright, I found " + data.meta.total + " doctors within five miles of your location that match your criteria,";
       if (data.meta.total > 50){
@@ -84,6 +91,7 @@ Template.results.onCreated(function resultsCreated(){
         txt += "</a></td><td>" + finaldistance.toString().substring(0,4);
         txt += "</td><td><button class=\"btn btn-default btn-sm\" id=\"" + data.data[x].uid + "\" data-uid=\"" + data.data[x].uid + "\"><i class=\"fa fa-star\" aria-hidden=\"true\"></i></button></td>" ;
         txt += "</tr>";
+        console.log(x.toString()+": "+data.data[x].uid);
         //Each doctor has a pin added to the map at the nearest practice to the user.
         var pos = new google.maps.LatLng(data.data[xsave].practices[ysave].lat,data.data[xsave].practices[ysave].lon);
         markers[x] = new google.maps.Marker({
@@ -117,23 +125,23 @@ Template.results.onCreated(function resultsCreated(){
   }
 });
 
+
+
 //Click event to add a doctor to user's favorites
 Template.results.events({
+
   'click button': function(element){
-    uid = element.target.dataset.uid;
+    //console.log($(element));
+    uid = element.currentTarget.dataset.uid;
     console.log(uid);
     document.getElementById(uid).style.backgroundColor = "#fc6f6f";
     var list = Meteor.user().profile.favorites;
     list.push(uid);
-    console.log(list);
     Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.favorites": list}});
     console.log(Meteor.user());
+
   }
 });
-
-//Template.results.onCreated(function() {
-//  Meteor.subscribe('profiles');
-//});
 
 //Click event to open a doctor's respective profile as a modal. Calls Better Doctor API and uses the content of the returned
 //JSON to fill out elements. Also calls OpenPaymentsData API to get info on 2016 big pharma payments to docs. A pie chart is created

@@ -1,7 +1,9 @@
 Template.profiles.onCreated(function(){
-  console.log(Meteor.user());
+  this.autorun(function () {
+    console.log(Meteor.user());
+  });
+});
 
-}),
 Template.profiles.events({
   'click span'(element, instance) {
   console.log(this.profile._id);
@@ -13,7 +15,6 @@ Template.profiles.events({
     const username = instance.$('#username').val();
     const password = instance.$('#password').val();
 
-    console.log(username);
     Meteor.loginWithPassword(username,password);
 
   }
