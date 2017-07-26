@@ -23,6 +23,14 @@
     // Opening prompter so people know what to say to the app when opening.
   </script>
 
+    </button>
+
+  </div>
+  <div>
+    <br>
+    <br>
+    <p id="tagline">Find the doctor you need. Where you need. When you need.</p>
+  </div>
 
   <!-- HTML for Microphone Button -->
   <div class="row">
@@ -117,7 +125,7 @@
         headers: {
           "Authorization": "Bearer " + accessToken
         },
-        data: JSON.stringify({ query: text, lang: "en", sessionId: "somerandomthing" }),
+        data: JSON.stringify({ query: text, lang: "en", sessionId: Meteor.userId() }),
         success: function(data) {
           setResponse(JSON.stringify(data, undefined, 2));
           console.log(data);
