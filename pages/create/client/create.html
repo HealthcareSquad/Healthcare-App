@@ -1,27 +1,126 @@
 <template name='create'>
+
+  <div class="col-sm-6" align="right" id="audioButton">
+  <input id="input" type="text" hidden>
+  <button class="btn btn-default btn-circle btn-large" id="rec">
+    <i class="fa fa-microphone "></i>
+
+  </button>
+</div>
+
   {{#if currentUser}}
+  <script>
+    if (Cookie.get('createdAccount') != 'true'){
+      responsiveVoice.speak('Great, now I just need you to fill out some information about you.');
+      Cookie.set('createdAccount','true');
+    }else{
+      responsiveVoice.speak('Make sure you fill out all fields before submitting edits to your profile!');
+    }
+  </script>
   <div class="container" align="center">
     {{> addProfile}}
   </div>
   {{else}}
-  <div class="container" align="center">
-  <br>
-  <br>
-  Username:<br>
-  <input type="text" id="username">
-  <br>
-  Password:<br>
-  <input type="password" id="password" >
-  <br>
-  Confirm password:<br>
-  <input type="password" id="confirm" >
-
-  <br><br>
-  <button id="createUser" class="btn btn-primary">
-    Submit
-  </button>
-</div>
+    {{> createUser}}
   {{/if}}
+
+
+  <script type="text/javascript">
+
+
+    document.getElementById("rec").style.backgroundColor = "#1985A1";
+    var latitude;
+    var longitude;
+    var accessToken = "f984d307361f4004ac180e3aeb02dd7d";
+    var baseUrl = "https://api.api.ai/v1/";
+    $(document).ready(function() {
+      $("#rec").click(function(event) {
+        switchRecognition();
+      });
+    });
+    var recognition;
+    function startRecognition() {
+      recognition = new webkitSpeechRecognition();
+      recognition.onstart = function(event) {
+        updateRec();
+      };
+      recognition.onresult = function(event) {
+        var text = "";
+          for (var i = event.resultIndex; i < event.results.length; ++i) {
+            text += event.results[i][0].transcript;
+          }
+          setInput(text);
+        stopRecognition();
+      };
+      recognition.onend = function() {
+        stopRecognition();
+      };
+      recognition.lang = "en-US";
+      recognition.start();
+    }
+
+    function stopRecognition() {
+      if (recognition) {
+        recognition.stop();
+        recognition = null;
+      }
+      updateRec();
+    }
+    function switchRecognition() {
+      if (recognition) {
+        stopRecognition();
+      } else {
+        startRecognition();
+      }
+    }
+    function setInput(text) {
+      $("#input").val(text);
+      send();
+    }
+    function updateRec() {
+      $("#rec").backgroundColor(recognition ? colorchange() : changecolor() );
+    }
+    function colorchange() {
+      document.getElementById("rec").style.backgroundColor = "#fc6f6f";
+    }
+    function changecolor() {
+      document.getElementById("rec").style.backgroundColor = "#1985A1";
+    }
+    function send() {
+      var text = $("#input").val();
+      $.ajax({
+        type: "POST",
+        url: baseUrl + "query?v=20150910",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {
+          "Authorization": "Bearer " + accessToken
+        },
+        data: JSON.stringify({ query: text, lang: "en", sessionId: sid }),
+        success: function(data) {
+          setResponse(JSON.stringify(data, undefined, 2));
+          console.log(data);
+          responsiveVoice.speak("," + data.result.fulfillment.speech);
+          if (data.result.metadata.intentName === 'Next'){
+            var url = document.getElementById("urlImport").innerHTML;
+            var spliturl = url.split('&skip=');
+            console.log(spliturl);
+            url.replace("")
+          }else if (data.result.metadata.intentName === 'Home'){
+            Router.go('home');
+          }
+        },
+        error: function() {
+          setResponse("Internal Server Error");
+        }
+      });
+      setResponse("Loading...");
+    }
+    function setResponse(val) {
+      $("#response").text(val);
+    }
+  </script>
+
 </template>
 
 
@@ -41,12 +140,36 @@ Location:<br>
 Prescription(s):<br>
 <input type="text" id="prescription" placeholder="My Prescriptions">
 <br>
-Preferred Doctor(s):<br>
-<input type="text" id="doctors" placeholder="My Doctors">
-<br><br>
+<br>
 <button id="addProfile" class="btn btn-primary">
   Submit
 </button>
 </div>
 
+</template>
+
+<template name="createUser">
+  <script>
+  if (Cookie.get('passwordChosen') != 'true'){
+    responsiveVoice.speak('Let\'s start by having you enter the username and password you wish to have.');
+    Cookie.set('passwordChosen','true');
+  }
+  </script>
+  <div class="container" align="center">
+  <br>
+  <br>
+  Username:<br>
+  <input type="text" id="username">
+  <br>
+  Password:<br>
+  <input type="password" id="password" >
+  <br>
+  Confirm password:<br>
+  <input type="password" id="confirm" >
+
+  <br><br>
+  <button id="createUser" class="btn btn-primary">
+    Submit
+  </button>
+</div>
 </template>

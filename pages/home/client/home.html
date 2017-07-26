@@ -7,8 +7,6 @@
         <br>
         <br>
         <br>
-        <br>
-        <br>
         <p id="DocFinder">DocFinder</p>
       </div>
     </div>
@@ -18,13 +16,20 @@
 
   if(Cookie.get('hasVisited') === null){
     Cookie.set('hasVisited','true');
-    responsiveVoice.speak("Welcome to DocFinder! If this is your first time here start by clicking the microphone and saying, help me find a doctor.");
+    responsiveVoice.speak("Welcome to DocFinder! You can start by either saying create an account or help me find a doctor.");
   }
+
     // Opening prompter so people know what to say to the app when opening.
   </script>
+  {{#if currentUser}}
+  <script>
+    responsiveVoice.speak('Welcome back, ' + Meteor.user().profile.name.split(' ')[0]);
+  </script>
+  {{/if}}
 
 
   <div>
+    <br>
     <br>
     <br>
     <br>
@@ -55,6 +60,14 @@
 
 
   <script type="text/javascript">
+  var sid = '';
+  if (Meteor.userId()){
+    sid = Meteor.userId();
+  }else{
+    sid = Math.floor(Math.random() * 2000).toString();
+  }
+
+
     document.getElementById("rec").style.backgroundColor = "#1985A1";
     var latitude;
     var longitude;
@@ -116,6 +129,7 @@
     }
     function send() {
       var text = $("#input").val();
+
       $.ajax({
         type: "POST",
         url: baseUrl + "query?v=20150910",
@@ -124,12 +138,15 @@
         headers: {
           "Authorization": "Bearer " + accessToken
         },
-        data: JSON.stringify({ query: text, lang: "en", sessionId: Meteor.userId() }),
+
+
+        data: JSON.stringify({ query: text, lang: "en", sessionId: sid }),
+
         success: function(data) {
           setResponse(JSON.stringify(data, undefined, 2));
           console.log(data);
 
-          responsiveVoice.speak("," + data.result.fulfillment.speech);
+          responsiveVoice.speak(data.result.fulfillment.speech);
           let adrs = "";
 
           if (data.result.resolvedQuery === "help"){
