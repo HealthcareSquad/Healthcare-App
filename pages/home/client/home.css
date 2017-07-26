@@ -48,3 +48,22 @@ button#find {
   font-size: 30px;
   color: #46494C;
 }
+
+
+/* Phone Optimization */
+@media screen and (max-width: 800px) {
+  #DocFinder {
+    font-size: 70px;
+    font: Arial;
+    text-align: center;
+    color: #1985A1;
+  }
+
+  #tagline {
+    font: Arial;
+    text-align: center;
+    font-size: 30px;
+    color: #46494C;
+    line-height: 1em;
+  }
+}

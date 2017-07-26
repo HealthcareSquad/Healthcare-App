@@ -5,4 +5,5 @@ Template.layout.events({
   'click #goLogin'(el,instance){
     Router.go('profiles');
   }
+
 });

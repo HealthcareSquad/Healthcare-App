@@ -31,20 +31,29 @@
     <button class="btn btn-danger" id="logout">Logout</button>
     {{/if}}
   </div>
-
   <div id="main">
     <span style="font-size:30px;cursor:pointer" id="openButton" onclick="openNav()">&#9776;</span>
     {{>yield}}
   </div>
 
+  <!-- Code for the responsive sidebar -->
   <script>
+    function openNav() {
+      if ($(window).width() < 800) {
+        document.getElementById("main").style.marginLeft = "0%";
+        document.getElementById("mySidenav").style.width = "100%";
+        document.getElementById("mySidenav").style.display = "block";
+        document.getElementById("openNav").style.display = 'none';
+      } else {
+        document.getElementById("main").style.marginLeft = "25%";
+        document.getElementById("mySidenav").style.width = "25%";
+        document.getElementById("mySidenav").style.display = "block";
+        document.getElementById("openNav").style.display = 'none';
+      }
+    }
 
-function openNav() {
-  document.getElementById("main").style.marginLeft = "25%";
-  document.getElementById("mySidenav").style.width = "25%";
-  document.getElementById("mySidenav").style.display = "block";
-  document.getElementById("openNav").style.display = 'none';
-}
+
+
 
 function closeNav() {
   document.getElementById("main").style.marginLeft = "0%";
@@ -64,5 +73,4 @@ function closeNav() {
   //     document.getElementById("main").style.marginLeft= "0";
   // }
   </script>
-  <!-- {{>yield}} -->
 </template>

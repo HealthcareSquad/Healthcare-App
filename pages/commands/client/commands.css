@@ -1,25 +1,32 @@
-#header {
-  font-size: 80px;
+#commandheader {
   text-align: center;
   color: #1985A1;
 }
 
-#desc {
+#commandtag {
   font-size: 30px;
-  color: #46494C;
-  padding-left: 300px;
-  padding-right: 300px;
-  padding-bottom: 50px;
-  line-height: inherit;
   text-align: center;
+  color: #46494C;
 }
-/*
-ul {
-  font-size: 30px;
+
+#commands {
+  font-size: 24px;
   color: #46494C;
-  padding-left: 300px;
-  padding-right: 300px;
-  padding-bottom: 50px;
-  line-height: inherit;
-  text-align: center;
-}*/
+}
+
+@media screen and (max-width: 800px) {
+  #commandheader {
+    font-size: 20px;
+    line-height: normal;
+  }
+
+  #commandtag {
+    font-size: 16px;
+    line-height: normal;
+  }
+
+  #commands {
+    font-size: 12px;
+    line-height: normal;
+  }
+}

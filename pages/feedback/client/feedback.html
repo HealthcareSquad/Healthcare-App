@@ -1,40 +1,42 @@
 <template name="feedback">
   <div class="container">
+
   <div class="feedback">
-  
+
     <h1>Contact Us</h1>
     <h2>Leave Feedback Below!</h2>
     <br>
-    <form>
-      <input type="text" id="name" placeholder="First and Last Name">
-      <br>
-      <br>
-      <textarea id="feedbackfield" rows="10" cols="50" placeholder="Enter feedback here!"></textarea>
-      <br>
-      <button type="button" class="btn btn-primary btn-group-lg">Submit</button>
-    </form>
-    <hr>
-    <div class="feedbackdatabase">
-      <h2>Our Feedback List</h2><br>
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr>
-            <td>Name</td>
-            <td>Feedback</td>
-          </tr>
-        </thead>
-        <tbody>
-        {{#each f in feedbacklist}}
-
-          {{> feedbackrow feed = f}}
-
-        {{/each}}
-      </tbody>
-      </table>
+    
+      <form>
+        <input type="text" id="name" placeholder="First and Last Name">
+        <br>
+        <br>
+        <textarea id="feedbackfield" rows="10" cols="50" placeholder="Enter feedback here!"></textarea>
+        <br>
+        <button type="button" class="btn btn-primary btn-group-lg">Submit</button>
+      </form>
       <hr>
+      <div class="feedbackdatabase">
+        <h2>Our Feedback List</h2><br>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <td>Name</td>
+              <td>Feedback</td>
+            </tr>
+          </thead>
+          <tbody>
+          {{#each f in feedbacklist}}
+
+            {{> feedbackrow feed = f}}
+
+          {{/each}}
+        </tbody>
+        </table>
+        <hr>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <template name="feedbackrow">
