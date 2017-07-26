@@ -1,0 +1,14 @@
+/* Phone Optimization */
+@media screen and (max-width: 800px) {
+  #map {
+    visibility: hidden;
+  }
+
+  div#resultsTop.container {
+    height: 10%;
+  }
+
+  a#docLink {
+    font-size: 18px;
+  }
+}
