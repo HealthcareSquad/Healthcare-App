@@ -1,4 +1,10 @@
+var current;
 Template.results.onCreated(function resultsCreated(){
+    this.autorun(function () {
+      console.log(Meteor.user());
+      current = Meteor.user();
+    });
+
     //Query is received as a string sent by the router and saved as 'input'. Key is BetterDoctor API key.
     const input = Router.current().params.query.params;
     const key = '876a19607233e092fdc4a30a9c079614';
@@ -84,6 +90,7 @@ Template.results.onCreated(function resultsCreated(){
         txt += "</a></td><td>" + finaldistance.toString().substring(0,4);
         txt += "</td><td><button class=\"btn btn-default btn-sm\" id=\"" + data.data[x].uid + "\" data-uid=\"" + data.data[x].uid + "\"><i class=\"fa fa-star\" aria-hidden=\"true\"></i></button></td>" ;
         txt += "</tr>";
+        console.log(x.toString()+": "+data.data[x].uid);
         //Each doctor has a pin added to the map at the nearest practice to the user.
         var pos = new google.maps.LatLng(data.data[xsave].practices[ysave].lat,data.data[xsave].practices[ysave].lon);
         markers[x] = new google.maps.Marker({
@@ -120,14 +127,14 @@ Template.results.onCreated(function resultsCreated(){
 //Click event to add a doctor to user's favorites
 Template.results.events({
   'click button': function(element){
-    uid = element.target.dataset.uid;
+    uid = element.attr("data-uid");
     console.log(uid);
     document.getElementById(uid).style.backgroundColor = "#fc6f6f";
     var list = Meteor.user().profile.favorites;
     list.push(uid);
-    console.log(list);
     Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.favorites": list}});
     console.log(Meteor.user());
+
   }
 });
 
