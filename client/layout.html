@@ -14,17 +14,17 @@
 <template name="layout">
   <div id="mySidenav" class="sidenav" align="center">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="/">Home</a>
+    <a href="/" onclick="closeNav()">Home</a>
     {{#if currentUser}}
-    <a href="/profiles">Profile</a>
+    <a href="/profiles" onclick="closeNav()">Profile</a>
     {{else}}
-    <a href="/profiles">Login</a>
+    <a href="/profiles" onclick="closeNav()">Login</a>
     {{/if}}
-    <a href="/commands">Help</a>
+    <a href="/commands" onclick="closeNav()">Help</a>
     <br><br>
-    <a href="/about" style="font-size:20px">About</a>
-    <a href="/resources" style="font-size:20px">Resources</a>
-    <a href="/feedback" style="font-size:20px">Contact</a>
+    <a href="/about" style="font-size:20px" onclick="closeNav()">About</a>
+    <a href="/resources" style="font-size:20px" onclick="closeNav()">Resources</a>
+    <a href="/feedback" style="font-size:20px" onclick="closeNav()">Contact</a>
 
     <br><br>
     {{#if currentUser}}

@@ -26,3 +26,23 @@ a {
   color: #1985A1;
   line-height: .7em;
 }
+
+/* Phone Optimization */
+@media screen and (max-width: 800px) {
+  #header {
+    font-size: 70px;
+  }
+
+  #head2 {
+    font-size: 30px;
+  }
+
+  .reflink {
+    font-size: 20px;
+  }
+
+  .thanks {
+    font-size: 20px;
+    line-height: .2em;
+  }
+}
