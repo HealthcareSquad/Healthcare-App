@@ -1,4 +1,6 @@
 /* Phone Optimization */
 @media screen and (max-width: 800px) {
-
+  #contactHeader {
+    padding-top: 30px;
+  }
 }
