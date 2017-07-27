@@ -140,7 +140,19 @@ Template.results.events({
     Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.favorites": list}});
     console.log(Meteor.user());
 
+  },
+  /*'click delete-button': function(element){
+    //console.log($(element));
+    uid = element.currentTarget.dataset.uid;
+    console.log(uid);
+    document.getElementById(uid).style.backgroundColor = "#fc6f6f";
+    var list = Meteor.user().profile.favorites;
+    list.pop(uid);
+    Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.favorites": list}});
+    console.log(Meteor.user());
+
   }
+  */
 });
 
 //Click event to open a doctor's respective profile as a modal. Calls Better Doctor API and uses the content of the returned

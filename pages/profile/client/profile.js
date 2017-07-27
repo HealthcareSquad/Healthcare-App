@@ -1,3 +1,7 @@
+Template.profiles.helpers({
+  profilelist() {return Meteor.user().profile.favorites},
+})
+
 Template.profiles.onCreated(function(){
   this.autorun(function () {
     console.log(Meteor.user());
