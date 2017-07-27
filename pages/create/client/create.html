@@ -151,15 +151,17 @@ Prescription(s):<br>
 <template name="createUser">
   <script>
   if (Cookie.get('passwordChosen') != 'true'){
-    responsiveVoice.speak('Let\'s start by having you enter the username and password you wish to have.');
+    responsiveVoice.speak('Please enter the username and password you wish to have.');
     Cookie.set('passwordChosen','true');
   }
   </script>
   <div class="container" align="center">
   <br>
   <br>
-  Username:<br>
-  <input type="text" id="username">
+  Username:
+  <br>
+  <input type="text" id="username" >
+
   <br>
   Password:<br>
   <input type="password" id="password" >

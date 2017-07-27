@@ -91,7 +91,6 @@ Template.results.onCreated(function resultsCreated(){
         txt += "</a></td><td>" + finaldistance.toString().substring(0,4);
         txt += "</td><td><button class=\"btn btn-default btn-sm\" id=\"" + data.data[x].uid + "\" data-uid=\"" + data.data[x].uid + "\"><i class=\"fa fa-star\" aria-hidden=\"true\"></i></button></td>" ;
         txt += "</tr>";
-        console.log(x.toString()+": "+data.data[x].uid);
         //Each doctor has a pin added to the map at the nearest practice to the user.
         var pos = new google.maps.LatLng(data.data[xsave].practices[ysave].lat,data.data[xsave].practices[ysave].lon);
         markers[x] = new google.maps.Marker({
@@ -113,7 +112,16 @@ Template.results.onCreated(function resultsCreated(){
       //thanks to Google's weird API characteristics.....
       document.getElementById("results").innerHTML = txt;
       for (x in data.data) {
+        if (Meteor.user()){
+          if (Meteor.user().profile.favorites.includes(data.data[x].uid)){
+            document.getElementById(data.data[x].uid).style.backgroundColor = "#fc6f6f";
+          }else{
+            document.getElementById(data.data[x].uid).style.backgroundColor = "#1985A1";
+        }
+      }else{
         document.getElementById(data.data[x].uid).style.backgroundColor = "#1985A1";
+      }
+
       }
       document.getElementById("mapWrapper").style.position = "fixed";
       document.getElementById("mapWrapper").style.top = "25%";
@@ -131,15 +139,23 @@ Template.results.onCreated(function resultsCreated(){
 Template.results.events({
 
   'click button': function(element){
-    //console.log($(element));
-    uid = element.currentTarget.dataset.uid;
-    console.log(uid);
-    document.getElementById(uid).style.backgroundColor = "#fc6f6f";
-    var list = Meteor.user().profile.favorites;
-    list.push(uid);
-    Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.favorites": list}});
-    console.log(Meteor.user());
-
+    if (Meteor.user()){
+      uid = element.currentTarget.dataset.uid;
+      var list = Meteor.user().profile.favorites;
+      if (list.includes(uid)){
+        document.getElementById(uid).style.backgroundColor = "#1985A1";
+        var index = list.indexOf(uid);
+        if (index > -1){
+          list.splice(index,1);
+        }
+      }else{
+        document.getElementById(uid).style.backgroundColor = "#fc6f6f";
+        list.push(uid);
+      }
+      Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.favorites": list}});
+    }else{
+      alert('You cannot add favorites unless you are logged in!');
+    }
   }
 });
 
@@ -199,7 +215,6 @@ Template.results.events({
       jQuery.getJSON('https://openpaymentsdata.cms.gov/resource/vq63-hu5i.json?physician_first_name=' + data.data.profile.first_name.toUpperCase() + '&physician_last_name=' + data.data.profile.last_name.toUpperCase() + '&recipient_state=' + data.data.practices[0].visit_address.state, function(payments){
         jQuery('#docPayments').empty();
         document.getElementById("docPayments").innerHTML = "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js\"></script><canvas id=\"myChart\"></canvas>";
-        console.log(payments);
 
         var ctx = document.getElementById('myChart').getContext('2d');
         var payees = [];

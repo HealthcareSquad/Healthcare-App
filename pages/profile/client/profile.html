@@ -205,42 +205,8 @@
           if (data.result.resolvedQuery === "help"){
             responsiveVoice.speak("When you are ready to return to the homepage, just let me know!");
             Router.go('commands');
-          }
-          if (data.result.contexts[0].name === "docfinder-followup" && data.result.action != "DocFinder.DocFinder-yes" && tmp == ''){
-            for (x in data.result.parameters){
-              if (data.result.parameters[x].length != 0){
-                  if(x != 'city' && x != 'address' && x != 'state'){
-                    tmp +=  "&" + x.substring(0,2) + '=' + data.result.parameters[x];
-
-                  }else if(x === "address"){
-                    adrs += data.result.parameters[x] + " ";
-                  }else if(x === "city"){
-                    adrs += data.result.parameters[x] + " ";
-                  }else if(x === "state"){
-                    adrs += data.result.parameters[x];
-                  }
-              }
-            }
-
-
-            var address = adrs.replace(/ /g, '+');
-            const key= "AIzaSyAgcB5vtpwngFC9WQtyX7oDUtUNlR0hnQs";
-            const url= "https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key="+key;
-
-           jQuery.getJSON(url, function(info){
-               if (info.status === "ZERO_RESULTS"){
-                  alert('We were unable to find any locations that match your search. Try another address or location?');
-                }else{
-                  latitude = info.results[0].geometry.location.lat;
-                  longitude = info.results[0].geometry.location.lng;
-                  console.log(tmp);
-                  tmp = 'lat=' + latitude + '&long=' + longitude + '&page=0' + tmp;
-                  console.log(tmp);
-             }
-            });
-          }
-          if (data.result.action === "DocFinder.DocFinder-yes"){
-            Router.go('results', {}, {query:{params:tmp}});
+          }else if (data.result.metadata.intentName === 'Home'){
+            Router.go('home');
           }
 
         },

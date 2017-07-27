@@ -184,6 +184,9 @@
           if (data.result.action === "DocFinder.DocFinder-yes"){
             Router.go('results', {}, {query:{params:tmp}});
           }
+          if (data.result.action === "make-profile"){
+            Router.go('create');
+          }
 
         },
         error: function() {
