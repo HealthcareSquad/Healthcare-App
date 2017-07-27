@@ -89,7 +89,12 @@
     </div>
     <div class="col-sm-6" id="favorite">
       <h2>Favorite Doctors</h2>
-      {{currentUser.profile.favorites}}
+      <ul>
+      {{#each currentUser.profile.favorites}}
+        <li>{{this}}</li>
+
+      {{/each}}
+    </ul>
     </div>
   {{else}}
   <br>

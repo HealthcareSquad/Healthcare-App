@@ -157,6 +157,7 @@ Template.results.events({
       alert('You cannot add favorites unless you are logged in!');
     }
   }
+  
 });
 
 //Click event to open a doctor's respective profile as a modal. Calls Better Doctor API and uses the content of the returned
