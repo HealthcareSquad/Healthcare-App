@@ -1,12 +1,31 @@
 Template.profiles.helpers({
-  profilelist() {return Meteor.user().profile.favorites},
-})
+  'doctornames': function(){
+      let nameList = [];
+      var idList;
+      waitForElement();
+      function waitForElement(){
+        if(typeof Meteor.user() !== "undefined"){
+          idList = Meteor.user().profile.favorites;
+        }
+        else{
+          setTimeout(waitForElement, 250);
+        }
+      }
+      for (x in idList) {
+        nameList.push(idList[x][1]);
+      }
+      console.log(nameList);
+      return nameList;
+  }
+});
+
 
 Template.profiles.onCreated(function(){
   this.autorun(function () {
     console.log(Meteor.user());
   });
 });
+
 
 Template.profiles.events({
   'click span'(element, instance) {

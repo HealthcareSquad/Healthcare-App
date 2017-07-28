@@ -8,7 +8,6 @@
   </button>
   </div>
 
-
 <br>
 <br>
   {{#if currentUser}}
@@ -91,8 +90,7 @@
       <h2>Favorite Doctors</h2>
       <ul>
       {{#each currentUser.profile.favorites}}
-        <li>{{this}}</li>
-
+        <li>{{this.[1]}}</li>
       {{/each}}
     </ul>
     </div>

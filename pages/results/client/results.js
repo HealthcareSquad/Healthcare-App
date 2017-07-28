@@ -88,8 +88,9 @@ Template.results.onCreated(function resultsCreated(){
         if (data.data[x].profile.title){
           txt += ', ' + data.data[x].profile.title;
         }
+        var currentName = data.data[x].profile.first_name + " " + data.data[x].profile.last_name + ", " + data.data[x].profile.title;
         txt += "</a></td><td>" + finaldistance.toString().substring(0,4);
-        txt += "</td><td><button class=\"btn btn-default btn-sm\" id=\"" + data.data[x].uid + "\" data-uid=\"" + data.data[x].uid + "\"><i class=\"fa fa-star\" aria-hidden=\"true\"></i></button></td>" ;
+        txt += "</td><td><button class=\"btn btn-default btn-sm\" id=\"" + data.data[x].uid + "\" data-uid=\"" + data.data[x].uid + "\" + data-name=\"" + currentName + "\"><i class=\"fa fa-star\" aria-hidden=\"true\"></i></button></td>" ;
         txt += "</tr>";
         //Each doctor has a pin added to the map at the nearest practice to the user.
         var pos = new google.maps.LatLng(data.data[xsave].practices[ysave].lat,data.data[xsave].practices[ysave].lon);
@@ -141,23 +142,25 @@ Template.results.events({
   'click button': function(element){
     if (Meteor.user()){
       uid = element.currentTarget.dataset.uid;
+      name = element.currentTarget.dataset.name;
+      doctor = [uid, name];
       var list = Meteor.user().profile.favorites;
-      if (list.includes(uid)){
+      if (list.includes(doctor)){
         document.getElementById(uid).style.backgroundColor = "#1985A1";
-        var index = list.indexOf(uid);
+        var index = list.indexOf(doctor);
         if (index > -1){
           list.splice(index,1);
         }
       }else{
         document.getElementById(uid).style.backgroundColor = "#fc6f6f";
-        list.push(uid);
+        list.push(doctor);
       }
       Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.favorites": list}});
     }else{
       alert('You cannot add favorites unless you are logged in!');
     }
   }
-  
+
 });
 
 //Click event to open a doctor's respective profile as a modal. Calls Better Doctor API and uses the content of the returned
