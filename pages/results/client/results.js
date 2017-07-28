@@ -154,6 +154,8 @@ Template.results.events({
       }else{
         document.getElementById(uid).style.backgroundColor = "#fc6f6f";
         list.push(doctor);
+        console.log(doctor);
+        console.log(Meteor.user());
       }
       Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.favorites": list}});
     }else{
