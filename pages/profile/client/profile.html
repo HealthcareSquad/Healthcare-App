@@ -90,7 +90,7 @@
       <h2>Favorite Doctors</h2>
       <ul>
       {{#each currentUser.profile.favorites}}
-        <li>{{this.name}}</li>
+        <li><a id='docLink' data-uid={{this.uid}} href='#docModal' data-toggle='modal'>{{this.name}}</a></li>
       {{/each}}
     </ul>
     </div>
@@ -223,4 +223,59 @@
       $("#response").text(val);
     }
   </script>
+
+
+  <div class="modal fade" id="docModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="row" id="docModalName">
+          </div>
+          <div class="row" id="specInfo">
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-2" id="profImage">
+              </div>
+              <div class="col-xs-4" id="docBio">
+              </div>
+            </div>
+          </div>
+            <hr>
+            <div class="container">
+          <div class="row">
+              <div class="col-xs-2" id="langSpoken">
+              </div>
+              <div class="col-xs-4" id="docLicenses">
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="container">
+          <div class="row">
+            <div class="col-xs-3" id="docAddresses">
+            </div>
+            <div class="col-xs-3" id="docInsurances">
+            </div>
+          </div>
+      </div>
+      <hr>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 center" id="docPayments">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>

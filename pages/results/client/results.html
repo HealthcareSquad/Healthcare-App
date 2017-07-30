@@ -187,12 +187,12 @@
           Router.go('home');
         }
         if (data.result.action === "DocFinder.DocFinder-update"){
-          var hasSeen = [];
+          // var hasSeen = [];
           for (x in data.result.contexts[0].parameters){
             if (data.result.contexts[0].parameters[x].length != 0){
-              if (!hasSeen.includes(x.substring(0,2)) && x != 'undefined'){
-                console.log('Have not seen before');
-                hasSeen.push(x.substring(0,2));
+              // if (!hasSeen.includes(x.substring(0,2)) && x != 'undefined'){
+                // console.log('Have not seen before');
+                // hasSeen.push(x.substring(0,2));
                 if(x != 'city' && x != 'address' && x != 'state'){
                   tmp +=  "&" + x.substring(0,2) + '=' + data.result.contexts[0].parameters[x];
 
@@ -203,7 +203,7 @@
                 }else if(x === "state"){
                   adrs += data.result.parameters[x];
                 }
-            }
+            // }
           }
           }
 
