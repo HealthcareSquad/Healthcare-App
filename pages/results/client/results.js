@@ -90,7 +90,7 @@ Template.results.onCreated(function resultsCreated(){
         }
         var currentName = data.data[x].profile.first_name + " " + data.data[x].profile.last_name + ", " + data.data[x].profile.title;
         txt += "</a></td><td>" + finaldistance.toString().substring(0,4);
-        txt += "</td><td><button class=\"btn btn-default btn-sm\" id=\"" + data.data[x].uid + "\" data-uid=\"" + data.data[x].uid + "\" + data-name=\"" + currentName + "\"><i class=\"fa fa-star\" aria-hidden=\"true\"></i></button></td>" ;
+        txt += "</td><td><button class=\"btn btn-default btn-sm\" name=\"docFav\" id=\"" + data.data[x].uid + "\" data-uid=\"" + data.data[x].uid + "\" + data-name=\"" + currentName + "\"><i class=\"fa fa-star\" aria-hidden=\"true\"></i></button></td>" ;
         txt += "</tr>";
         //Each doctor has a pin added to the map at the nearest practice to the user.
         var pos = new google.maps.LatLng(data.data[xsave].practices[ysave].lat,data.data[xsave].practices[ysave].lon);
@@ -114,15 +114,15 @@ Template.results.onCreated(function resultsCreated(){
       document.getElementById("results").innerHTML = txt;
       for (x in data.data) {
         if (Meteor.user()){
-          if (Meteor.user().profile.favorites.includes(data.data[x].uid)){
-            document.getElementById(data.data[x].uid).style.backgroundColor = "#fc6f6f";
-          }else{
-            document.getElementById(data.data[x].uid).style.backgroundColor = "#1985A1";
+          document.getElementById(data.data[x].uid).style.backgroundColor = "#1985A1";
+          for (y in Meteor.user().profile.favorites){
+            if (Meteor.user().profile.favorites[y].uid === data.data[x].uid) {
+              document.getElementById(data.data[x].uid).style.backgroundColor = "#fc6f6f";
+            }
+          }
+        }else{
+          document.getElementById(data.data[x].uid).style.backgroundColor = "#1985A1";
         }
-      }else{
-        document.getElementById(data.data[x].uid).style.backgroundColor = "#1985A1";
-      }
-
       }
       document.getElementById("mapWrapper").style.position = "fixed";
       document.getElementById("mapWrapper").style.top = "25%";
@@ -143,15 +143,17 @@ Template.results.events({
     if (Meteor.user()){
       uid = element.currentTarget.dataset.uid;
       name = element.currentTarget.dataset.name;
-      doctor = [uid, name];
+      doctor = {uid:uid, name:name};
       var list = Meteor.user().profile.favorites;
-      if (list.includes(doctor)){
-        document.getElementById(uid).style.backgroundColor = "#1985A1";
-        var index = list.indexOf(doctor);
-        if (index > -1){
-          list.splice(index,1);
+      var foundIt = false;
+      for (y in list){
+        if (list[y].uid === doctor.uid) {
+          document.getElementById(uid).style.backgroundColor = "#1985A1";
+          list.splice(y,1);
+          foundIt = true;
         }
-      }else{
+      }
+      if (foundIt === false){
         document.getElementById(uid).style.backgroundColor = "#fc6f6f";
         list.push(doctor);
         console.log(doctor);

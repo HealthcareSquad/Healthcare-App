@@ -21,11 +21,11 @@
 
     // Opening prompter so people know what to say to the app when opening.
   </script>
-  {{#if currentUser}}
+  <!-- {{#if currentUser}}
   <script>
     responsiveVoice.speak('Welcome back, ' + Meteor.user().profile.name.split(' ')[0]);
   </script>
-  {{/if}}
+  {{/if}} -->
 
 
   <div>
@@ -55,12 +55,7 @@
 
 
   <script type="text/javascript">
-  var sid = '';
-  if (Meteor.userId()){
-    sid = Meteor.userId();
-  }else{
-    sid = Math.floor(Math.random() * 2000).toString();
-  }
+  
 
 
     document.getElementById("rec").style.backgroundColor = "#1985A1";
