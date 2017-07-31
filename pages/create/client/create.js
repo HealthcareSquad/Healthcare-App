@@ -9,7 +9,10 @@ Template.create.events({
     const password = instance.$('#password').val();
     const confirm = instance.$('#confirm').val();
     if (password != confirm){
-      alert('The two password fields do not match. Please try again');
+      alert('The two password fields do not match. Please try again.');
+    }else if (password === "" || username === ""){
+      alert('Please fill in all fields.')
+
     }else{
       var newUserData = {
         username:username,
@@ -20,13 +23,29 @@ Template.create.events({
     }
   },
   'click #addProfile'(elt,instance){
-    var profile = {
-      name:instance.$('#name').val(),
-      insurance:instance.$('#insurance').val().split(','),
-      location:instance.$('#location').val(),
-      prescriptions:instance.$('#prescription').val().split(','),
-      favorites:[]
-    };
+      const name = instance.$('#name').val();
+      const insurance = instance.$('#insurance').val().split(',');
+      const location = instance.$('#location').val();
+      const prescriptions = instance.$('#prescription').val().split(',');
+    if (name === ""){
+      alert('Please fill in a name.')
+    }
+    if (location === ""){
+      alert('Please fill in a location.')
+    }
+    if (insurance[0] === ""){
+      alert('Please fill in an insurance company.')
+    }
+    if (name != "" && insurance != "" && location[0] != ""){
+      var profile = {
+        name:name,
+        insurance:insurance,
+        location:location,
+        prescriptions:prescriptions,
+        favorites:[]
+      };
+    }
+    if (name != "" && insurance != "" && location[0] != ""){
     Meteor.call('updateUser',profile);
     if (!Cookie.get('hasProfile')){
       responsiveVoice.speak('Thanks ' + profile.name.split(' ')[0] + ' you are now ready to use DocFinder.');
@@ -35,6 +54,7 @@ Template.create.events({
       responsiveVoice.speak('OK, your profile has been updated.');
     }
     Router.go('profiles');
+  }
   }
 });
 
