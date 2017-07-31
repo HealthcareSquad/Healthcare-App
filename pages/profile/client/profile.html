@@ -90,7 +90,7 @@
       <h2>Favorite Doctors</h2>
       <ul>
       {{#each currentUser.profile.favorites}}
-        <li><a id='docLink' data-uid={{this.uid}} href='#docModal' data-toggle='modal'>{{this.name}}</a></li>
+        <li><a id='docLink' data-uid={{this.uid}} href='#docModal' data-toggle='modal'>{{this.name}}</a><span class="glyphicon glyphicon-remove" aria-hidden="true" id="suffer"></span></li>
       {{/each}}
     </ul>
     </div>

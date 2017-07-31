@@ -29,9 +29,26 @@ Template.profiles.onCreated(function(){
 
 Template.profiles.events({
   'click span'(element, instance) {
-  console.log(this.profile._id);
-  var feedID = this.profile._id;
-  Meteor.call('profiles.remove',feedID);
+      /*uid = this.uid;
+      console.log(uid)
+      var list = Meteor.user().profile.favorites;
+      if (list.includes(uid)){
+        var index = list.indexOf(uid);
+        if (index > -1){
+          list.splice(index,1);
+        }
+      }*/
+      var list = Meteor.user().profile.favorites;
+
+      for (y in list){
+        if (list[y].uid === this.uid) {
+
+          list.splice(y,1);
+
+        }
+      }
+      Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.favorites": list}});
+
 },
 
   'click #login'(elt, instance){
