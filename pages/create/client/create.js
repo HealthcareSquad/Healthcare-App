@@ -3,6 +3,13 @@ Template.create.onCreated(function() {
 
 });
 
+$("#confirm").keyup(function(event) {
+  alert('enter pressed');
+if (event.keyCode == 13) {
+  $("#createUser").click();
+}
+});
+
 Template.create.events({
   'click #createUser'(elt,instance){
     const username = instance.$('#username').val();
