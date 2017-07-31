@@ -13,14 +13,31 @@ Template.create.events({
     }else if (password === "" || username === ""){
       alert('Please fill in all fields.')
 
-    }else{
+    }
+    /*else{
       var newUserData = {
         username:username,
         password:password
       };
       Meteor.call('insertUser',newUserData);
       Meteor.loginWithPassword(username,password);
-    }
+    }*/
+    Meteor.call('checkIfUserExists', username, function (err, result) {
+        if (err) {
+            alert('There is an error while checking username');
+        } else {
+            if (result === false) {
+              var newUserData = {
+                username:username,
+                password:password
+              };
+              Meteor.call('insertUser',newUserData);
+              Meteor.loginWithPassword(username,password);
+            } else {
+                alert('A user with this username already exists..');
+            }
+        }
+    });
   },
   'click #addProfile'(elt,instance){
       const name = instance.$('#name').val();
