@@ -136,8 +136,12 @@
         success: function(data) {
           setResponse(JSON.stringify(data, undefined, 2));
           console.log(data);
-
+          if ((data.result.parameters.insurance === "your-insurance") && !Meteor.user()){
+            responsiveVoice.speak("To search by your insurance you need to login first.");
+            Router.go('profiles');
+          }else{
           responsiveVoice.speak(data.result.fulfillment.speech);
+          }
           let adrs = "";
 
           if (data.result.resolvedQuery === "help"){
