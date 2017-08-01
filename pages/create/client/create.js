@@ -60,7 +60,7 @@ Template.create.events({
     if (insurance[0] === ""){
       alert('Please fill in an insurance company.')
     }
-    if (name != "" && insurance != "" && location[0] != ""){
+    if (name != "" && insurance[0] != "" && location != ""){
       var profile = {
         name:name,
         insurance:insurance,
@@ -69,7 +69,7 @@ Template.create.events({
         favorites:[]
       };
     }
-    if (name != "" && insurance != "" && location[0] != ""){
+    if (name != "" && insurance[0] != "" && location != ""){
     Meteor.call('updateUser',profile);
     if (!Cookie.get('hasProfile')){
       responsiveVoice.speak('Thanks ' + profile.name.split(' ')[0] + ' you are now ready to use DocFinder.');

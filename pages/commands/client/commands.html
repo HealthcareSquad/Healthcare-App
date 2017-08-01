@@ -27,10 +27,12 @@
 
 <div align="center">
   <input id="input" type="text" hidden>
-  <button class="btn btn-default btn-circle btn-lg" id="rec">
+  <div class="btn btn-default btn-circle btn-lg" id="rec">
+    <div style="height:65px;">&nbsp;</div>
+
     <i class="fa fa-microphone "></i>
     <!--<i class="fa fa-microphone fa-4x"></i>-->
-  </button>
+  </div>
 </div>
 </div>
   <script type="text/javascript">
@@ -114,7 +116,7 @@
             responsiveVoice.speak("When you are ready to return to the homepage, just let me know!");
             Router.go('commands');
           }
-          
+
           if (data.result.action === "DocFinder.DocFinder-yes"){
             Router.go('results', {}, {query:{params:tmp}});
           }

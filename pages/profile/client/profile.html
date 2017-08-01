@@ -2,15 +2,17 @@
 
   <div class="col-sm-6" align="right" id="audioButton">
   <input id="input" type="text" hidden>
-  <button class="btn btn-default btn-circle btn-large" id="rec">
+  <div class="btn btn-default btn-circle btn-large" id="rec">
+    <div style="height:25px;">&nbsp;</div>
     <i class="fa fa-microphone "></i>
 
-  </button>
+  </div>
   </div>
 
 <br>
 <br>
   {{#if currentUser}}
+  <div class="container">
     <div class="container" align="center" id="personal">
       <h2>{{currentUser.profile.name}}, from {{currentUser.profile.location}}, insured by {{currentUser.profile.insurance}}.</h2>
     </div>
@@ -93,6 +95,11 @@
         <li><a id='docLink' data-uid={{this.uid}} href='#docModal' data-toggle='modal'>{{this.name}}</a>&emsp;<span class="glyphicon glyphicon-remove" aria-hidden="true" id="suffer"></span></li>
       {{/each}}
     </ul>
+    </div>
+  </div>
+
+  <div class="row" style="position:fixed;bottom:0%;width:100%">
+    <a href="/create" class="btn btn-block btn-primary">Edit Profile</a>
     </div>
   {{else}}
   <br>
