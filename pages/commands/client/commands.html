@@ -1,40 +1,41 @@
 <template name ="commands">
-
   <div class="container" id='commands'>
-  <div class="row">
-    <div class="col">
-  <h1 id=commandheader>What are the DocFinder commands?</h1>
-</div>
-</div>
-<br>
     <div class="row">
       <div class="col">
-  <h2 id="commandtag">There are multiple ways to find a nearby doctor using DocFinder.</h2>
-</div>
-</div>
-<br>
-<div class="row">
-  <div class="col">
-  <ul>
-    <li id="commands">Search by your location and insurance company, to be provided a list of doctor's within a 5 mile radius of your location</li>
-    <li id="commands">Location can be given simply as a city and state or as the exact street address. More precise location information will provide more exact results.</li>
-    <li id="commands">You can search according to a doctor's spoken language. Simply, say "I need a doctor who knows Spanish."</li>
-    <li id="commands">DocFinder is conversational! Feel free to say "What's up" or any other greeting and DocFinder will respond.</li>
-  </ul>
-</div>
-</div>
-  <br><br>
+        <h1 id=commandheader>What are the DocFinder commands?</h1>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col">
+        <h2 id="commandtag">There are multiple ways to find a nearby doctor using DocFinder.</h2>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col">
+        <ul>
+          <li id="commands">Search by your location and insurance company, to be provided a list of doctor's within a 5 mile radius of your location</li>
+          <li id="commands">Location can be given simply as a city and state or as the exact street address. More precise location information will provide more exact results.</li>
+          <li id="commands">You can search according to a doctor's spoken language. Simply, say "I need a doctor who knows Spanish."</li>
+          <li id="commands">DocFinder is conversational! Feel free to say "What's up" or any other greeting and DocFinder will respond.</li>
+        </ul>
+      </div>
+    </div>
+    <br><br>
 
-<div align="center">
-  <input id="input" type="text" hidden>
-  <div class="btn btn-default btn-circle btn-lg" id="rec">
-    <div style="height:65px;">&nbsp;</div>
-
-    <i class="fa fa-microphone "></i>
-    <!--<i class="fa fa-microphone fa-4x"></i>-->
+    <!-- Voice Button -->
+    <div align="center">
+      <input id="input" type="text" hidden>
+      <div class="btn btn-default btn-circle btn-lg" id="rec">
+        <div style="height:65px;">&nbsp;</div>
+          <i class="fa fa-microphone "></i>
+          <!--<i class="fa fa-microphone fa-4x"></i>-->
+      </div>
+    </div>
   </div>
-</div>
-</div>
+
+  <!-- Script for Voice Button -->
   <script type="text/javascript">
     document.getElementById("rec").style.backgroundColor = "#1985A1";
     var latitude;
@@ -74,6 +75,7 @@
       }
       updateRec();
     }
+
     function switchRecognition() {
       if (recognition) {
         stopRecognition();
@@ -81,19 +83,24 @@
         startRecognition();
       }
     }
+
     function setInput(text) {
       $("#input").val(text);
       send();
     }
+
     function updateRec() {
       $("#rec").backgroundColor(recognition ? colorchange() : changecolor() );
     }
+
     function colorchange() {
       document.getElementById("rec").style.backgroundColor = "#fc6f6f";
     }
+
     function changecolor() {
       document.getElementById("rec").style.backgroundColor = "#1985A1";
     }
+
     function send() {
       var text = $("#input").val();
       $.ajax({
@@ -134,6 +141,7 @@
       });
       setResponse("Loading...");
     }
+    
     function setResponse(val) {
       $("#response").text(val);
     }
