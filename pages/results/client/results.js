@@ -17,8 +17,10 @@ Template.results.onCreated(function resultsCreated(){
     //Parsing query sent by router and appending to API call.......
     for (x in inputArr){
       if (inputArr[x].substring(0,2) === 'in'){
-        if (inputArr[x].replace('in=','') != "no-insurance"){
+        if (inputArr[x].replace('in=','') != ("no-insurance" && "your-insurance")){
           url += "&query=" + inputArr[x].replace('in=','');
+        }else if (inputArr[x].replace('in=','') === "your-insurance"){
+          url += "&query=" + Meteor.user().profile.insurance;
         }
       }else if (inputArr[x].substring(0,2) === 'sp'){
         url += "&specialty_uid=" + inputArr[x].replace('sp=','');
@@ -243,7 +245,17 @@ Template.results.events({
               labels: payees,
               datasets: [{
                 label: "Big Pharma Payments",
-                backgroundColor: ['rgb(178, 34, 34, 0.2)',
+                 backgroundColor: ['rgb(178, 34, 34, 0.2)',
+                'rgba(255, 140, 0, 0.2)',
+                'rgba(34, 139, 34, 0.2)',
+                'rgba(46, 139, 87, 0.2)',
+                'rgba(0, 128, 128, 0.2)',
+                'rgba(25, 25, 112, 0.2)',
+                'rgba(199, 21, 133, 0.2)',
+                'rgba(139, 69, 19, 0.2)',
+                'rgba(112, 128, 144, 0.2)',
+                'rgba(105, 105, 105, 0.2)',
+                'rgb(178, 34, 34, 0.2)',
                'rgba(255, 140, 0, 0.2)',
                'rgba(34, 139, 34, 0.2)',
                'rgba(46, 139, 87, 0.2)',
@@ -315,7 +327,7 @@ Template.results.events({
           },
           title:{
             display:true,
-            text:"Received $" + sum + " in payments from pharmaceutical companies in 2016.",
+            text:"Received $" +parseFloat(Math.round(sum * 100) / 100).toFixed(2)+ " in payments from pharmaceutical companies in 2016.",
             fontSize:17
           }
         }
