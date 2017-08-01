@@ -1,9 +1,8 @@
 Template.results.onCreated(function resultsCreated(){
     this.autorun(function () {
       console.log(Meteor.user());
-
+      //this just finds the current user and prints their info to console.
     });
-
 
     //Query is received as a string sent by the router and saved as 'input'. Key is BetterDoctor API key.
     const input = Router.current().params.query.params;
@@ -25,20 +24,13 @@ Template.results.onCreated(function resultsCreated(){
       }else if (inputArr[x].substring(0,2) === 'sp'){
         url += "&specialty_uid=" + inputArr[x].replace('sp=','');
       }
-      // else if (inputArr[x].substring(0,3) === 'la='){
-      //   url += "&language=" + inputArr[x].replace('la=','');
-      // }
+
     }
     url += '&skip=' + counter*50 + '&limit=50&sort=distance-asc&user_key=' + key;
     //Creates Google Map centered on user
     window.initMap = function(){
-      //Optional geolocation services.......
-      // if (navigator.geolocation) {
-      //   navigator.geolocation.getCurrentPosition(function (position) {
-      //     var userLoc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)});
-      // }else{
        var userLoc = {lat:parseFloat(inputArr[0].replace('lat=','')) , lng: parseFloat(inputArr[1].replace('long=',''))};
-      // }
+
        var map = new google.maps.Map(document.getElementById('map'), {
          zoom: 11,
          center: userLoc
@@ -66,7 +58,7 @@ Template.results.onCreated(function resultsCreated(){
       txt = "";
       var markers = [];
       var infoWindows = [];
-
+      //these for loops find the closest practice that each given doctor works at.
       for (x in data.data) {
         var xsave = 0;
         var ysave = 0;
@@ -90,6 +82,7 @@ Template.results.onCreated(function resultsCreated(){
         if (data.data[x].profile.title){
           txt += ', ' + data.data[x].profile.title;
         }
+        //the id of each doctor's add-to-favorites button is that doctor's uid.
         var currentName = data.data[x].profile.first_name + " " + data.data[x].profile.last_name + ", " + data.data[x].profile.title;
         txt += "</a></td><td>" + finaldistance.toString().substring(0,4);
         txt += "</td><td><button class=\"btn btn-default btn-sm\" name=\"docFav\" id=\"" + data.data[x].uid + "\" data-uid=\"" + data.data[x].uid + "\" + data-name=\"" + currentName + "\"><i class=\"fa fa-star\" aria-hidden=\"true\"></i></button></td>" ;
@@ -114,6 +107,7 @@ Template.results.onCreated(function resultsCreated(){
       //Map is positioned as a fixed div on the right side of screen. Had to fudge this one a lot to get it to work
       //thanks to Google's weird API characteristics.....
       document.getElementById("results").innerHTML = txt;
+      //makes the favorites buttons display different colors for logged in users, depending on whether the doctor is in their favorites list or not
       for (x in data.data) {
         if (Meteor.user()){
           document.getElementById(data.data[x].uid).style.backgroundColor = "#1985A1";
@@ -123,6 +117,7 @@ Template.results.onCreated(function resultsCreated(){
             }
           }
         }else{
+          //if not logged in, all favorites buttons are blue
           document.getElementById(data.data[x].uid).style.backgroundColor = "#1985A1";
         }
       }
@@ -136,11 +131,8 @@ Template.results.onCreated(function resultsCreated(){
   }
 });
 
-
-
 //Click event to add a doctor to user's favorites
 Template.results.events({
-
   'click button': function(element){
     if (Meteor.user()){
       uid = element.currentTarget.dataset.uid;
@@ -175,6 +167,7 @@ Template.results.events({
     event.preventDefault();
     //uid is gotten from the data attribute of the element clicked
     uid = doc.target.dataset.uid;
+    //calls the betterdoctor API to get doctor bio, practices, accepted insurance, etc
     jQuery.getJSON('https://api.betterdoctor.com/2016-03-01/doctors/' + uid + '?user_key=876a19607233e092fdc4a30a9c079614', function(data){
       document.getElementById("docModalName").innerHTML = "<p class=\"text-center\"><strong>" + data.data.profile.first_name + " " + data.data.profile.last_name + ", " + data.data.profile.title + "</strong></p>";
       document.getElementById("profImage").innerHTML = "<img src=\"" + data.data.profile.image_url + "\" style=\"max-width: 100%;max-height: 100%\">";
@@ -220,6 +213,7 @@ Template.results.events({
       document.getElementById("docInsurances").innerHTML = "<p>Accepted Insurers</p><br>" + uniques;
 
     }
+    //calls Open Payments to get info about pharmaceutical payments to the given doctor
       jQuery.getJSON('https://openpaymentsdata.cms.gov/resource/vq63-hu5i.json?physician_first_name=' + data.data.profile.first_name.toUpperCase() + '&physician_last_name=' + data.data.profile.last_name.toUpperCase() + '&recipient_state=' + data.data.practices[0].visit_address.state, function(payments){
         jQuery('#docPayments').empty();
         document.getElementById("docPayments").innerHTML = "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js\"></script><canvas id=\"myChart\"></canvas>";
