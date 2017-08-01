@@ -124,7 +124,9 @@ Template.profiles.events({
             }, 0);
           if (sum > 0){
             Chart.defaults.global.legend.display = false;
+
             new Chart(ctx, {
+
               // The type of chart we want to create
               type: 'pie',
 
@@ -133,16 +135,66 @@ Template.profiles.events({
                 labels: payees,
                 datasets: [{
                   label: "Big Pharma Payments",
-                   backgroundColor: ['rgb(178, 34, 34, 0.2)',
-                  'rgba(255, 140, 0, 0.2)',
-                  'rgba(34, 139, 34, 0.2)',
-                  'rgba(46, 139, 87, 0.2)',
-                  'rgba(0, 128, 128, 0.2)',
-                  'rgba(25, 25, 112, 0.2)',
-                  'rgba(199, 21, 133, 0.2)',
-                  'rgba(139, 69, 19, 0.2)',
-                  'rgba(112, 128, 144, 0.2)',
-                  'rgba(105, 105, 105, 0.2)'],
+                  backgroundColor: ['rgb(178, 34, 34, 0.2)',
+                 'rgba(255, 140, 0, 0.2)',
+                 'rgba(34, 139, 34, 0.2)',
+                 'rgba(46, 139, 87, 0.2)',
+                 'rgba(0, 128, 128, 0.2)',
+                 'rgba(25, 25, 112, 0.2)',
+                 'rgba(199, 21, 133, 0.2)',
+                 'rgba(139, 69, 19, 0.2)',
+                 'rgba(112, 128, 144, 0.2)',
+                 'rgba(255, 128, 128, 1)',
+                 'rgba(200, 128, 255, 1)',
+                 'rgba(128, 181, 255, 1)',
+                 'rgba(128, 255, 176, 1)',
+                 'rgba(255, 255, 128, 1)',
+                 'rgba(255, 149, 128, 1)',
+                 'rgba(255, 128, 223, 1)',
+                 'rgba(134, 128, 255, 1)',
+                 'rgba(132, 255, 128, 1)',
+                 'rgba(255, 189, 128, 1)',
+                 'rgba(105, 105, 105, 0.2)',
+                 'rgb(178, 34, 34, 0.2)',
+                'rgba(255, 140, 0, 0.2)',
+                'rgba(34, 139, 34, 0.2)',
+                'rgba(46, 139, 87, 0.2)',
+                'rgba(0, 128, 128, 0.2)',
+                'rgba(25, 25, 112, 0.2)',
+                'rgba(199, 21, 133, 0.2)',
+                'rgba(139, 69, 19, 0.2)',
+                'rgba(112, 128, 144, 0.2)',
+                'rgba(255, 128, 128, 1)',
+                'rgba(200, 128, 255, 1)',
+                'rgba(128, 181, 255, 1)',
+                'rgba(128, 255, 176, 1)',
+                'rgba(255, 255, 128, 1)',
+                'rgba(255, 149, 128, 1)',
+                'rgba(255, 128, 223, 1)',
+                'rgba(134, 128, 255, 1)',
+                'rgba(132, 255, 128, 1)',
+                'rgba(255, 189, 128, 1)',
+                'rgba(105, 105, 105, 0.2)',
+                'rgb(178, 34, 34, 0.2)',
+               'rgba(255, 140, 0, 0.2)',
+               'rgba(34, 139, 34, 0.2)',
+               'rgba(46, 139, 87, 0.2)',
+               'rgba(0, 128, 128, 0.2)',
+               'rgba(25, 25, 112, 0.2)',
+               'rgba(199, 21, 133, 0.2)',
+               'rgba(139, 69, 19, 0.2)',
+               'rgba(112, 128, 144, 0.2)',
+               'rgba(255, 128, 128, 1)',
+               'rgba(200, 128, 255, 1)',
+               'rgba(128, 181, 255, 1)',
+               'rgba(128, 255, 176, 1)',
+               'rgba(255, 255, 128, 1)',
+               'rgba(255, 149, 128, 1)',
+               'rgba(255, 128, 223, 1)',
+               'rgba(134, 128, 255, 1)',
+               'rgba(132, 255, 128, 1)',
+               'rgba(255, 189, 128, 1)',
+               'rgba(105, 105, 105, 0.2)'],
                   borderColor: 'rgb(13, 84, 22)',
                   data: amounts,
               }]
@@ -161,7 +213,7 @@ Template.profiles.events({
           }
         });
 
-
+        console.log(Chart.defaults.global.defaultColor);
       }else{
         document.getElementById("docPayments").innerHTML = "<p>Received $0 in payments from pharmaceutical companies in 2016.</p>";
       }
