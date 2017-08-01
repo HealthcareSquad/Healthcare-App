@@ -277,7 +277,7 @@ Template.results.events({
           },
           title:{
             display:true,
-            text:"Received $" + sum + " in payments from pharmaceutical companies in 2016.",
+            text:"Received $" +parseFloat(Math.round(sum * 100) / 100).toFixed(2)+ " in payments from pharmaceutical companies in 2016.",
             fontSize:17
           }
         }
