@@ -20,6 +20,8 @@ Template.create.events({
     }else if (password === "" || username === ""){
       alert('Please fill in all fields.')
 
+    }else if (password.length < 6 || username.length < 6){
+     alert("Please make usernames and passwords at least six characters.")
     }else{
       Meteor.call('checkIfUserExists', username, function (err, result) {
           if (err) {

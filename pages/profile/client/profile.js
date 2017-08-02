@@ -55,7 +55,14 @@ Template.profiles.events({
     const username = instance.$('#username').val();
     const password = instance.$('#password').val();
 
-    Meteor.loginWithPassword(username,password);
+    Meteor.loginWithPassword(username, password, function(error){
+    if (Meteor.user()) {
+      console.log(Meteor.userId());
+    } else {
+      alert("Incorrect username and password.");
+    }
+  });
+
 
   },
     'click #docLink':function createDocModal(doc){
