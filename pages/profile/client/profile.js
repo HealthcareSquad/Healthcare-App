@@ -1,25 +1,3 @@
-Template.profiles.helpers({
-  'doctornames': function(){
-      let nameList = [];
-      var idList;
-      waitForElement();
-      function waitForElement(){
-        if(typeof Meteor.user() !== "undefined"){
-          idList = Meteor.user().profile.favorites;
-        }
-        else{
-          setTimeout(waitForElement, 250);
-        }
-      }
-      for (x in idList) {
-        nameList.push(idList[x][1]);
-      }
-      console.log(nameList);
-      return nameList;
-  }
-});
-
-
 Template.profiles.onCreated(function(){
   this.autorun(function () {
     console.log(Meteor.user());
@@ -28,29 +6,18 @@ Template.profiles.onCreated(function(){
 
 
 Template.profiles.events({
+  /**This removes a doctor from the favorites list if the user clicks the corresponding x span*/
   'click span'(element, instance) {
-      /*uid = this.uid;
-      console.log(uid)
       var list = Meteor.user().profile.favorites;
-      if (list.includes(uid)){
-        var index = list.indexOf(uid);
-        if (index > -1){
-          list.splice(index,1);
-        }
-      }*/
-      var list = Meteor.user().profile.favorites;
-
       for (y in list){
         if (list[y].uid === this.uid) {
-
           list.splice(y,1);
-
         }
       }
       Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.favorites": list}});
-
 },
 
+  /**This is the login function*/
   'click #login'(elt, instance){
     const username = instance.$('#username').val();
     const password = instance.$('#password').val();
@@ -65,11 +32,13 @@ Template.profiles.events({
 
 
   },
+  /**This displays the doctor profile when the user clicks on their name in the favorites list*/
     'click #docLink':function createDocModal(doc){
       event.preventDefault();
       //uid is gotten from the data attribute of the element clicked
       uid = doc.target.dataset.uid;
       console.log(uid);
+      //calls betterdoctor api with the doctor's uid.
       jQuery.getJSON('https://api.betterdoctor.com/2016-03-01/doctors/' + uid + '?user_key=876a19607233e092fdc4a30a9c079614', function(data){
         document.getElementById("docModalName").innerHTML = "<p class=\"text-center\"><strong>" + data.data.profile.first_name + " " + data.data.profile.last_name + ", " + data.data.profile.title + "</strong></p>";
         document.getElementById("profImage").innerHTML = "<img src=\"" + data.data.profile.image_url + "\" style=\"max-width: 100%;max-height: 100%\">";
@@ -115,6 +84,7 @@ Template.profiles.events({
         document.getElementById("docInsurances").innerHTML = "<p>Accepted Insurers</p><br>" + uniques;
 
       }
+      //gets the doctor pharmaceutical payment history from OpenPayments
         jQuery.getJSON('https://openpaymentsdata.cms.gov/resource/vq63-hu5i.json?physician_first_name=' + data.data.profile.first_name.toUpperCase() + '&physician_last_name=' + data.data.profile.last_name.toUpperCase() + '&recipient_state=' + data.data.practices[0].visit_address.state, function(payments){
           jQuery('#docPayments').empty();
           document.getElementById("docPayments").innerHTML = "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js\"></script><canvas id=\"myChart\"></canvas>";
@@ -163,45 +133,45 @@ Template.profiles.events({
                  'rgba(255, 189, 128, 1)',
                  'rgba(105, 105, 105, 0.2)',
                  'rgb(178, 34, 34, 0.2)',
-                'rgba(255, 140, 0, 0.2)',
-                'rgba(34, 139, 34, 0.2)',
-                'rgba(46, 139, 87, 0.2)',
-                'rgba(0, 128, 128, 0.2)',
-                'rgba(25, 25, 112, 0.2)',
-                'rgba(199, 21, 133, 0.2)',
-                'rgba(139, 69, 19, 0.2)',
-                'rgba(112, 128, 144, 0.2)',
-                'rgba(255, 128, 128, 1)',
-                'rgba(200, 128, 255, 1)',
-                'rgba(128, 181, 255, 1)',
-                'rgba(128, 255, 176, 1)',
-                'rgba(255, 255, 128, 1)',
-                'rgba(255, 149, 128, 1)',
-                'rgba(255, 128, 223, 1)',
-                'rgba(134, 128, 255, 1)',
-                'rgba(132, 255, 128, 1)',
-                'rgba(255, 189, 128, 1)',
-                'rgba(105, 105, 105, 0.2)',
-                'rgb(178, 34, 34, 0.2)',
-               'rgba(255, 140, 0, 0.2)',
-               'rgba(34, 139, 34, 0.2)',
-               'rgba(46, 139, 87, 0.2)',
-               'rgba(0, 128, 128, 0.2)',
-               'rgba(25, 25, 112, 0.2)',
-               'rgba(199, 21, 133, 0.2)',
-               'rgba(139, 69, 19, 0.2)',
-               'rgba(112, 128, 144, 0.2)',
-               'rgba(255, 128, 128, 1)',
-               'rgba(200, 128, 255, 1)',
-               'rgba(128, 181, 255, 1)',
-               'rgba(128, 255, 176, 1)',
-               'rgba(255, 255, 128, 1)',
-               'rgba(255, 149, 128, 1)',
-               'rgba(255, 128, 223, 1)',
-               'rgba(134, 128, 255, 1)',
-               'rgba(132, 255, 128, 1)',
-               'rgba(255, 189, 128, 1)',
-               'rgba(105, 105, 105, 0.2)'],
+                 'rgba(255, 140, 0, 0.2)',
+                 'rgba(34, 139, 34, 0.2)',
+                 'rgba(46, 139, 87, 0.2)',
+                 'rgba(0, 128, 128, 0.2)',
+                 'rgba(25, 25, 112, 0.2)',
+                 'rgba(199, 21, 133, 0.2)',
+                 'rgba(139, 69, 19, 0.2)',
+                 'rgba(112, 128, 144, 0.2)',
+                 'rgba(255, 128, 128, 1)',
+                 'rgba(200, 128, 255, 1)',
+                 'rgba(128, 181, 255, 1)',
+                 'rgba(128, 255, 176, 1)',
+                 'rgba(255, 255, 128, 1)',
+                 'rgba(255, 149, 128, 1)',
+                 'rgba(255, 128, 223, 1)',
+                 'rgba(134, 128, 255, 1)',
+                 'rgba(132, 255, 128, 1)',
+                 'rgba(255, 189, 128, 1)',
+                 'rgba(105, 105, 105, 0.2)',
+                 'rgb(178, 34, 34, 0.2)',
+                 'rgba(255, 140, 0, 0.2)',
+                 'rgba(34, 139, 34, 0.2)',
+                 'rgba(46, 139, 87, 0.2)',
+                 'rgba(0, 128, 128, 0.2)',
+                 'rgba(25, 25, 112, 0.2)',
+                 'rgba(199, 21, 133, 0.2)',
+                 'rgba(139, 69, 19, 0.2)',
+                 'rgba(112, 128, 144, 0.2)',
+                 'rgba(255, 128, 128, 1)',
+                 'rgba(200, 128, 255, 1)',
+                 'rgba(128, 181, 255, 1)',
+                 'rgba(128, 255, 176, 1)',
+                 'rgba(255, 255, 128, 1)',
+                 'rgba(255, 149, 128, 1)',
+                 'rgba(255, 128, 223, 1)',
+                 'rgba(134, 128, 255, 1)',
+                 'rgba(132, 255, 128, 1)',
+                 'rgba(255, 189, 128, 1)',
+                 'rgba(105, 105, 105, 0.2)'],
                   borderColor: 'rgb(13, 84, 22)',
                   data: amounts,
               }]

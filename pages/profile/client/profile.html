@@ -28,10 +28,11 @@
         <br>
         <br>
         <hr>
-        DocFinder is not a liscensed professional. Please contact a professional for medical advice.
         <section>
-          
+
         </section>
+        DocFinder is not a liscensed professional. Please contact a professional for medical advice.
+
         <!--Script for drug information api-->
         <script>
           function myFunction() {
@@ -74,27 +75,24 @@
             myArticle.appendChild(myList2);
 
             section.appendChild(myArticle);
-
-
-      }
-      </script>
-
-
-
+          }
+        </script>
+      </div>
+        <!--This displays a list of the user's favorite doctors-->
+      <div class="col-sm-6" id="favorite">
+        <h2>Favorite Doctors</h2>
+        <ul>
+          {{#each currentUser.profile.favorites}}
+          <li><a id='docLink' data-uid={{this.uid}} href='#docModal' data-toggle='modal'>{{this.name}}</a>&emsp;<span class="glyphicon glyphicon-remove" aria-hidden="true" id="suffer"></span></li>
+          {{/each}}
+        </ul>
+      </div>
     </div>
-    <div class="col-sm-6" id="favorite">
-      <h2>Favorite Doctors</h2>
-      <ul>
-      {{#each currentUser.profile.favorites}}
-        <li><a id='docLink' data-uid={{this.uid}} href='#docModal' data-toggle='modal'>{{this.name}}</a>&emsp;<span class="glyphicon glyphicon-remove" aria-hidden="true" id="suffer"></span></li>
-      {{/each}}
-    </ul>
+      <!--A footer with an option for the user to edit their profile-->
+    <div class="row" style="position:fixed;bottom:0%;width:100%">
+      <a href="/create" class="btn btn-block btn-primary">Edit Profile</a>
     </div>
-  </div>
-
-  <div class="row" style="position:fixed;bottom:0%;width:100%">
-    <a href="/create" class="btn btn-block btn-primary">Edit Profile</a>
-    </div>
+  <!--If the user is not logged in, shows them the login screen-->
   {{else}}
   <br>
   <br>
@@ -103,31 +101,32 @@
   <br>
   <br>
   <div class="container">
-<div class="row" align="center">
-  <p id="DocFinder">DocFinder</p>
-</div>
-</div>
+    <div class="row" align="center">
+      <p id="DocFinder">DocFinder</p>
+    </div>
+  </div>
   <br>
   <br>
   <br>
   <div class="container">
     <div class="row" align="center">
-  <input type="text" align="center" id="username" placeholder="Username" onkeydown = "if (event.keyCode == 13) document.getElementById('login').click()">
-  <input type="password" align="center" id="password" placeholder="Password" onkeydown = "if (event.keyCode == 13) document.getElementById('login').click()">
-</div>
-<br>
-<div class="row" align="center">
-  <button class="btn btn-default" id="login">Login</button>
-</div>
-  <br>
-<br>
-<div class="row" align="center">
-  <p>First time here? </p><a href="/create"><button class="btn btn-success" id=createAccount>Create an account</button></a>
-</div>
-</div>
+      <input type="text" align="center" id="username" placeholder="Username" onkeydown = "if (event.keyCode == 13) document.getElementById('login').click()">
+      <input type="password" align="center" id="password" placeholder="Password" onkeydown = "if (event.keyCode == 13) document.getElementById('login').click()">
+    </div>
+    <br>
+    <div class="row" align="center">
+      <button class="btn btn-default" id="login">Login</button>
+    </div>
+    <br>
+    <br>
+    <div class="row" align="center">
+      <p>First time here? </p><a href="/create"><button class="btn btn-success" id=createAccount>Create an account</button></a>
+    </div>
+  </div>
 
   {{/if}}
 
+    <!--Script for voice button functionality-->
   <script type="text/javascript">
     document.getElementById("rec").style.backgroundColor = "#1985A1";
     var latitude;
@@ -225,7 +224,7 @@
     }
   </script>
 
-
+  <!--This displays the doctor profile when the user clicks on one of their favorite doctors-->
   <div class="modal fade" id="docModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
