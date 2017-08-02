@@ -1,4 +1,4 @@
-<template name="results">
+<template name="results" >
   <div class="container">
     <div class="container" id="resultsTop">
       <div class="row">
@@ -28,7 +28,7 @@
             </tr>
           </thead>
             <br>
-          <tbody data-link='row' class='rowlink' id="results">
+          <tbody data-link='row' class='rowlink' id="results" onload="counter()">
           </tbody>
           </table>
       </div>
@@ -43,7 +43,6 @@
       console.log("defering");
     </script>
 </div>
-<div id="urlImport" hidden></div>
 </div>
 
 
@@ -166,6 +165,7 @@
   function changecolor() {
     document.getElementById("rec").style.backgroundColor = "#1985A1";
   }
+
   function send() {
     var text = $("#input").val();
     $.ajax({
@@ -182,11 +182,10 @@
         setResponse(JSON.stringify(data, undefined, 2));
         console.log(data);
         responsiveVoice.speak(data.result.fulfillment.speech);
+        $('document').ready(function(){
+
         if (data.result.metadata.intentName === 'Next'){
-          var url = document.getElementById("urlImport").innerHTML;
-          var spliturl = url.split('&skip=');
-          console.log(spliturl);
-          url.replace("")
+          document.location.reload(true);
         }else if (data.result.metadata.intentName === 'Home'){
           Router.go('home');
         }
@@ -229,6 +228,7 @@
           });
           Router.go('results', {}, {query:{params:tmp}});
         }
+        });
 
       },
       error: function() {

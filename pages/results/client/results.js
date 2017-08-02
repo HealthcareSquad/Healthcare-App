@@ -1,17 +1,18 @@
 Template.results.onCreated(function resultsCreated(){
     this.autorun(function () {
       console.log(Meteor.user());
-      //this just finds the current user and prints their info to console.
-    });
+      counter = counter+1;
+      console.log(counter);
+      });
 
     //Query is received as a string sent by the router and saved as 'input'. Key is BetterDoctor API key.
     const input = Router.current().params.query.params;
     const key = '876a19607233e092fdc4a30a9c079614';
     //Split input by parameters.....
     inputArr = input.split('&');
-    //(in development) Keeps track of what page of results user is on
-    var counter = parseInt(inputArr[2].replace('page=',''));
+
     //Start of API call.......
+    console.log(counter);
     let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + inputArr[0].replace('lat=','') + ',' + inputArr[1].replace('long=','') + ',5';
     //Parsing query sent by router and appending to API call.......
     for (x in inputArr){
@@ -27,6 +28,7 @@ Template.results.onCreated(function resultsCreated(){
 
     }
     url += '&skip=' + counter*50 + '&limit=50&sort=distance-asc&user_key=' + key;
+    console.log(url);
     //Creates Google Map centered on user
     window.initMap = function(){
        var userLoc = {lat:parseFloat(inputArr[0].replace('lat=','')) , lng: parseFloat(inputArr[1].replace('long=',''))};
@@ -124,7 +126,6 @@ Template.results.onCreated(function resultsCreated(){
       document.getElementById("mapWrapper").style.position = "fixed";
       document.getElementById("mapWrapper").style.top = "25%";
       document.getElementById("mapWrapper").style.left = "48%";
-      document.getElementById("urlImport").innerHTML = url;
 
 
     });
