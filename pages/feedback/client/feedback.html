@@ -1,10 +1,10 @@
 <template name="feedback">
   <div class="container">
-  <div class="feedback">
-    <h1 id="contactHeader">Contact Us</h1>
-    <h2>Leave Feedback Below!</h2>
-    <br>
-
+    <div class="feedback">
+      <h1 id="contactHeader">Contact Us</h1>
+      <h2>Leave Feedback Below!</h2>
+      <br>
+        <!--Form to submit feedback-->
       <form>
         <input type="text" id="name" placeholder="First and Last Name">
         <br>
@@ -14,6 +14,7 @@
         <button type="button" class="btn btn-primary btn-group-lg">Submit</button>
       </form>
       <hr>
+        <!--Here we display feedback that was submitted-->
       <div class="feedbackdatabase">
         <h2>Our Feedback List</h2><br>
         <table class="table table-bordered table-striped">
@@ -24,12 +25,10 @@
             </tr>
           </thead>
           <tbody>
-          {{#each f in feedbacklist}}
-
-            {{> feedbackrow feed = f}}
-
-          {{/each}}
-        </tbody>
+            {{#each f in feedbacklist}}
+              {{> feedbackrow feed = f}}
+            {{/each}}
+          </tbody>
         </table>
         <hr>
       </div>
@@ -37,6 +36,7 @@
   </div>
 </template>
 
+  <!--This template helps make the feedback table-->
 <template name="feedbackrow">
   <tr>
     <td>{{feed.Name}}</td>

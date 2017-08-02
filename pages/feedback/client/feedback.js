@@ -1,14 +1,12 @@
 Template.feedback.onCreated(function feedbackCreated(){
-
   Meteor.subscribe('feedback');
 });
-
 
 Template.feedback.helpers({
   feedbacklist() {return Feedback.find()}
 })
 
-
+//Adds feedback to collection when button is clicked
 Template.feedback.events({
   'click button' (element, instance) {
     const name = instance.$('#name').val();
@@ -35,6 +33,7 @@ Template.feedback.events({
   }
 })
 
+//Removes one feedback item if the user clicks the corresponding x button.
 Template.feedback.events({
   'click span'(element, instance) {
   console.log(this.feed._id);

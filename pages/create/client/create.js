@@ -1,16 +1,12 @@
 Template.create.onCreated(function() {
   Meteor.subscribe('profiles');
-
-});
-
-$("#confirm").keyup(function(event) {
-  alert('enter pressed');
-if (event.keyCode == 13) {
-  $("#createUser").click();
-}
 });
 
 Template.create.events({
+  /**On clicking the submit button or pressing enter on the createUser template,
+  the user's chosen username and password are checked, a popup is sent out if
+  there is a problem, and if not the the accound is created and the user is
+  logged in.*/
   'click #createUser'(elt,instance){
     const username = instance.$('#username').val();
     const password = instance.$('#password').val();
@@ -40,16 +36,13 @@ Template.create.events({
           }
       });
     }
-    /*else{
-      var newUserData = {
-        username:username,
-        password:password
-      };
-      Meteor.call('insertUser',newUserData);
-      Meteor.loginWithPassword(username,password);
-    }*/
+
 
   },
+  /**On clicking submit or pressing enter on the addProfile template, the users'
+  information is submitted. If the user has left their name, insurance, or
+  location blank, a popup appears telling them to correct the problem. If not,
+  they are directed to their completed profile. */
   'click #addProfile'(elt,instance){
       const name = instance.$('#name').val();
       const insurance = instance.$('#insurance').val().split(',');

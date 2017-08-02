@@ -21,11 +21,7 @@
 
     // Opening prompter so people know what to say to the app when opening.
   </script>
-  <!-- {{#if currentUser}}
-  <script>
-    responsiveVoice.speak('Welcome back, ' + Meteor.user().profile.name.split(' ')[0]);
-  </script>
-  {{/if}} -->
+
 
 
   <div>
@@ -47,18 +43,15 @@
         <div class="btn btn-default btn-circle btn-xl" id="rec">
           <div style="height:50px;">&nbsp;</div>
           <i class="fa fa-microphone "></i>
-          <!--<i class="fa fa-microphone fa-4x"></i>-->
+
         </div>
-        <!-- <i class="material-icons" style="vertical-align: middle;font-size:43px;color:green" id="micButt">mic</i> -->
+
       </div>
     </div>
   </div>
 
-
+  <!--Script for voice button functionality-->
   <script type="text/javascript">
-
-
-
     document.getElementById("rec").style.backgroundColor = "#1985A1";
     var latitude;
     var longitude;

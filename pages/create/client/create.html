@@ -1,12 +1,16 @@
 <template name='create'>
+  <!--Voice Button-->
   <div  align="right" id="audioButton">
     <input id="input" type="text" hidden>
     <button class="btn btn-default btn-circle btn-large" id="rec">
       <i class="fa fa-microphone "></i>
     </button>
   </div>
+
+  <!--If currentUser, show the template for filling out a profile-->
   {{#if currentUser}}
 
+  <!--Script for voice instructions for filling out profile-->
   <script>
     if (Cookie.get('createdAccount') != 'true'){
       responsiveVoice.speak('Great, now I just need you to fill out some information about you.');
@@ -19,11 +23,12 @@
   <div class="container" align="center">
     {{> addProfile}}
   </div>
+    <!--If NOT currentUser, show the template for creating a username and password-->
   {{else}}
     {{> createUser}}
   {{/if}}
 
-
+    <!--Script for voice functionality-->
   <script type="text/javascript">
     document.getElementById("rec").style.backgroundColor = "#1985A1";
     var latitude;
@@ -120,6 +125,7 @@
 </template>
 
 
+  <!--Template for user to fill out profile information about themselves-->
 <template name = "addProfile">
   <br><br><br>
   <div class="container" align="center">
@@ -142,6 +148,7 @@
   </div>
 </template>
 
+  <!--template for user to create username and password-->
 <template name="createUser">
   <script>
     if (Cookie.get('passwordChosen') != 'true'){
