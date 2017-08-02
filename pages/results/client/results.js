@@ -1,3 +1,5 @@
+var counter = 0;
+
 Template.results.onCreated(function resultsCreated(){
     this.autorun(function () {
       console.log(Meteor.user());
