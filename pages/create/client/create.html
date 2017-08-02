@@ -124,16 +124,16 @@
   <br><br><br>
   <div class="container" align="center">
     Full Name:<br>
-    <input type="text" id="name" placeholder="My Name" value={{currentUser.profile.name}}>
+    <input type="text" id="name" placeholder="My Name" value={{currentUser.profile.name}} onkeydown = "if (event.keyCode == 13) document.getElementById('addProfile').click()">
     <br>
     Insurance(s):<br>
-    <input type="text" id="insurance" placeholder="My Insurance" value={{currentUser.profile.insurance}}>
+    <input type="text" id="insurance" placeholder="My Insurance" value={{currentUser.profile.insurance}} onkeydown = "if (event.keyCode == 13) document.getElementById('addProfile').click()">
     <br>
     Location:<br>
-    <input type="text" id="location" placeholder="My Location" value={{currentUser.profile.location}}>
+    <input type="text" id="location" placeholder="My Location" value={{currentUser.profile.location}} onkeydown = "if (event.keyCode == 13) document.getElementById('addProfile').click()">
     <br>
     Prescription(s):<br>
-    <input type="text" id="prescription" placeholder="My Prescriptions" value={{currentUser.profile.prescriptions}}>
+    <input type="text" id="prescription" placeholder="My Prescriptions" value={{currentUser.profile.prescriptions}} onkeydown = "if (event.keyCode == 13) document.getElementById('addProfile').click()">
     <br>
     <br>
     <button id="addProfile" class="btn btn-primary">
@@ -155,15 +155,15 @@
     <br>
     Username:
     <br>
-    <input type="text" id="username">
+    <input type="text" id="username" onkeydown = "if (event.keyCode == 13) document.getElementById('createUser').click()">
     <br>
     Password:<br>
-    <input type="password" id="password">
+    <input type="password" id="password" onkeydown = "if (event.keyCode == 13) document.getElementById('createUser').click()">
     <br>
     Confirm password:<br>
-    <input type="password" id="confirm">
+    <input type="password" id="confirm" onkeydown = "if (event.keyCode == 13) document.getElementById('createUser').click()">
     <br><br>
-    <button id="createUser" class="btn btn-primary">
+    <button id="createUser" class="btn btn-primary" onkeydown = "if (event.keyCode == 13) document.getElementById('createUser').click()">
       Submit
     </button>
   </div>

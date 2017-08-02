@@ -24,8 +24,8 @@
       <br>
       <hr>
       Look up information for medication you may be interested in. Learn about possible side effects and alternatives. Simply type in the medication name (generic or brand) to begin.
-      <h2>Drug Medication: </h2><input type="text" id="drug" placeholder="drug name">
-      <button onclick="myFunction()" >SUBMIT</button>
+      <h2>Drug Medication: </h2><input type="text" id="drug" placeholder="drug name" onkeydown = "if (event.keyCode == 13) document.getElementById('drugInfoButton').click()" >
+      <button onclick="myFunction()" id="drugInfoButton">SUBMIT</button>
       <br>
       <br>
       <section>
@@ -118,8 +118,8 @@
   <br>
   <div class="container">
     <div class="row" align="center">
-  <input type="text" align="center" id="username" placeholder="Username">
-  <input type="password" align="center" id="password" placeholder="Password">
+  <input type="text" align="center" id="username" placeholder="Username" onkeydown = "if (event.keyCode == 13) document.getElementById('login').click()">
+  <input type="password" align="center" id="password" placeholder="Password" onkeydown = "if (event.keyCode == 13) document.getElementById('login').click()">
 </div>
 <br>
 <div class="row" align="center">
