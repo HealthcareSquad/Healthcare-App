@@ -1,6 +1,5 @@
 var sid;
 
-
 Template.layout.events({
   'click #logout'(el,instance){
     Meteor.logout();

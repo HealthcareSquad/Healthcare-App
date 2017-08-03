@@ -69,7 +69,7 @@ Template.create.events({
     if (name != "" && insurance[0] != "" && location != ""){
     Meteor.call('updateUser',profile);
     if (!Cookie.get('hasProfile')){
-      responsiveVoice.speak('Thanks, you are now ready to use DocFinder.');
+      responsiveVoice.speak('Thanks ' + profile.name.split(' ')[0] + ' you are now ready to use DocFinder.');
       Cookie.set('hasProfile','true');
     }else{
       responsiveVoice.speak('OK, your profile has been updated.');
