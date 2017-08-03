@@ -1,10 +1,8 @@
-var counter = 0;
 
 Template.results.onCreated(function resultsCreated(){
     this.autorun(function () {
       console.log(Meteor.user());
-      //this just finds the current user and prints their info to console.
-    });
+      });
 
     //Query is received as a string sent by the router and saved as 'input'. Key is BetterDoctor API key.
     const input = Router.current().params.query.params;
@@ -28,7 +26,8 @@ Template.results.onCreated(function resultsCreated(){
       }
 
     }
-    url += '&skip=' + counter*50 + '&limit=50&sort=distance-asc&user_key=' + key;
+    url += '&skip=0&limit=50&sort=distance-asc&user_key=' + key;
+    console.log(url);
     //Creates Google Map centered on user
     window.initMap = function(){
        var userLoc = {lat:parseFloat(inputArr[0].replace('lat=','')) , lng: parseFloat(inputArr[1].replace('long=',''))};
