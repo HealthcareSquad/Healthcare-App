@@ -1,0 +1,7 @@
+{
+  "galaxy.meteor.com": {
+     "env": {
+       "MONGO_URL": "mongodb://user:test@ds163656.mlab.com:63656/docfinder"
+     }
+   }
+}
