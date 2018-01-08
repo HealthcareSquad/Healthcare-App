@@ -13,9 +13,9 @@ The microphone button will turn red when listening to your speech and automatica
 
 <strong>Known Issues</strong>
 
--- All searches must be made from the homepage currently, although the dialog system may indicate otherwise.\n
--- Searches work best in the form 'Find me a [TYPE OF DOCTOR] who takes [INSURANCE NAME] near [ADDRESS]'. If you include a street address, make sure to include a house number and not just the name of the street.\n
--- Sometimes the dialog system will enter a buggy loop, which is best resolved by fully refreshing the page.\n
+-- All searches must be made from the homepage currently, although the dialog system may indicate otherwise. <br>
+-- Searches work best in the form 'Find me a [TYPE OF DOCTOR] who takes [INSURANCE NAME] near [ADDRESS]'. If you include a street address, make sure to include a house number and not just the name of the street. <br>
+-- Sometimes the dialog system will enter a buggy loop, which is best resolved by fully refreshing the page. <br>
 -- The medical database we are using has not yet rolled out a foreign language field, although they promise they will soon. This means that searching for a doctor who speaks a language other than English will not yet work, although it is built into the site.
 
 
